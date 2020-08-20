@@ -19,7 +19,7 @@ const nunjucks = require('gulp-nunjucks');
 function browserSyncStart(done) {
   browsersync.init({
     server: {
-      baseDir: "../dist/"
+      baseDir: "dist/"
     },
     port: 3000
   });
@@ -41,24 +41,24 @@ function clean() {
 function modules() {
   // Bootstrap
   var bootstrap = gulp.src('./node_modules/bootstrap/dist/**/*')
-    .pipe(gulp.dest('../dist/vendor/bootstrap'));
+    .pipe(gulp.dest('dist/vendor/bootstrap'));
   // Font Awesome CSS
   var fontAwesomeCSS = gulp.src('./node_modules/@fortawesome/fontawesome-free/css/**/*')
-    .pipe(gulp.dest('../dist/vendor/fontawesome-free/css'));
+    .pipe(gulp.dest('dist/vendor/fontawesome-free/css'));
   // Font Awesome Webfonts
   var fontAwesomeWebfonts = gulp.src('./node_modules/@fortawesome/fontawesome-free/webfonts/**/*')
-    .pipe(gulp.dest('../dist/vendor/fontawesome-free/webfonts'));
+    .pipe(gulp.dest('dist/vendor/fontawesome-free/webfonts'));
   // jQuery Easing
   /*
   var jqueryEasing = gulp.src('./node_modules/jquery.easing/*.js')
-    .pipe(gulp.dest('../dist/vendor/jquery-easing'));
+    .pipe(gulp.dest('dist/vendor/jquery-easing'));
   */
   // jQuery
   var jquery = gulp.src([
       './node_modules/jquery/dist/*',
       '!./node_modules/jquery/dist/core.js'
     ])
-    .pipe(gulp.dest('../dist/vendor/jquery'));
+    .pipe(gulp.dest('dist/vendor/jquery'));
   return merge(bootstrap, fontAwesomeCSS, fontAwesomeWebfonts, jquery);//, jqueryEasing);
 }
 
@@ -75,12 +75,12 @@ function css() {
     .pipe(autoprefixer({
       cascade: false
     }))
-    .pipe(gulp.dest("../dist/css"))
+    .pipe(gulp.dest("dist/css"))
     .pipe(rename({
       suffix: ".min"
     }))
     .pipe(cleanCSS())
-    .pipe(gulp.dest("../dist/css"))
+    .pipe(gulp.dest("dist/css"))
     .pipe(browsersync.stream());
 }
 
@@ -97,7 +97,7 @@ function js() {
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(gulp.dest('../dist/js'))
+    .pipe(gulp.dest('dist/js'))
     .pipe(browsersync.stream());
 }
 
@@ -116,19 +116,19 @@ function htmlDev() {
   return gulp
     .src("./nunjucks/*.html")
     .pipe(nunjucks.compile({production: false}, nunjucksOptions))
-    .pipe(gulp.dest('../dist/'));
+    .pipe(gulp.dest('dist/'));
 }
 function htmlProd() {
   return gulp
     .src("./nunjucks/*.html")
     .pipe(nunjucks.compile({production: true}, nunjucksOptions))
-    .pipe(gulp.dest('../dist/'));
+    .pipe(gulp.dest('dist/'));
 }
 
 function staticFiles() {
   return gulp
     .src("./static/**/*")
-    .pipe(gulp.dest("../dist/"));
+    .pipe(gulp.dest("dist/"));
 }
 
 
