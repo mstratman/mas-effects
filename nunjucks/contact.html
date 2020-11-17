@@ -1,0 +1,39 @@
+<% set title="Contact - MAS Effects" %>
+<% extends "partials/_template.html" %>
+
+<% block body %>
+  <section class="page-section pb-0 pb-lg-4 bg-dark text-white">
+  </section>
+
+  <section class="page-section">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <h1 class="mb-4 section-heading text-uppercase">Contact</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p>Reach out and let me know if there is anything I can do for you. You can also email me directly at <a href="mailto:mark@mas-effects.com">mark@mas-effects.com</a></p>
+          <form data-netlify="true" method="POST">
+            <input type="hidden" name="page" value="contact">
+            <div class="form-group">
+              <label for="contact-name">Your Name</label>
+              <input id="contact-name" class="form-control"  type="text">
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Your Email</label>
+              <input id="contact-email" class="form-control"  type="email">
+            </div>
+            <div class="form-group form-group-textarea mb-md-0">
+              <label for="contact-message">Message</label>
+              <textarea rows="3" class="form-control" id="contact-message" placeholder="Questions, comments, feedback?"></textarea>
+            </div>
+            <button class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<% endblock %>
