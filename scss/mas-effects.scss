@@ -28,6 +28,10 @@
   @include serif-font;
 }
 
+img.home-mw {
+  max-height: 190px;
+}
+
 .bg-teal {
   background-color: #83d3c9;
   color: #fff;
@@ -215,4 +219,13 @@ td.details {
 
 .other-pedal-thumbnail {
   max-height: 300px;
+}
+
+
+
+p.fourlines {
+  @media (min-width: 576px) {
+
+    height: 4em;
+  }
 }
