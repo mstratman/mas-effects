@@ -13,6 +13,7 @@ const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 const uglify = require("gulp-uglify");
 const nunjucks = require('gulp-nunjucks');
+const filter = require('gulp-filter');
 
 
 // BrowserSync
@@ -113,15 +114,29 @@ const nunjucksOptions = {
 };
 
 function htmlDev() {
+  const f = filter(['**', '!**/index.html'], {restore: true});
   return gulp
     .src("./nunjucks/*.html")
     .pipe(nunjucks.compile({production: false}, nunjucksOptions))
+    .pipe(f)
+    .pipe(rename(function(path) {
+      path.dirname += "/" + path.basename;
+      path.basename = "index";
+    }))
+    .pipe(f.restore)
     .pipe(gulp.dest('dist/'));
 }
 function htmlProd() {
+  const f = filter(['**', '!**/index.html'], {restore: true});
   return gulp
     .src("./nunjucks/*.html")
     .pipe(nunjucks.compile({production: true}, nunjucksOptions))
+    .pipe(f)
+    .pipe(rename(function(path) {
+      path.dirname += "/" + path.basename;
+      path.basename = "index";
+    }))
+    .pipe(f.restore)
     .pipe(gulp.dest('dist/'));
 }
 
