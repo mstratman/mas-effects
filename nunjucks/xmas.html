@@ -1,0 +1,129 @@
+<% set title="Playable Guitar Pedal Christmas Ornament" %>
+<% extends "partials/_template.html" %>
+
+<% block body %>
+  <header class="masthead">
+    <div class="container">
+      <div class="intro-text">
+        <h2 class="intro-lead-in">A boost "pedal", an ornament, a fun project kit, a conversation piece</h2>
+        <h1 class="intro-heading text-uppercase">Rockin' Around the Christmas Tree</h1>
+        <h2 class="intro-lead-in normal-style">Playable Guitar Pedal Ornament</h2>
+        <div class="mt-2">
+          <a class="btn btn-outline-primary btn-lg text-uppercase js-scroll-trigger" href="https://mas-effects.square.site/product/xmas-ornament-guitar-pedal-kit/48?cp=true&sa=true&sbp=false&q=false" target="_blank">Buy Now</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-section">
+    <div class="container">
+
+      <% set imgs = [
+           "cover1",
+           "back",
+           "xmas-tree-cover-square",
+           "night1",
+           "night2",
+           "kit",
+           "kit-bagged",
+           "stocking"
+         ]
+      %>
+      <div class="row no-gutters">
+        <% for img in imgs %>
+          <div class="col-6 col-md-3">
+            <a target="_blank" href="/img/xmas/<$ img $>.jpg">
+              <img class="lazy img-fluid" src="/img/xmas/<$ img $>-reduced-placeholder.jpg" data-src="/img/xmas/<$ img $>-reduced.jpg" />
+            </a>
+          </div>
+        <% endfor %>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3 class="text-center section-heading text-uppercase">So what exactly is this?</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="clearfix">
+            <img class="float-left mr-4" src="/img/xmas/xmas-animated2.gif" alt="Playable guitar pedal ornament" />
+            <div class="float-left">
+              <ul>
+                <li>It's an <strong>ornament</strong>.  15 LEDs randomly emit holiday cheer at varying wavelengths. </li>
+                <li>It's a sweet but gritty <strong>boost guitar "pedal"</strong>.</li>
+                <li>It's a <strong><a target="_blank" href="https://mas-effects.square.site/product/xmas-ornament-guitar-pedal-kit/48?cp=true&sa=true&sbp=false&q=false">kit you build</a></strong> (or <a target="_blank" href="https://mas-effects.square.site/product/xmas-ornament-guitar-pedal-prebuilt/49?cp=true&sa=true&sbp=false&q=false">prebuilt are available too</a>).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col">
+          <h5 class="section-heading text-uppercase">And how does it work?</h5>
+          <p>Flip the switch to make the lights blink. Plug in your guitar to engage the <strong>Nine Volt Nirvana Tape Measure</strong> audio circuit
+          <small>(<a target="_blank" href="https://raw.githubusercontent.com/mstratman/xmas-pedal/master/xmas-tree-1.0-schematic.png">schematic</a>)</small>.
+          </p>
+
+          <h5 class="section-heading text-uppercase">How does it sound?</h5>
+          <p>It gives you a pretty decent boost, around 25dB, and a bit of gritty overdrive. When cranked it has a bit of a lo-fi vibe to it.</p>
+          <p>I'll try to make a video demo before too long <small>(unless you do! Please do and I will happily post it)</small>, but my recording setup is pretty bad.</p>
+          <!--<p>Honestly, though, it's an ornament. If you're picky about how your Christmas Tree sounds I'm not sure what to tell you.</p>-->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3 class="text-center section-heading text-uppercase">How do I get one?</h3>
+          <p>This is available pre-built, or as a DIY kit that you solder together, or even a standalone PCB. If you can't or don't want to order a PCB you can get all the files needed to make your own on the <a target="_blank" href="https://github.com/mstratman/xmas-pedal">GitHub project page</a>.</p>
+          <a target="_blank" href="https://mas-effects.square.site/product/xmas-ornament-guitar-pedal-kit/48?cp=true&sa=true&sbp=false&q=false" class="btn btn-lg btn-block btn-primary">Shop Kits</a>
+          <a target="_blank" href="https://mas-effects.square.site/product/xmas-ornament-guitar-pedal-prebuilt/49?cp=true&sa=true&sbp=false&q=false" class="btn btn-lg btn-block btn-outline-primary">Shop Pre-built</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3 class="text-center section-heading text-uppercase">Instructions / How To</h3>
+
+          <h5 class="section-heading text-uppercase">Using the Pedal</h5>
+          <p>There's really only one non-obvious thing to be aware of: <strong>when your guitar cable is plugged in, the pedal is using power</strong>. Unplug it when you're not playing. This has two circuits: the lights controlled by the switch, and the audio controlled by the input cable.</p>
+          <p>NOTE: If you experience a ticking noise while playing, turn off the pedal's blinking lights. Or embrace it and shrug it off because your guitar is plugged into a freaking Christmas Tree, hanging on a bigger Christmas Tree.</p>
+
+          <h5 class="section-heading text-uppercase">Build Documents</h5>
+          <p><strong><em>Coming Very Soon</em></strong></p>
+          <p>http://mas-effects.com/xmas-instructions.pdf - Illustrated step-by-step build document.</p>
+          <ul>
+            <li>The following are included in the build document, but here are direct links if you want to skip the walkthrough and go straight to the details:
+              <ul>
+                <li><a target="_blank" href="https://raw.githubusercontent.com/mstratman/xmas-pedal/master/xmas-tree-1.0-schematic.png">Schematic</a></li>
+                <li><a target="_blank" href="https://github.com/mstratman/xmas-pedal/blob/master/xmas-tree-1.0-BOM.csv">Bill of Materials</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <h5 class="section-heading text-uppercase">Need Help?</h5>
+          <p>Post to <a target="_blank" href="https://www.reddit.com/r/diypedals/">Reddit r/diypedals</a>, 
+          <a target="_blank" href="https://www.diystompboxes.com/smfforum/">the DIYstompboxes forum</a>, or the 
+          Facebook Guitar Pedal Builders group. If I see any posts here I'll jump in and try to help.
+          </p>
+          <p>You can also <a href="mailto:mark@mas-effects.com">email me directly</a> but you'll get a quicker response through those groups.</p>
+          <p>There are dozens of other DIY pedal communities as well, so of course you can seek help anywhere else.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<% endblock %>
