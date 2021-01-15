@@ -2,31 +2,31 @@ $img-width: 426;
 $img-height: 1075;
 
 @media (max-width: 576px) {
-  .fuzz-builder-preview{
+  .fuzz-builder-preview-container {
     width: 100px;
     max-width: 90vw;
   }
 }
 @media (min-width: 576px) {
-  .fuzz-builder-preview {
+  .fuzz-builder-preview-container  {
     width: 170px;
   }
 }
 
 @media (min-width: 768px) {
-  .fuzz-builder-preview {
+  .fuzz-builder-preview-container  {
     width: 300px;
   }
 }
 
 @media (min-width: 992px) {
-  .fuzz-builder-preview {
+  .fuzz-builder-preview-container  {
     width: 350px;
   }
 }
 
 @media (min-width: 1200px) {
-  .fuzz-builder-preview {
+  .fuzz-builder-preview-container  {
     width: 426px;
   }
 }
@@ -43,6 +43,9 @@ $img-height: 1075;
     max-width: 60%;
   }
 
+  .fuzz-builder-preview-container {
+    position: absolute;
+  }
   .fuzz-builder-preview {
     cursor: pointer;
     width: 100%;

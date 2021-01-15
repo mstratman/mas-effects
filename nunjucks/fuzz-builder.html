@@ -28,12 +28,14 @@
 
   <div class="page-section" id="fuzz-builder">
 
-    <div class="fuzz-builder-preview" @click.stop-prevent="zoomIn">
-      <img class="z1" src="/img/fuzz-builder/enclosure.png">
+    <div class="fuzz-builder-preview-container">
+      <div class="fuzz-builder-preview" @click.stop-prevent="zoomIn">
+        <img class="z1" src="/img/fuzz-builder/enclosure.png">
 
-      <img v-for="sticker in stickers" v-if="sticker.key == chosenSticker.key" class="z2" :src="`/img/fuzz-builder/sticker-${sticker.key}.png`">
+        <img v-for="sticker in stickers" v-if="sticker.key == chosenSticker.key" class="z2" :src="`/img/fuzz-builder/sticker-${sticker.key}.png`">
 
-      <img v-if="knobs=='black-1'" class="z3" src="/img/fuzz-builder/knob-black-1.png">
+        <img v-if="knobs=='black-1'" class="z3" src="/img/fuzz-builder/knob-black-1.png">
+      </div>
     </div>
 
     <div class="wizard">
