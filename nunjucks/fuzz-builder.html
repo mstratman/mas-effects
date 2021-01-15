@@ -1,0 +1,79 @@
+<% set title="Customize your Tiny Fuzz Illustrator Series guitar pedal" %>
+<% extends "partials/_template.html" %>
+
+<% block body %>
+  <section class="page-section bg-dark text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center mt-3">
+          <!-- TODO put a nice big pretty header here -->
+          <h1 class="text-uppercase">Custom Tiny Fuzz</h2>
+          <div class="intro-lead-in">Illustrator Series</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section d-sm-none">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="alert alert-danger" role="alert">
+            <strong>NOTE:</strong> This page works much better with a larger screen.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="page-section" id="fuzz-builder">
+
+    <div class="fuzz-builder-preview" @click.stop-prevent="zoomIn">
+      <img class="z1" src="/img/fuzz-builder/enclosure.png">
+
+      <img v-for="sticker in stickers" v-if="sticker.key == chosenSticker.key" class="z2" :src="`/img/fuzz-builder/sticker-${sticker.key}.png`">
+
+      <img v-if="knobs=='black-1'" class="z3" src="/img/fuzz-builder/knob-black-1.png">
+    </div>
+
+    <div class="wizard">
+      <!--
+      <a href="#" @click.prevent.stop="chooseSticker({})">none</a>
+      -->
+
+      <div class="sticker-info">
+        <div v-show="! chosenSticker.key">
+          <h2>Choose an illustration</h2>
+        </div>
+        <div v-show="chosenSticker.key">
+          <h2>{{chosenSticker.title}}</h2>
+          <h3>by <a target="_blank" :href="chosenSticker.url">{{chosenSticker.artist}}</a></h3>
+        </div>
+      </div>
+
+      <a v-for="sticker in stickers" href="#" @click.prevent.stop="chooseSticker(sticker)">
+        <img :src="`/img/fuzz-builder/thumbs/thumb-${sticker.key}.png`">
+      </a>
+
+      <p>
+      wizard goes here
+      wizard goes here
+      wizard goes here
+      wizard goes here
+      wizard goes here
+      wizard goes here
+      wizard goes here
+      wizard goes here
+      </p>
+    </div>
+  </div>
+
+  <% if production %>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  <% else %>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <% endif %>
+
+  <script src="/js/fuzz-builder.min.js"></script>
+
+<% endblock %>
