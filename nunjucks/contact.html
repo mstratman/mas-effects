@@ -15,7 +15,11 @@
       <div class="row">
         <div class="col">
           <p>Reach out and let me know if there is anything I can do for you. You can also email me directly at <a href="mailto:mark@mas-effects.com">mark@mas-effects.com</a></p>
-          <form data-netlify="true" method="POST" name="contact">
+          <form data-netlify="true" netlify-honeypot="pooh" method="POST" name="contact">
+            <div class="d-none">
+              Don't fill this field:
+              <input name="pooh" type="text" placeholder="Omit this">
+            </div>
             <input type="hidden" name="page" value="contact">
             <div class="form-group">
               <label for="contact-name">Your Name</label>
