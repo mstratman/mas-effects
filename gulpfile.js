@@ -6,6 +6,7 @@ const browsersync = require("browser-sync").create();
 const cleanCSS = require("gulp-clean-css");
 const del = require("del");
 const gulp = require("gulp");
+const babel = require('gulp-babel');
 const header = require("gulp-header");
 const merge = require("merge-stream");
 const plumber = require("gulp-plumber");
@@ -94,6 +95,7 @@ function js() {
       '!./js/contact_me.js',
       '!./js/jqBootstrapValidation.js'
     ])
+    .pipe(babel({ presets: ['@babel/env'] }))
     .pipe(uglify())
     .pipe(rename({
       suffix: '.min'

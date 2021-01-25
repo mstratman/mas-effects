@@ -8,3 +8,4 @@ docs-bak
 /docs-src/static/img/attic/
 /docs/img/attic/
 /docs/img/src/
+/nunjucks/attic/*

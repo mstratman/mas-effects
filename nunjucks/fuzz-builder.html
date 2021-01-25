@@ -1,6 +1,23 @@
 <% set title="Customize your Tiny Fuzz Illustrator Series guitar pedal" %>
 <% extends "partials/_template.html" %>
 
+<% block head_additions %>
+
+  <% if production %>
+    <script src="/deps/vue-2.6.11.js"></script>
+  <% else %>
+    <script src="/deps/vue-dev.js"></script>
+  <% endif %>
+
+  <link rel="stylesheet" href="/deps/vue-form-wizard.min.css">
+  <script src="/deps/vue-form-wizard.js"></script>
+
+  <link rel="stylesheet" href="/deps/vue-multiselect.min.css">
+  <script src="/deps/vue-multiselect.min.js"></script>
+
+  <script src="/js/fuzz-builder.min.js"></script>
+<% endblock %>
+
 <% block body %>
   <section class="page-section bg-dark text-white">
     <div class="container">
@@ -14,68 +31,325 @@
     </div>
   </section>
 
-  <section class="page-section d-sm-none">
-    <div class="container">
+  <section class="page-section" id="fuzz-builder">
+
+    <div class="container" >
       <div class="row">
         <div class="col">
-          <div class="alert alert-danger" role="alert">
+          <div class="alert alert-danger d-md-none" role="alert">
             <strong>NOTE:</strong> This page works much better with a larger screen.
           </div>
         </div>
       </div>
+
+      <div class="row">
+
+        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-3 col-12">
+          <div class="sticky-top sticky-preview">
+            <div class="fuzz-builder-preview" @click.stop-prevent="zoomIn">
+
+              <img  id="preview-enclosure" class="z1 img-fluid" src="/img/fuzz-builder/enclosure.png">
+
+              <img v-for="sticker in stickers" v-if="sticker.key == chosenSticker.key" class="z2 preview-abs" :src="`/img/fuzz-builder/sticker-${sticker.key}.png`">
+
+              <template v-for="knob in knobs">
+                <img v-if="!knob.nopreview && chosenSticker.key!='rocket' && chosenKnob != null && chosenKnob.key==knob.key && chosenKnobNumber==1" class="z3 preview-abs" :src="`/img/fuzz-builder/knobs/${knob.key}1.png`">
+                <img v-if="!knob.nopreview && chosenSticker.key=='rocket' && chosenKnob != null && chosenKnob.key==knob.key && chosenKnobNumber==1" class="z3 preview-abs" :src="`/img/fuzz-builder/knobs/${knob.key}1b.png`">
+                <img v-if="!knob.nopreview && chosenKnob != null && chosenKnob.key==knob.key && chosenKnobNumber==2" class="z3 preview-abs" :src="`/img/fuzz-builder/knobs/${knob.key}2.png`">
+
+                <img v-if="knob.nopreview && chosenKnob != null && chosenKnob.key==knob.key && chosenSticker.key!='rocket' && chosenKnobNumber==1" class="z3 preview-abs" src="/img/fuzz-builder/knobs/no-preview1.png">
+                <img v-if="knob.nopreview && chosenKnob != null && chosenKnob.key==knob.key && chosenSticker.key=='rocket' && chosenKnobNumber==1" class="z3 preview-abs" src="/img/fuzz-builder/knobs/no-preview1b.png">
+                <img v-if="knob.nopreview && chosenKnob != null && chosenKnob.key==knob.key && chosenKnobNumber==2" class="z3 preview-abs" src="/img/fuzz-builder/knobs/no-preview2.png">
+              </template>
+
+              <img v-for="stomp in stomps" v-if="chosenStomp != null && chosenStomp.key==stomp.key" class="z3 preview-abs" :src="`/img/fuzz-builder/footswitch/${stomp.key}.png`">
+
+              <img v-for="color in ledColors" v-if="led == color" class="z3 preview-abs" :src="`/img/fuzz-builder/leds/${color}.png`">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-9 col-lg-9 col-md-8 col-sm-9 col-12">
+          <form v-show="!formComplete" action="/fuzz-builder-done" data-netlify="true" netlify-honeypot="pooh" class="wizard" ref="wizardform">
+            <input v-if="chosenSticker" type="hidden" name="illustration_key" :value="chosenSticker.key">
+            <input v-if="chosenKnob" type="hidden" name="knob_key" :value="chosenKnob.key">
+            <input v-if="chosenStomp" type="hidden" name="footswitch_key" :value="chosenStomp.key">
+
+            <form-wizard title="" subtitle="" ref="wizard" finish-button-text="Save">
+              <div class="d-none">
+                Don't fill this field:
+                <input name="pooh" type="text" placeholder="Omit this">
+              </div>
+
+              <tab-content title="Illustration">
+                <div class="sticker-info">
+                  <div v-show="! chosenSticker.key">
+                    <h2>Choose an illustration</h2>
+                  </div>
+                  <div v-show="chosenSticker.key">
+                    <h2>{{chosenSticker.title}}</h2>
+                    <h3>by <a target="_blank" :href="chosenSticker.url">{{chosenSticker.artist}}</a></h3>
+                    <div v-show="chosenSticker.note">
+                      <div class="alert alert-primary" role="alert">
+                        <strong>NOTE:</strong> {{chosenSticker.note}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <a v-for="sticker in stickers" href="#" @click.prevent.stop="chooseSticker(sticker)">
+                  <img :src="`/img/fuzz-builder/thumbs/thumb-${sticker.key}.png`">
+                </a>
+                <!--
+                <a href="#" @click.prevent.stop="chooseSticker({})">none</a>
+                -->
+              </tab-content>
+
+              <tab-content title="Controls">
+                <h4>Knobs</h4>
+                <div class="form-group">
+                  <label for="knob-number">Control Knobs</label>
+                  <select name="num_knobs" v-model="chosenKnobNumber" v-on:change="waitThenResizeImages" class="form-control" id="knob-number">
+                    <option value="2">Gain + Volume</option>
+                    <option value="1">Gain only (internal volume trimmer)</option>
+                    <option value="0">None (volume trimmer, max gain)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="knob-color">Knob Color</label>
+                  <multiselect
+                    id="knob-color"
+                    :allow-empty="false"
+                    deselect-label=""
+                    @input="waitThenResizeImages"
+                    v-model="chosenKnob"
+                    :options="knobs"
+                    track-by="key"
+                    name="knob"
+                  >
+                    <template slot="singleLabel" slot-scope="props">
+                      <img v-if="! props.option.nothumb" class="option__image" :src="`/img/fuzz-builder/knobs/preview-${props.option.key}.png`" :alt="`Knob color: ${props.option.title}`">
+                      <span class="option__desc">
+                        <span class="option__title">{{ props.option.title }}</span>
+                        <br>
+                        <div v-if="props.option.desc" class="option__small ml-100">{{ props.option.desc }}</div>
+                      </span>
+                    </template>
+                    <template slot="option" slot-scope="props">
+                      <img v-if="! props.option.nothumb" class="option__image reduced" :src="`/img/fuzz-builder/knobs/preview-${props.option.key}.png`" alt="`Knob color: ${props.option.title}`">
+                      <span :class="{'option__desc': true, 'ml-60': props.option.nothumb}">
+                        <span class="option__title">{{ props.option.title }}</span>
+                        <span v-if="props.option.desc" class="option__small">{{ props.option.desc }}</span>
+                      </span>
+                    </template>
+                  </multiselect>
+                </div>
+
+                <h4 class="mt">Foot Switch</h4>
+                <div class="form-group">
+                  <label for="knob-color">Foot switch washer/nut</label>
+                  <multiselect
+                    id="footswitch"
+                    :allow-empty="false"
+                    deselect-label=""
+                    @input="waitThenResizeImages"
+                    v-model="chosenStomp"
+                    :options="stomps"
+                    track-by="key"
+                    :option-height="100"
+                    name="footswitch"
+                  >
+                    <template slot="singleLabel" slot-scope="props">
+                      <img class="option__image" :src="`/img/fuzz-builder/footswitch/preview-${props.option.key}.png`" :alt="`Footswitch: ${props.option.title}`">
+                      <span class="option__desc">
+                        <span class="option__title">{{ props.option.title }}</span>
+                      </span>
+                    </template>
+                    <template slot="option" slot-scope="props">
+                      <img class="option__image reduced" :src="`/img/fuzz-builder/footswitch/preview-${props.option.key}.png`" alt="`Footswitch: ${props.option.title}`">
+                      <span class="option__desc">
+                        <span class="option__title">{{ props.option.title }}</span>
+                        <span v-if="props.option.desc" class="option__small">{{ props.option.desc }}</span>
+                      </span>
+                    </template>
+                  </multiselect>
+
+
+                </div>
+
+              </tab-content>
+
+              <tab-content title="Extras">
+                <h4>LED Indicator</h4>
+                <div class="form-group">
+                  <label for="led-color">LED Color</label>
+                  <select name="led_color" v-model="led" v-on:change="waitThenResizeImages" class="form-control" id="led-color">
+                    <option value="">No LED indicator</option>
+                    <option v-for="color in ledColors" :value="color">[+${{ledPrice}}] {{color | capitalize}}</option>
+                  </select>
+                </div>
+                <small>NOTE: LED placement and bezel hardware will vary</small>
+
+                <h4 v-show="chosenSticker.addonPrice" class="mt">Ambient LEDs</h4>
+                <div  v-show="chosenSticker.addonPrice" class="form-check">
+                  <input class="form-check-input" type="checkbox" name="addon_selected" v-model="choseAddon" :value="chosenSticker.addonPrice" id="addon">
+                  <label class="form-check-label" for="addon">
+                    [+${{chosenSticker.addonPrice}}] {{chosenSticker.addon}}
+                  </label>
+                </div>
+
+                <h4 class="mt">Hardware Upgrades</h4>
+                <div class="form-check">
+                  <input name="upgrade_jacks" v-model="jacksUpgrade" class="form-check-input" type="checkbox" value="yes" id="upgrade-jacks">
+                  <label class="form-check-label" for="upgrade-jacks">
+                    [+${{jackUpgradePrice}}] Lumberg brand premium jacks:<small> input, output, and DC power</small>
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input name="upgrade_footswitch" v-model="footswitchUpgrade" class="form-check-input" type="checkbox" value="yes" id="upgrade-footswitch">
+                  <label class="form-check-label" for="upgrade-footswitch">
+                    [+${{footswitchUpgradePrice}}] "feather click" foot switch<small>, ultra-premium</small>
+                  </label>
+                </div>
+
+
+                <h4 class="mt">Goodies</h4>
+                <div class="form-check">
+                  <input name="sticker" v-model="extraSticker" class="form-check-input" type="checkbox" value="yes" id="extra-sticker">
+                  <label class="form-check-label" for="extra-sticker">
+                    [+${{stickerPrice}}] Extra faceplate sticker, heavy duty vinyl. 100% goes to the illustrator.
+                    <a href="#" @click.prevent.stop="" class="mytip">More info
+                      <div class="top">
+                        <p>
+                        The faceplate of these pedals is a heavy duty vinyl sticker. For $5 you can get a duplicate to stick on your guitar case, or wherever. This entire $5 will go to the illustrator in addition to his/her royalty.
+                        </p>
+                        <i></i>
+                      </div>
+                    </a>
+                  </label>
+                </div>
+
+                <h4 class="mt">Summary</h4>
+                <div class="row">
+                  <div class="col-12 col-md-8">
+                    <table class="summary table table-sm">
+                      <tbody>
+                        <tr>
+                          <td>${{basePrice}}</td>
+                          <td>base price</td>
+                        </tr>
+                        <tr v-if="chosenSticker.key">
+                          <td><small><em>included</em></small></td>
+                          <td>Illustration: <strong>{{chosenSticker.title}}</strong> <em>by {{chosenSticker.artist}}</em></td>
+                        </tr>
+                        <tr>
+                          <td><small><em>included</em></small></td>
+                          <td>Controls:
+                            <strong v-if="chosenKnobNumber == 0">No knobs. Internal volume trimmer. Maximized gain</strong>
+                            <strong v-if="chosenKnobNumber == 1">Gain knob. Internal volume trimmer</strong>
+                            <strong v-if="chosenKnobNumber == 2">Gain &amp; Volume knobs</strong>
+                          </td>
+                        </tr>
+                        <tr v-if="chosenKnobNumber > 0 && chosenKnob && chosenKnob.addonPrice">
+                          <td>+ <em>${{chosenKnob.addonPrice}}</em></td>
+                          <td>Knob upgrade: <strong>{{chosenKnob.title}}</strong></td>
+                        </tr>
+                        <tr v-if="chosenKnobNumber > 0 && chosenKnob && ! chosenKnob.addonPrice">
+                          <td><small><em>included</em></small></td>
+                          <td>Knobs: <strong>{{chosenKnob.title}}</strong></td>
+                        </tr>
+                        <tr v-if="chosenStomp">
+                          <td><small><em>included</em></small></td>
+                          <td>Foot switch nut/washer: <strong>{{chosenStomp.title}}</strong></td>
+                        </tr>
+                        <tr v-if="led">
+                          <td>+ <em>${{ledPrice}}</em></td>
+                          <td>LED: <strong>{{led | capitalize}}</strong></td>
+                        </tr>
+                        <tr v-if="chosenSticker && chosenSticker.addonPrice && choseAddon">
+                          <td>+ <em>${{chosenSticker.addonPrice}}</em></td>
+                          <td>Ambient LED: <strong>{{chosenSticker.addon}}</strong></td>
+                        </tr>
+                        <tr v-if="jacksUpgrade">
+                          <td>+ <em>${{jackUpgradePrice}}</em></td>
+                          <td><strong>Premium Lumberg brand jacks</strong></td>
+                        </tr>
+                        <tr v-if="footswitchUpgrade">
+                          <td>+ <em>${{footswitchUpgradePrice}}</em></td>
+                          <td><strong>Ultra-premium "feather click" foot switch</strong></td>
+                        </tr>
+                        <tr v-if="extraSticker">
+                          <td>+ <em>${{stickerPrice}}</em></td>
+                          <td><strong>Sticker</strong>. <small>(Proceeds added to illustrator's royalty)</small></td>
+                        </tr>
+                        <tr class="total">
+                          <td><em>Total:</em></td>
+                          <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td><strong>$50</strong></td>
+                          <td><em>Deposit</em></td>
+                        </tr>
+                        <tr>
+                          <td><strong>${{total - 50}}</strong></td>
+                          <td><em>Remaining balance, <small>payable in 1-3 days when pedal is complete, or later at your convenience</small></em></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="col-12 col-md-4">
+                    <div class="alert alert-info" role="alert">
+                      <small>
+                        <strong>COMING SOON:</strong>
+                        On a tighter budget? Get a pedal with this illustration, off-the-shelf, without customizations for $49
+                      </small>
+                    </div>
+                  </div>
+                </div>
+
+                <h4 class="mt">Save Design</h4>
+                <div class="form-group">
+                  <label for="email-address">Enter your email</small></label>
+                  <input type="email" name="email" class="form-control" id="email-address" aria-describedby="emailHelp" v-model="email">
+                  <small id="emailHelp" class="form-text text-muted">When you click "Save" your pedal info will be sent <a href="mailto:mark@mas-effects.com">to me (mark@mas-effects.com)</a>. If you make changes and save again, I will use your most recent save after you place an order</small>
+                </div>
+
+                <div class="form-group">
+                  <label for="comments">Instructions for special order, other comments</label>
+                  <textarea name="comments" v-model="comments" class="form-control" id="comments" rows="2"></textarea>
+                </div>
+
+              </tab-content>
+
+              <template slot="footer" slot-scope="props">
+                <div class="wizard-footer-left">
+                  <button type="button"  v-if="props.activeTabIndex > 0" @click.prevent.stop="props.prevTab()" class="btn btn-outline-danger">Back</button>
+                </div>
+                <div class="wizard-footer-right">
+                  <button type="button" class="btn btn-danger" v-if="!props.isLastStep" @click.prevent.stop="props.nextTab()">Next</button>
+                  <button type="submit" v-else class="btn btn-danger">Save</button>
+                </div>
+              </template>
+
+            </form-wizard>
+
+          </form>
+
+          <div v-show="formComplete">
+            <h4>Next steps</h4>
+            <ol>
+              <li><a href="https://mas-effects.square.site/product/deposit-on-a-custom-pedal/17?cp=true&sa=true&sbp=false&q=false" target="_blank">Make a <strong>$50 deposit</strong></a></li>
+              <li><em>1-5 business days:</em> <strong>I'll build your pedal</strong> then send you a photo and link to complete the purchase</li>
+              <li>Pay the <strong>${{total - 50}} balance</strong> when you're ready and I'll ship your pedal <small>(it will arrive in 1-3 days in the US)</small></li>
+            </ol>
+          </div>
+
+        </div>
+      </div>
     </div>
   </section>
-
-  <div class="page-section" id="fuzz-builder">
-
-    <div class="fuzz-builder-preview-container">
-      <div class="fuzz-builder-preview" @click.stop-prevent="zoomIn">
-        <img class="z1" src="/img/fuzz-builder/enclosure.png">
-
-        <img v-for="sticker in stickers" v-if="sticker.key == chosenSticker.key" class="z2" :src="`/img/fuzz-builder/sticker-${sticker.key}.png`">
-
-        <img v-if="knobs=='black-1'" class="z3" src="/img/fuzz-builder/knob-black-1.png">
-      </div>
-    </div>
-
-    <div class="wizard">
-      <!--
-      <a href="#" @click.prevent.stop="chooseSticker({})">none</a>
-      -->
-
-      <div class="sticker-info">
-        <div v-show="! chosenSticker.key">
-          <h2>Choose an illustration</h2>
-        </div>
-        <div v-show="chosenSticker.key">
-          <h2>{{chosenSticker.title}}</h2>
-          <h3>by <a target="_blank" :href="chosenSticker.url">{{chosenSticker.artist}}</a></h3>
-        </div>
-      </div>
-
-      <a v-for="sticker in stickers" href="#" @click.prevent.stop="chooseSticker(sticker)">
-        <img :src="`/img/fuzz-builder/thumbs/thumb-${sticker.key}.png`">
-      </a>
-
-      <p>
-      wizard goes here
-      wizard goes here
-      wizard goes here
-      wizard goes here
-      wizard goes here
-      wizard goes here
-      wizard goes here
-      wizard goes here
-      </p>
-    </div>
-  </div>
-
-  <% if production %>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
-  <% else %>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <% endif %>
-
-  <script src="/js/fuzz-builder.min.js"></script>
+  
 
 <% endblock %>
