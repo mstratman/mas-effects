@@ -1,0 +1,343 @@
+<% set title="Tiny Fuzz: Illustrator Series - Guitar and Bass Fuzz Pedal by MAS Effects" %>
+<% set meta_description="The perfect blend of huge sound, beautiful artwork, and extreme affordability ($49!!!) - this fuzz pedal trims the fat and delivers what matters" %>
+<% extends "partials/_template.html" %>
+
+<% block body %>
+  <section class="page-section bg-dark text-white fuzz-illustrator-masthead">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center mt-3">
+          <h1 class="text-uppercase">Tiny Fuzz: Illustrator Series</h2>
+          <div class="intro-lead-in">Gorgeous... huge-sounding... handmade... affordable
+</div>
+          <div class="mt-5 text-center">
+            <a target="_blank" href="https://mas-effects.square.site/shop/tiny-fuzz/8" class="btn btn-xl btn-primary">Shop In-Stock (coming soon)</a>
+            <a  href="/fuzz-builder/" class="btn btn-xl btn-secondary">Custom Built</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h2 class="section-heading text-uppercase text-center">What is it?</h2>
+          <p>This tiny fuzz pedal for guitar and bass is the perfect blend of <strong>awesome fuzz sounds</strong>, <strong>extreme affordability</strong>, and <strong>gorgeous aesthetics</strong>.</p>
+          <p><em>[More photos coming soon]</em></p><!-- TODO -->
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="col-12 col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-volume-up fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">HUGE Sound</h4>
+          <p class="text-left small">Simple, no-nonsense fuzz pedal. It has <strong>a single voice that goes from all-out buzz saw down to a light breakup</strong> <small>(roll back that guitar volume!)</small>.</p>
+          <p class="text-left small"><em>In-depth demo coming soon...</em> in the meantime <a target="_blank" href="https://soundcloud.com/mark-a-stratman/sets/monster-under-the-bed-pedal-quick-and-dirty-samples">here are some quick and dirty <strong>sound clips</strong></a>, or for a longer form presentation with some narration <a target="_blank" href="https://www.reddit.com/r/guitarpedals/comments/kmju17/mas_effects_fuzzy_monster_under_the_bed_guitar/">check out this <strong>video from Justus Gash</strong></a> showing how it sounds with guitar and bass.</p>
+        </div>
+        <div class="col-12 col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-dollar-sign fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">Ridiculously Affordable ($49)</h4>
+          <p class="text-left small">
+          I've gone through <strong>countless iterations</strong> of this pedal and have progressively made it <strong>quicker and simpler</strong> to build,
+            while maintaining a singular focus on keeping the amazing sounds and beautiful aesthetics.
+          </p>
+          <p class="text-left small">
+            A <strong>raw aluminum enclosure</strong> with a <strong>heavy duty vinyl sticker</strong> are far more economical - especially when offering so many designs to pick from - than traditional powder coating and UV printing. Not to mention it simply looks more interesting, and holds up to extreme abuse.
+          </p>
+          <p class="text-left small">These and a handful of other <strong>careful considerations allow me to pass insane savings to you</strong> without cutting any of the corners that truly matter.</p>
+        </div>
+        <div class="col-12 col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-heart fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">Hand-made With Love</h4>
+          <p class="text-left small">Support a <strong>small business</strong> and <strong>independent illustrators</strong> with your purchase.</p>
+          <p class="text-left small">These pedals are carefully and lovingly hand-made in the USA <small>(Lockport, IL)</small>.</p>
+          <p class="text-left small">The illustrations come from a variety of artists around the world. I encourage you to check out their websites, and buy prints and other products featuring their work. If you <a href="/fuzz-builder/">build a custom pedal</a> you'll also have the option to buy an extra faceplate sticker and have 100% added to the artist's royalty.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="page-section bg-light bordered" id="kailey-reid">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h2 class="section-heading text-uppercase text-center">Meet The Illustrators</h2>
+          <h3 class="text-center section-subheading text-muted">and their work...</h3>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <% macro section(artist, insta, section_class='', store='') %>
+    <section class="page-section <$ section_class $>" id="<$ artist | lower | replace(' ', '-') $>">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col">
+            <div class="artist-info">
+              <h3 class="text-uppercase text-center"><$ artist $></h3>
+              <div class="text-center small">
+                <a target="_blank" href="https://www.instagram.com/<$ insta $>/">follow on instagram: <strong>@<$ insta $></strong></a>
+              </div>
+              <% if store %>
+                <div class="text-center small">
+                  <a target="_blank" href="<$ store $>">Buy prints or other merchandise here</a>
+                </div>
+              <% endif %>
+            </div>
+          </div>
+        </div>
+        <$ caller() $>
+      </div>
+    </section>
+  <% endmacro %>
+
+  <% macro section_row_A(store_link, builder_link, img, img_placeholder, title, artist, upgrade='', more_photos_soon, prints='') %>
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-4 text-center">
+        <h4 class="d-block d-sm-none mt-4"><em><$ title $></em></h4>
+        <a href="<$ store_link if store_link else builder_link $>" target="_blank">
+          <img class="<% if img_placeholder %>lazy<% endif %> img-fluid" src="<$ img_placeholder if img_placeholder else img $>" data-src="<$ img $>" alt="Tiny Fuzz pedal: <$ title $> by <$ artist $>" />
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-8">
+        <h4 class="d-none d-sm-block"><em><$ title $></em></h4>
+        <% if upgrade %>
+          <p>Upgrade available: <$ upgrade $></p>
+        <% endif %>
+        <% if more_photos_soon %>
+          <p><em>More photos coming soon</em></p>
+        <% endif %>
+        <% if DISABLED_TODO_prints %>
+          <p><a target="_blank" href="<$ prints $>">Order a print of this from the illustrator</p>
+        <% endif %>
+        <% if store_link %>
+          <a class="btn btn-block btn-primary" target="_blank" href="<$ store_link $>">Shop In-Stock <% if upgrade %>[$49-59]<% else %>[$49]<% endif %></a>
+        <% else %>
+          <button class="btn btn-block btn-secondary" disabled>COMING SOON: Shop In-Stock <% if upgrade %>[$49-59]<% else %>[$49]<% endif %></button>
+        <% endif %>
+        <a class="btn btn-block btn-<% if store_link %>outline-<% endif %>primary" href="<$ builder_link $>">Customize [$65+]</a>
+      </div>
+    </div>
+  <% endmacro %>
+
+  <% call section('Kailey Reid', 'kaileyreidillustration', 'bg-light') %>
+    <$ section_row_A(
+      store_link='https://mas-effects.square.site/product/fuzzy-monster-under-my-bed-glowing-eyes/42?cp=true&sa=true&sbp=false&q=false',
+      builder_link='/fuzz-builder/?sticker=monster&pg=2',
+      img='/img/illustrator-series/hiding-fear.jpg',
+      img_placeholder='/img/illustrator-series/hiding-fear-placeholder.jpg',
+      title='Hiding Fear',
+      artist='Kaily Reid',
+      upgrade='glowing eyes'
+    ) $>
+  <% endcall %>
+
+  <% set artist = 'David Slebodnick' %>
+  <% call section(artist, 'daviddrawsdrawings', '', 'https://www.etsy.com/shop/DavidSlebodnick') %>
+    <$ section_row_A(
+      store_link='',
+      builder_link='/fuzz-builder/?sticker=spaceman&pg=2',
+      img='/img/fuzz-builder/thumbs/thumb-spaceman.png',
+      img_placeholder='',
+      title='Drunk Dead Spaceman',
+      artist=artist,
+      upgrade='glowing eyes',
+      more_photos_soon=true
+    ) $>
+  <% endcall %>
+
+  <% set artist = 'Matt Dixon' %>
+  <% call section(artist, 'mattdixonart', 'bg-light', 'https://www.mattdixon.co.uk/') %>
+    <$ section_row_A(
+      store_link='',
+      builder_link='/fuzz-builder/?sticker=divinity&pg=2',
+      img='/img/fuzz-builder/thumbs/thumb-divinity.png',
+      img_placeholder='',
+      title='Divinity',
+      artist=artist,
+      upgrade='',
+      more_photos_soon=true,
+      prints='https://www.mattdixon.co.uk/shop/divinity'
+    ) $>
+    <$ section_row_A(
+      store_link='',
+      builder_link='/fuzz-builder/?sticker=fathom&pg=2',
+      img='/img/fuzz-builder/thumbs/thumb-fathom.png',
+      img_placeholder='',
+      title='Full Fathom Five',
+      artist=artist,
+      upgrade='glowing antenna',
+      more_photos_soon=true,
+      prints='https://www.mattdixon.co.uk/shop/full-fathom-five'
+    ) $>
+    <$ section_row_A(
+      store_link='',
+      builder_link='/fuzz-builder/?sticker=charging&pg=2',
+      img='/img/fuzz-builder/thumbs/thumb-charging.png',
+      img_placeholder='',
+      title='Charging',
+      artist=artist,
+      more_photos_soon=true,
+      prints='https://www.mattdixon.co.uk/shop/charging'
+    ) $>
+  <% endcall %>
+
+  <% set artist = 'Justin Estcourt' %>
+  <% call section(artist, 'jetsyart', '', 'https://linktr.ee/jetsyart') %>
+    <$ section_row_A(
+      store_link='',
+      builder_link='/fuzz-builder/?sticker=saturn&pg=2',
+      img='/img/fuzz-builder/thumbs/thumb-saturn.png',
+      img_placeholder='',
+      title='Saturn Rise',
+      artist=artist,
+      upgrade='',
+      more_photos_soon=true
+    ) $>
+    <$ section_row_A(
+      store_link='',
+      builder_link='/fuzz-builder/?sticker=isolation&pg=2',
+      img='/img/fuzz-builder/thumbs/thumb-isolation.png',
+      img_placeholder='',
+      title='Isolation',
+      artist=artist,
+      upgrade='',
+      more_photos_soon=true
+    ) $>
+    <$ section_row_A(
+      store_link='',
+      builder_link='/fuzz-builder/?sticker=comet&pg=2',
+      img='/img/fuzz-builder/thumbs/thumb-comet.png',
+      img_placeholder='',
+      title='Until the End',
+      artist=artist,
+      upgrade='',
+      more_photos_soon=true
+    ) $>
+  <% endcall %>
+
+
+  <% set artist = 'Louis Picard' %>
+  <% call section(artist, 'louispicard.art', 'bg-light', 'https://www.redbubble.com/fr/people/PikPikPik/shop') %>
+    <$ section_row_A(
+      store_link='',
+      builder_link='/fuzz-builder/?sticker=lost8&pg=2',
+      img='/img/fuzz-builder/thumbs/thumb-lost8.png',
+      img_placeholder='',
+      title='The Lost Ones 08',
+      artist=artist,
+      upgrade='',
+      more_photos_soon=true
+    ) $>
+    <$ section_row_A(
+      store_link='',
+      builder_link='/fuzz-builder/?sticker=lost6&pg=2',
+      img='/img/fuzz-builder/thumbs/thumb-lost6.png',
+      img_placeholder='',
+      title='The Lost Ones 06',
+      artist=artist,
+      upgrade='',
+      more_photos_soon=true
+    ) $>
+    <$ section_row_A(
+      store_link='',
+      builder_link='/fuzz-builder/?sticker=lost3&pg=2',
+      img='/img/fuzz-builder/thumbs/thumb-lost3.png',
+      img_placeholder='',
+      title='The Lost Ones 03',
+      artist=artist,
+      upgrade='',
+      more_photos_soon=true
+    ) $>
+  <% endcall %>
+
+  <% set artist = 'Milky Stout' %>
+  <% call section(artist, 'milkystout', '', '') %>
+    <$ section_row_A(
+      store_link='',
+      builder_link='/fuzz-builder/?sticker=spirits&pg=2',
+      img='/img/fuzz-builder/thumbs/thumb-spirits.png',
+      img_placeholder='',
+      title='Spirits',
+      artist=artist,
+      upgrade='',
+      more_photos_soon=true
+    ) $>
+  <% endcall %>
+
+  <% set artist = 'Cam Ojeda' %>
+  <% call section(artist, 'camtronart', 'bg-light', '') %>
+    <$ section_row_A(
+      store_link='',
+      builder_link='/fuzz-builder/?sticker=rocket&pg=2',
+      img='/img/fuzz-builder/thumbs/thumb-rocket.png',
+      img_placeholder='',
+      title='Rocket',
+      artist=artist,
+      upgrade='',
+      more_photos_soon=true
+    ) $>
+  <% endcall %>
+
+  <% set artist = 'MottsyMakes' %>
+  <% call section(artist, 'mottsymakes', '', 'https://www.etsy.com/shop/mottsymakes') %>
+    <$ section_row_A(
+      store_link='',
+      builder_link='/fuzz-builder/?sticker=avocado&pg=2',
+      img='/img/fuzz-builder/thumbs/thumb-avocado.png',
+      img_placeholder='',
+      title="Devil's Avocado",
+      artist=artist,
+      upgrade='',
+      more_photos_soon=true
+    ) $>
+    <$ section_row_A(
+      store_link='',
+      builder_link='/fuzz-builder/?sticker=kiwi&pg=2',
+      img='/img/fuzz-builder/thumbs/thumb-kiwi.png',
+      img_placeholder='',
+      title="Kiwi",
+      artist=artist,
+      upgrade='',
+      more_photos_soon=true
+    ) $>
+    <$ section_row_A(
+      store_link='',
+      builder_link='/fuzz-builder/?sticker=hourglass&pg=2',
+      img='/img/fuzz-builder/thumbs/thumb-hourglass.png',
+      img_placeholder='',
+      title="Hourglass",
+      artist=artist,
+      upgrade='',
+      more_photos_soon=true
+    ) $>
+  <% endcall %>
+
+  <% set artist = 'Anna Geschwind' %>
+  <% call section(artist, 'annageschwind.art', 'bg-light', '') %>
+    <$ section_row_A(
+      store_link='',
+      builder_link='/fuzz-builder/?sticker=map&pg=2',
+      img='/img/fuzz-builder/thumbs/thumb-map.png',
+      img_placeholder='',
+      title="Middle Earth",
+      artist=artist,
+      upgrade='',
+      more_photos_soon=true
+    ) $>
+  <% endcall %>
+
+<% endblock %>

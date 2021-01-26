@@ -13,6 +13,13 @@
   background-position: center center;
   background-size: cover;
 }
+.fuzz-illustrator-masthead {
+  background-image: url('../img/header-tiny-fuzz.jpg');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+}
 
 .anchor {
   display: block;
@@ -236,4 +243,21 @@ section.bordered {
   border-top: 1px solid #adadad;
 }
 
+.illustrator span {
+  font-weight: normal;
+  font-size: 1rem;
+}
 
+.artist-info {
+  /*
+  border: 1px solid gray;
+  padding: 1rem;
+  */
+  /*
+  background-color: #546d87;
+  color: #fff;
+  a {
+    color: #fff;
+  }
+  */
+}
