@@ -74,6 +74,7 @@
             <input v-if="chosenSticker" type="hidden" name="illustration_key" :value="chosenSticker.key">
             <input v-if="chosenKnob" type="hidden" name="knob_key" :value="chosenKnob.key">
             <input v-if="chosenStomp" type="hidden" name="footswitch_key" :value="chosenStomp.key">
+            <input type="hidden" name="total" :value="total">
 
             <form-wizard title="" subtitle="" ref="wizard" finish-button-text="Save">
               <div class="d-none">
