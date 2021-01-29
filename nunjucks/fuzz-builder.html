@@ -198,6 +198,8 @@
                   <label class="form-check-label" for="addon">
                     [+${{chosenSticker.addonPrice}}] {{chosenSticker.addon}}
                   </label>
+                  <a v-show="chosenSticker.addonPreviewUrl" target="_blank" :href="chosenSticker.addonPreviewUrl"><small>(Preview)</small></a>
+                  <small v-show="! chosenSticker.addonPreviewUrl"><em>(Sorry, no preview available yet)</em></small>
                 </div>
 
                 <h4 class="mt">Hardware Upgrades</h4>
@@ -205,7 +207,7 @@
                   <input name="upgrade_jacks" v-model="jacksUpgrade" class="form-check-input" type="checkbox" value="yes" id="upgrade-jacks">
                   <label class="form-check-label" for="upgrade-jacks">
                     [+${{jackUpgradePrice}}] Lumberg brand premium jacks:<small> input, output, and DC power</small>
-                    <a href="#" @click.prevent.stop="" class="mytip">More info
+                    <a href="#" @click.prevent.stop="" class="mytip"><small>(More info)</small>
                       <div class="top">
                         <p>The standard jacks are great quality, and very affordable. I confidently use them in all my pedals.  That said, if you want your pedal to survive into the apocalypse then you can consider these upgraded jacks. They have a simpler construction and thicker metal so they're probably impossible to break.
                         </p>
@@ -217,7 +219,7 @@
                   <input name="upgrade_footswitch" v-model="footswitchUpgrade" class="form-check-input" type="checkbox" value="yes" id="upgrade-footswitch">
                   <label class="form-check-label" for="upgrade-footswitch">
                     [+${{footswitchUpgradePrice}}] "Feather click" foot switch
-                    <a href="#" @click.prevent.stop="" class="mytip">More info
+                    <a href="#" @click.prevent.stop="" class="mytip"><small>(More info)</small>
                       <div class="top">
                         <p>Both the standard and feather-click foot switches are extremely high quality, rated for extended life (30,000 cycles). Both are used for latching, true bypass. The feather click ones simply require about half the force to click, and are quieter as well.
                         </p>
@@ -232,7 +234,7 @@
                   <input name="sticker" v-model="extraSticker" class="form-check-input" type="checkbox" value="yes" id="extra-sticker">
                   <label class="form-check-label" for="extra-sticker">
                     [+${{stickerPrice}}] Extra faceplate sticker, heavy duty vinyl. 100% goes to the illustrator.
-                    <a href="#" @click.prevent.stop="" class="mytip">More info
+                    <a href="#" @click.prevent.stop="" class="mytip"><small>(More info)</small>
                       <div class="top">
                         <p>
                         The faceplate of these pedals is a heavy duty vinyl sticker. For $5 you can get a duplicate to stick on your guitar case, or wherever. This entire $5 will go to the illustrator in addition to his/her royalty.
