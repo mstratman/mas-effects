@@ -64,7 +64,8 @@
 
               <img v-for="stomp in stomps" v-if="chosenStomp != null && chosenStomp.key==stomp.key" class="z3 preview-abs" :src="`/img/fuzz-builder/footswitch/${stomp.key}.png`">
 
-              <img v-for="color in ledColors" v-if="led == color" class="z3 preview-abs" :src="`/img/fuzz-builder/leds/${color}.png`">
+              <img v-for="color in ledColors" v-if="led == color && !(chosenSticker && chosenSticker.flipLED)" class="z3 preview-abs" :src="`/img/fuzz-builder/leds/${color}.png`">
+              <img v-for="color in ledColors" v-if="led == color && chosenSticker && chosenSticker.flipLED" class="z3 preview-abs" :src="`/img/fuzz-builder/leds/${color}-right.png`">
             </div>
           </div>
         </div>
