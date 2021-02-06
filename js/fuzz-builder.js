@@ -41,7 +41,7 @@ window.addEventListener('load', function () {
       stickers: [
         { key: 'monster', artist: 'Kailey Reid', title: 'Hiding Fear', url: 'https://www.instagram.com/kaileyreidillustration/', note: "Optional add-on: Eyes glow red. (step 3)", addon: "Glowing eyes", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/hiding-fear.jpg' },
         { key: 'spaceman', artist: 'David Slebodnick', title: 'Drunk Dead Spaceman', url: 'https://www.instagram.com/daviddrawsdrawings/', note: "Optional add-on: Eyes glow red. (step 3)", addon: "Glowing eyes", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/spaceman.jpg' },
-        { key: 'comet', artist: 'Justin Estcourt', title: 'Until the End', url: 'https://www.instagram.com/jetsyart/', note: 'Comet glows. Optional Add-on (step 3)', addon: "Glowing comet", addonPrice: 20, addonPreviewUrl: '/img/illustrator-series/until-the-end.jpg' },
+        { key: 'comet', artist: 'Justin Estcourt', title: 'Until the End', url: 'https://www.instagram.com/jetsyart/' },
         { key: 'saturn', artist: 'Justin Estcourt', title: 'Saturn Rise', url: 'https://www.instagram.com/jetsyart/', },
         { key: 'isolation', artist: 'Justin Estcourt', title: 'Isolation', url: 'https://www.instagram.com/jetsyart/', note: "Staff glows blue. Optional Add-on (step 3)", addon: "Glowing staff", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/isolation.jpg', flipLED: true },
         { key: 'charging', artist: 'Matt Dixon', title: 'Charging', url: 'https://www.instagram.com/mattdixonart', },
