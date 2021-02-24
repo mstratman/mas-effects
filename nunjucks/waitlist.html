@@ -1,0 +1,59 @@
+<% set title="Join a Waitlist - MAS Effects" %>
+<% extends "partials/_template.html" %>
+
+<% block body %>
+  <section class="page-section pb-0 pb-lg-4 bg-dark text-white">
+  </section>
+
+  <section class="page-section">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <h1 class="mb-4 section-heading text-uppercase">Waitlist</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p>Sign up to be notified when it's back in stock and available for purchase.</p>
+          <form data-netlify="true" netlify-honeypot="pooh" method="POST" name="waitlist">
+            <div class="d-none">
+              Don't fill this field:
+              <input name="pooh" type="text" placeholder="Omit this">
+            </div>
+            <input type="hidden" name="page" value="waitlist">
+            <div class="form-group">
+              <label for="waitlist-email"><strong>Your Email</strong></label>
+              <input name="email" id="waitlist-email" class="form-control"  type="email">
+            </div>
+            <div class="form-group">
+              <label for="waitlist-item">Item:</label>
+              <input name="item" id="waitlist-item" class="form-control"  type="text">
+            </div>
+            <div class="form-group form-group-textarea mb-md-0">
+              <label for="waitlist-message">Message</label>
+              <textarea name="comments" rows="3" class="form-control" id="waitlist-message" placeholder="Questions, comments, feedback?"></textarea>
+            </div>
+            <button class="btn btn-primary btn-xl text-uppercase" type="submit">Get Notified</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var url = window.location.search;
+      var query = url.substr(1);
+      var p = {};
+      query.split("&").forEach(function(part) {
+        var item = part.split("=");
+        p[item[0]] = decodeURIComponent(item[1]);
+      });
+      if (p["item"]) {
+        document.getElementById("waitlist-item").value = p["item"];
+      }
+      document.getElementById("waitlist-email").focus();
+    });
+  </script>
+
+<% endblock %>
