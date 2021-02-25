@@ -17,30 +17,37 @@ var rom_programs = [
   {
     name: "Chorus + Reverb",
     controls: ["Reverb mix", "Rate", "Chorus mix"],
+    fav: true
   },
   {
     name: "Flanger + Reverb",
     controls: ["Reverb mix", "Rate", "Flanger mix"],
+    fav: true
   },
   {
     name: "Tremolo + Reverb",
     controls: ["Reverb mix", "Rate", "Tremolo mix"],
+    fav: true
   },
   {
     name: "Pitch shift",
     controls: ["Pitch +/- 4 semitones", "-", "-"],
+    fav: true
   },
   {
     name: "Pitch Echo",
     controls: ["Pitch", "Delay", "Echo mix"],
+    fav: true
   },
   {
     name: "Reverb 1",
     controls: ["Time", "High filter", "Low filter"],
+    fav: true
   },
   {
     name: "Reverb 2",
     controls: ["Time", "High filter", "Low filter"],
+    fav: true
   }
 ];
 

@@ -25,7 +25,7 @@
           It comes with <a href="#rom-programs" @click="showRom = !showRom">7 great built-in patches <small>(click to view)</small></a>, and you can <strong>use this page to choose up to 16 more</strong> custom ones.</p>
           <p>Feel free to pick more than 16, but just be sure to buy the extra bank(s) to hold them.</p>
           <h3>Other Pedals:</h3>
-          <p><a target="_blank" href="https://shop.mas-effects.com/collections/diy/products/custom-fv-1-eeprom">Buy an EEPROM for $6</a> (bank of 8 patches). This is a reduced cost since you don't need the display driver.</p>
+          <p><a target="_blank" href="https://shop.mas-effects.com/collections/diy/products/custom-fv-1-eeprom">Buy an EEPROM for $6</a> (bank of 8 patches). This is a reduced cost since you don't need the display driver. These work great with almost any FV-1 based pedal. Try the <a target="_blank" href="https://www.pedalpcb.com/product/arachnid/">PedalPCB Arachnid</a> if you're looking for a typical circuit.</p>
         </div>
       </div>
 
@@ -112,6 +112,7 @@
               <tbody>
                 <tr v-for="p in romPrograms">
                   <td>
+                    <i v-if="p['fav']" class="fas fa-star text-warning" title="MAS Favorite"></i>
                     {{p.name}}
                   </td>
                   <td>{{p.controls[0]}}</td>
