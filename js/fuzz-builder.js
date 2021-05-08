@@ -67,7 +67,7 @@ window.addEventListener('load', function () {
         { key: 'orange',  title: 'Orange' },
         { key: 'purple',  title: 'Purple' },
         { key: 'red',  title: 'Red', },
-        { key: 'al1',  title: 'Aluminum with dot', desc:'[+$10] Special order', addonPrice: 10 },
+        { key: 'al1',  title: 'Aluminum with dot', desc:'TEMPORARILY OUT OF STOCK [+$10] Special order', addonPrice: 10 },
         { key: 'al2', nopreview: true, title: 'Aluminum', desc: '[+$10] Various colors, Special order', addonPrice: 10 },
         { key: 'other', nopreview: true, nothumb: true, title: 'Other', desc: '[+$10] Leave comments, Special order', addonPrice: 10 },
       ],
