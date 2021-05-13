@@ -45,6 +45,15 @@ img.home-mw {
   background-color: #83d3c9;
   color: #fff;
 }
+.bg-dark {
+  color: #fff;
+  h1, h2, h3, p {
+    color: #fff;
+  }
+  .text-muted {
+    color: #e8e8e8 !important;
+  }
+}
 
 .bigger {
   font-size: 1.5rem;
