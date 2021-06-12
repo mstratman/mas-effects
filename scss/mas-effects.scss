@@ -279,3 +279,15 @@ section.bordered {
   font-size: 2.3rem;
   font-weight: bolder;
 }
+
+.pedal-grid {
+  .pedal-name {
+    font-weight: bold;
+    display: block;
+  }
+  .pedal-descr {
+    font-weight: light;
+    font-size: 0.85rem;
+    display: block;
+  }
+}

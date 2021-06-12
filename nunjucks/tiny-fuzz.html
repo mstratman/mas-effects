@@ -113,31 +113,212 @@
   </section>
 
 
+  <%
+  set sections = [
+    { artist: 'Kailey Reid',
+      ig: 'kaileyreidillustration',
+      pedals: [
+        {
+          title: 'Hiding Fear',
+          store_link: 'https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-hiding-fear',
+          builder_link: '/fuzz-builder/?sticker=monster&pg=2',
+          img: '/img/illustrator-series/hiding-fear.jpg',
+          img_placeholder: '/img/illustrator-series/hiding-fear-placeholder.jpg',
+          upgrade: 'glowing eyes'
+        }
+      ]
+    },
+    {
+      artist: 'David Slebodnick',
+      ig: 'daviddrawsdrawings',
+      pedals: [
+        {
+          title: 'Drunk Dead Spaceman',
+          store_link: 'https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-drunk-dead-spaceman',
+          builder_link: '/fuzz-builder/?sticker=spaceman&pg=2',
+          img: '/img/illustrator-series/spaceman.jpg',
+          img_placeholder: '/img/illustrator-series/spaceman-placeholder.jpg',
+          upgrade: 'glowing eyes'
+        }
+      ]
+    },
+    {
+      artist: 'Matt Dixon',
+      ig: 'mattdixonart',
+      pedals: [
+        {
+          store_link: 'https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-divinity',
+          builder_link: '/fuzz-builder/?sticker=divinity&pg=2',
+          img: '/img/illustrator-series/divinity.jpg',
+          img_placeholder: '/img/illustrator-series/divinity-placeholder.jpg',
+          title: 'Divinity'
+        },
+        {
+          store_link: 'https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-full-fathom-five',
+          builder_link: '/fuzz-builder/?sticker=fathom&pg=2',
+          img: '/img/illustrator-series/full-fathom-five.jpg',
+          img_placeholder: '/img/illustrator-series/full-fathom-five-placeholder.jpg',
+          title: 'Full Fathom Five',
+          upgrade: 'glowing antenna'
+        },
+        {
+          store_link: 'https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-charging',
+          builder_link: '/fuzz-builder/?sticker=charging&pg=2',
+          img: '/img/illustrator-series/charging.jpg',
+          img_placeholder: '/img/illustrator-series/charging-placeholder.jpg',
+          title: 'Charging'
+        }
+      ]
+    },
+    {
+      artist:  'Justin Estcourt',
+      ig: 'jetsyart',
+      pedals: [
+        {
+          store_link: 'https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-saturn-rise',
+          builder_link: '/fuzz-builder/?sticker=saturn&pg=2',
+          img: '/img/illustrator-series/saturn-rise.jpg',
+          img_placeholder: '/img/illustrator-series/saturn-rise-placeholder.jpg',
+          title: 'Saturn Rise'
+        },
+        {
+          store_link: 'https://shop.mas-effects.com/products/tiny-fuzz-isolation',
+          builder_link: '/fuzz-builder/?sticker=isolation&pg=2',
+          img: '/img/illustrator-series/isolation.jpg',
+          img_placeholder: '/img/illustrator-series/isolation-placeholder.jpg',
+          title: 'Isolation',
+          upgrade: 'glowing staff'
+        },
+        {
+          store_link: 'https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-until-the-end',
+          builder_link: '/fuzz-builder/?sticker=comet&pg=2',
+          img: '/img/illustrator-series/until-the-end.jpg',
+          img_placeholder: '/img/illustrator-series/until-the-end-placeholder.jpg',
+          title: 'Until the End',
+          upgrade: 'comet LED'
+        }
+      ]
+    },
+    {
+      artist:  'Louis Picard',
+      ig: 'louispicard.art',
+      pedals: [
+        {
+          store_link: 'https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-the-lost-ones-08',
+          builder_link: '/fuzz-builder/?sticker=lost8&pg=2',
+          img: '/img/illustrator-series/lost-ones-08.jpg',
+          img_placeholder: '/img/illustrator-series/lost-ones-08-placeholder.jpg',
+          title: 'The Lost Ones 08'
+        },
+        {
+          store_link: 'https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-the-lost-ones-06',
+          builder_link: '/fuzz-builder/?sticker=lost6&pg=2',
+          img: '/img/illustrator-series/lost-ones-06.jpg',
+          img_placeholder: '/img/illustrator-series/lost-ones-06-placeholder.jpg',
+          title: 'The Lost Ones 06'
+        },
+        {
+          store_link: 'https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-the-lost-ones-03',
+          builder_link: '/fuzz-builder/?sticker=lost3&pg=2',
+          img: '/img/illustrator-series/lost-ones-03.jpg',
+          img_placeholder: '/img/illustrator-series/lost-ones-03-placeholder.jpg',
+          title: 'The Lost Ones 03'
+        }
+      ]
+    },
+    {
+      artist:  'Milky Stout',
+      ig: 'milkystout',
+      pedals: [
+        {
+          store_link: 'https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-spirits',
+          builder_link: '/fuzz-builder/?sticker=spirits&pg=2',
+          img: '/img/illustrator-series/spirits.jpg',
+          img_placeholder: '/img/illustrator-series/spirits-placeholder.jpg',
+          title: 'Spirits'
+        }
+      ]
+    },
+    {
+      artist: 'Cam Ojeda',
+      ig: 'camtronart',
+      pedals: [
+        {
+          store_link: 'https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-rocket',
+          builder_link: '/fuzz-builder/?sticker=rocket&pg=2',
+          img: '/img/illustrator-series/rocket.jpg',
+          img_placeholder: '/img/illustrator-series/rocket-placeholder.jpg',
+          title: 'Rocket'
+        }
+      ]
+    },
+    {
+      artist:  'MottsyMakes',
+      ig: 'mottsymakes',
+      pedals: [
+        {
+          store_link: 'https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-devils-avocado',
+          builder_link: '/fuzz-builder/?sticker=avocado&pg=2',
+          img: '/img/illustrator-series/avocado.jpg',
+          img_placeholder: '/img/illustrator-series/avocado-placeholder.jpg',
+          title: "Devil's Avocado"
+        },
+        {
+          store_link: 'https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-kiwi',
+          builder_link: '/fuzz-builder/?sticker=kiwi&pg=2',
+          img: '/img/illustrator-series/kiwi.jpg',
+          img_placeholder: '/img/illustrator-series/kiwi-placeholder.jpg',
+          title: "Kiwi"
+        },
+        {
+          store_link: 'https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-hourglass',
+          builder_link: '/fuzz-builder/?sticker=hourglass&pg=2',
+          img: '/img/illustrator-series/hourglass.jpg',
+          img_placeholder: '/img/illustrator-series/hourglass-placeholder.jpg',
+          title: "Hourglass"
+        }
+      ]
+    },
+    {
+      artist:  'Anna Geschwind',
+      ig: 'annageschwind.art',
+      pedals: [
+        {
+          store_link: 'https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-middle-earth',
+          builder_link: '/fuzz-builder/?sticker=map&pg=2',
+          img: '/img/illustrator-series/map.jpg',
+          img_placeholder: '/img/illustrator-series/map-placeholder.jpg',
+          title: "Middle Earth"
+        }
+      ]
+    }
+  ]
+  %>
+
   <section class="page-section bg-light bordered">
     <div class="container">
       <div class="row">
         <div class="col">
           <h2 class="section-heading text-uppercase text-center">Meet The Illustrators</h2>
           <h3 class="text-center section-subheading text-muted">and their work...</h3>
-
         </div>
       </div>
     </div>
   </section>
 
-  <% macro section(artist, insta, section_class='', store='') %>
-    <section class="page-section <$ section_class $>" id="<$ artist | lower | replace(' ', '-') $>">
+  <% macro artist_section(section, row_num) %>
+    <section class="page-section <% if row_num > 0 %>bordered<% endif %>" id="<$ section.artist | lower | replace(' ', '-') $>">
       <div class="container">
         <div class="row mb-4">
           <div class="col">
             <div class="artist-info">
-              <h3 class="text-uppercase text-center"><$ artist $></h3>
+              <h3 class="text-uppercase text-center"><$ section.artist $></h3>
               <div class="text-center small">
-                <a target="_blank" href="https://www.instagram.com/<$ insta $>/">follow on instagram: <strong>@<$ insta $></strong></a>
+                <a target="_blank" href="https://www.instagram.com/<$ section.ig $>/">follow on instagram: <strong>@<$ section.ig $></strong></a>
               </div>
-              <% if store %>
+              <% if section.store %>
                 <div class="text-center small">
-                  <a target="_blank" href="<$ store $>">Buy prints or other merchandise here</a>
+                  <a target="_blank" href="<$ section.store $>">Buy prints or other merchandise here</a>
                 </div>
               <% endif %>
             </div>
@@ -148,224 +329,87 @@
     </section>
   <% endmacro %>
 
-  <% macro section_row_A(store_link, builder_link, img, img_placeholder, title, artist, upgrade='', more_photos_soon, prints='') %>
+  <% macro row_single_pedal(pedal) %>
     <div class="row">
       <div class="col-12 col-sm-6 col-md-4 text-center">
-        <h4 class="d-block d-sm-none mt-4"><em><$ title $></em></h4>
-        <a href="<$ store_link if store_link else builder_link $>" target="_blank">
-          <img class="<% if img_placeholder %>lazy<% endif %> img-fluid" src="<$ img_placeholder if img_placeholder else img $>" data-src="<$ img $>" alt="Tiny Fuzz pedal: <$ title $> by <$ artist $>" />
-        </a>
+        <$ pedal_img(pedal) $>
       </div>
       <div class="col-12 col-sm-6 col-md-8">
-        <h4 class="d-none d-sm-block"><em><$ title $></em></h4>
-        <% if upgrade %>
-          <p>Upgrade available: <$ upgrade $></p>
-        <% endif %>
-        <% if more_photos_soon %>
-          <p><em>More photos coming soon</em></p>
-        <% endif %>
-        <% if DISABLED_TODO_prints %>
-          <p><a target="_blank" href="<$ prints $>">Order a print of this from the illustrator</p>
-        <% endif %>
-        <% if store_link %>
-          <a class="btn btn-block btn-primary" target="_blank" href="<$ store_link $>">Shop In-Stock <% if upgrade %>[$49-59]<% else %>[$49]<% endif %></a>
-        <% else %>
-          <button class="btn btn-block btn-secondary" disabled>COMING SOON: Shop In-Stock <% if upgrade %>[$49-59]<% else %>[$49]<% endif %></button>
-        <% endif %>
-        <a target="_blank" class="btn btn-block btn-<% if store_link %>outline-<% endif %>primary" href="<$ builder_link $>">Customize [$65+]</a>
+        <$ pedal_details_and_buttons(pedal) $>
       </div>
     </div>
   <% endmacro %>
 
-  <% call section('Kailey Reid', 'kaileyreidillustration', '') %>
-    <$ section_row_A(
-      store_link='https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-hiding-fear',
-      builder_link='/fuzz-builder/?sticker=monster&pg=2',
-      img='/img/illustrator-series/hiding-fear.jpg',
-      img_placeholder='/img/illustrator-series/hiding-fear-placeholder.jpg',
-      title='Hiding Fear',
-      artist='Kaily Reid',
-      upgrade='glowing eyes'
-    ) $>
-  <% endcall %>
+  <% macro col_pedal_top(pedal) %>
+    <div class="col-12 col-sm-6 col-md-4 text-center">
+      <$ pedal_img(pedal) $>
+      <# tiny screen shows the details directly below the image... #>
+      <div class="d-block d-sm-none">
+        <$ pedal_details_and_buttons(pedal) $>
+      </div>
+      <div class="d-none d-md-block">
+        <$ pedal_details(pedal) $>
+      </div>
+    </div>
 
-  <% set artist = 'David Slebodnick' %>
-  <% call section(artist, 'daviddrawsdrawings', 'bordered', 'https://www.etsy.com/shop/DavidSlebodnick') %>
-    <$ section_row_A(
-      store_link='https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-drunk-dead-spaceman',
-      builder_link='/fuzz-builder/?sticker=spaceman&pg=2',
-      img='/img/illustrator-series/spaceman.jpg',
-      img_placeholder='/img/illustrator-series/spaceman-placeholder.jpg',
-      title='Drunk Dead Spaceman',
-      artist=artist,
-      upgrade='glowing eyes'
-    ) $>
-  <% endcall %>
+    <# sm shows the details next to the image... #>
+    <div class="d-none d-sm-block d-md-none col-6 col-sm-6">
+      <$ pedal_details_and_buttons(pedal) $>
+    </div>
+  <% endmacro %>
 
-  <% set artist = 'Matt Dixon' %>
-  <% call section(artist, 'mattdixonart', 'bordered', 'https://www.mattdixon.co.uk/') %>
-    <$ section_row_A(
-      store_link='https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-divinity',
-      builder_link='/fuzz-builder/?sticker=divinity&pg=2',
-      img='/img/illustrator-series/divinity.jpg',
-      img_placeholder='/img/illustrator-series/divinity-placeholder.jpg',
-      title='Divinity',
-      artist=artist,
-      upgrade='',
-      prints='https://www.mattdixon.co.uk/shop/divinity'
-    ) $>
-    <$ section_row_A(
-      store_link='https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-full-fathom-five',
-      builder_link='/fuzz-builder/?sticker=fathom&pg=2',
-      img='/img/illustrator-series/full-fathom-five.jpg',
-      img_placeholder='/img/illustrator-series/full-fathom-five-placeholder.jpg',
-      title='Full Fathom Five',
-      artist=artist,
-      upgrade='glowing antenna',
-      prints='https://www.mattdixon.co.uk/shop/full-fathom-five'
-    ) $>
-    <$ section_row_A(
-      store_link='https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-charging',
-      builder_link='/fuzz-builder/?sticker=charging&pg=2',
-      img='/img/illustrator-series/charging.jpg',
-      img_placeholder='/img/illustrator-series/charging-placeholder.jpg',
-      title='Charging',
-      artist=artist,
-      prints='https://www.mattdixon.co.uk/shop/charging'
-    ) $>
-  <% endcall %>
+  <# md and lg show the details below the image, and in its own row to vertically align #>
+  <% macro col_pedal_bottom(pedal) %>
+    <div class="d-none d-md-block col-md-4">
+      <$ pedal_buttons(pedal) $>
+    </div>
+  <% endmacro %>
 
-  <% set artist = 'Justin Estcourt' %>
-  <% call section(artist, 'jetsyart', 'bordered', 'https://linktr.ee/jetsyart') %>
-    <$ section_row_A(
-      store_link='https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-saturn-rise',
-      builder_link='/fuzz-builder/?sticker=saturn&pg=2',
-      img='/img/illustrator-series/saturn-rise.jpg',
-      img_placeholder='/img/illustrator-series/saturn-rise-placeholder.jpg',
-      title='Saturn Rise',
-      artist=artist,
-      upgrade=''
-    ) $>
-    <$ section_row_A(
-      store_link='https://shop.mas-effects.com/products/tiny-fuzz-isolation',
-      builder_link='/fuzz-builder/?sticker=isolation&pg=2',
-      img='/img/illustrator-series/isolation.jpg',
-      img_placeholder='/img/illustrator-series/isolation-placeholder.jpg',
-      title='Isolation',
-      artist=artist,
-      upgrade='glowing staff'
-    ) $>
-    <$ section_row_A(
-      store_link='https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-until-the-end',
-      builder_link='/fuzz-builder/?sticker=comet&pg=2',
-      img='/img/illustrator-series/until-the-end.jpg',
-      img_placeholder='/img/illustrator-series/until-the-end-placeholder.jpg',
-      title='Until the End',
-      artist=artist
-    ) $>
-  <% endcall %>
+  <% macro pedal_img(pedal) %>
+    <a href="<$ pedal.store_link if pedal.store_link else pedal.builder_link $>" target="_blank">
+      <img class="<% if pedal.img_placeholder %>lazy<% endif %> img-fluid" src="<$ pedal.img_placeholder if pedal.img_placeholder else pedal.img $>" data-src="<$ pedal.img $>" alt="Tiny Fuzz pedal: <$ pedal.title $> by <$ pedal.artist $>" />
+    </a>
+  <% endmacro %>
 
+  <% macro pedal_details_and_buttons(pedal) %>
+    <$ pedal_details(pedal) $>
+    <$ pedal_buttons(pedal) $>
+  <% endmacro %>
 
-  <% set artist = 'Louis Picard' %>
-  <% call section(artist, 'louispicard.art', 'bordered', 'https://www.redbubble.com/fr/people/PikPikPik/shop') %>
-    <$ section_row_A(
-      store_link='https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-the-lost-ones-08',
-      builder_link='/fuzz-builder/?sticker=lost8&pg=2',
-      img='/img/illustrator-series/lost-ones-08.jpg',
-      img_placeholder='/img/illustrator-series/lost-ones-08-placeholder.jpg',
-      title='The Lost Ones 08',
-      artist=artist,
-      upgrade=''
-    ) $>
-    <$ section_row_A(
-      store_link='https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-the-lost-ones-06',
-      builder_link='/fuzz-builder/?sticker=lost6&pg=2',
-      img='/img/illustrator-series/lost-ones-06.jpg',
-      img_placeholder='/img/illustrator-series/lost-ones-06-placeholder.jpg',
-      title='The Lost Ones 06',
-      artist=artist,
-      upgrade=''
-    ) $>
-    <$ section_row_A(
-      store_link='https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-the-lost-ones-03',
-      builder_link='/fuzz-builder/?sticker=lost3&pg=2',
-      img='/img/illustrator-series/lost-ones-03.jpg',
-      img_placeholder='/img/illustrator-series/lost-ones-03-placeholder.jpg',
-      title='The Lost Ones 03',
-      artist=artist,
-      upgrade=''
-    ) $>
-  <% endcall %>
+  <% macro pedal_details(pedal) %>
+    <h4><em><$ pedal.title $></em></h4>
+    <% if pedal.upgrade %>
+      <p>Upgrade available: <$ pedal.upgrade $></p>
+    <% endif %>
+  <% endmacro %>
 
-  <% set artist = 'Milky Stout' %>
-  <% call section(artist, 'milkystout', 'bordered', '') %>
-    <$ section_row_A(
-      store_link='https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-spirits',
-      builder_link='/fuzz-builder/?sticker=spirits&pg=2',
-      img='/img/illustrator-series/spirits.jpg',
-      img_placeholder='/img/illustrator-series/spirits-placeholder.jpg',
-      title='Spirits',
-      artist=artist,
-      upgrade=''
-    ) $>
-  <% endcall %>
+  <% macro pedal_buttons(pedal) %>
+    <% if pedal.store_link %>
+      <a class="btn btn-block btn-primary" target="_blank" href="<$ pedal.store_link $>">Shop In-Stock <% if pedal.upgrade %>[$49-59]<% else %>[$49]<% endif %></a>
+    <% else %>
+      <button class="btn btn-block btn-secondary" disabled>COMING SOON: Shop In-Stock <% if pedal.upgrade %>[$49-59]<% else %>[$49]<% endif %></button>
+    <% endif %>
+    <a target="_blank" class="btn btn-block btn-<% if pedal.store_link %>outline-<% endif %>primary" href="<$ pedal.builder_link $>">Customize [$65+]</a>
+  <% endmacro %>
 
-  <% set artist = 'Cam Ojeda' %>
-  <% call section(artist, 'camtronart', 'bordered', '') %>
-    <$ section_row_A(
-      store_link='https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-rocket',
-      builder_link='/fuzz-builder/?sticker=rocket&pg=2',
-      img='/img/illustrator-series/rocket.jpg',
-      img_placeholder='/img/illustrator-series/rocket-placeholder.jpg',
-      title='Rocket',
-      artist=artist,
-      upgrade=''
-    ) $>
-  <% endcall %>
-
-  <% set artist = 'MottsyMakes' %>
-  <% call section(artist, 'mottsymakes', 'bordered', 'https://www.etsy.com/shop/mottsymakes') %>
-    <$ section_row_A(
-      store_link='https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-devils-avocado',
-      builder_link='/fuzz-builder/?sticker=avocado&pg=2',
-      img='/img/illustrator-series/avocado.jpg',
-      img_placeholder='/img/illustrator-series/avocado-placeholder.jpg',
-      title="Devil's Avocado",
-      artist=artist,
-      upgrade=''
-    ) $>
-    <$ section_row_A(
-      store_link='https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-kiwi',
-      builder_link='/fuzz-builder/?sticker=kiwi&pg=2',
-      img='/img/illustrator-series/kiwi.jpg',
-      img_placeholder='/img/illustrator-series/kiwi-placeholder.jpg',
-      title="Kiwi",
-      artist=artist,
-      upgrade=''
-    ) $>
-    <$ section_row_A(
-      store_link='https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-hourglass',
-      builder_link='/fuzz-builder/?sticker=hourglass&pg=2',
-      img='/img/illustrator-series/hourglass.jpg',
-      img_placeholder='/img/illustrator-series/hourglass-placeholder.jpg',
-      title="Hourglass",
-      artist=artist,
-      upgrade=''
-    ) $>
-  <% endcall %>
-
-  <% set artist = 'Anna Geschwind' %>
-  <% call section(artist, 'annageschwind.art', 'bordered', '') %>
-    <$ section_row_A(
-      store_link='https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-middle-earth',
-      builder_link='/fuzz-builder/?sticker=map&pg=2',
-      img='/img/illustrator-series/map.jpg',
-      img_placeholder='/img/illustrator-series/map-placeholder.jpg',
-      title="Middle Earth",
-      artist=artist,
-      upgrade=''
-    ) $>
-  <% endcall %>
+  <% for section in sections %>
+    <% call artist_section(section, loop.index0) %>
+      <% if section.pedals.length > 1 %>
+        <div class="row">
+          <% for pedal in section.pedals %>
+            <$ col_pedal_top(pedal) $>
+          <% endfor %>
+        </div>
+        <div class="row">
+          <% for pedal in section.pedals %>
+            <$ col_pedal_bottom(pedal) $>
+          <% endfor %>
+        </div>
+      <% else %>
+        <$ row_single_pedal(section.pedals[0]) $>
+      <% endif %>
+    <% endcall %>
+  <% endfor %>
 
   <section class="page-section bg-light bordered">
     <div class="container">
