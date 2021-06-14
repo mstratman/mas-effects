@@ -1,5 +1,5 @@
-<% set title="TODO" %>
-<% set meta_description="TODO" %>
+<% set title="Krampus Fuzz - Wickedly Frightening fuzz pedal by MAS Effects" %>
+<% set meta_description="Krampus Fuzz is a high gain, vicious, and brutal beast to be reckoned with on your guitar or bass pedal board. " %>
 <% extends "partials/_template.html" %>
 
 <% block body %>
@@ -11,12 +11,84 @@
       <div class="row">
         <div class="col text-center">
           <h1 class="mb-4 section-heading text-uppercase">Krampus Fuzz</h1>
-          <h3 class="section-subheading text-muted">TODO<h3>
+          <h3 class="section-subheading text-muted">A Wickedly Frightening Fuzz Pedal</h3>
         </div>
+
       </div>
       <div class="row">
-        <div class="col-12">
-          TODO...
+        <div class="col-12 col-sm-6 text-center">
+          <span class="prototype-note">(Prototype Photo)</span><br>
+          <img class="lazy img-fluid" src="/img/krampus-placeholder.jpg" data-src="/img/krampus.png" alt="Krampus Fuzz pedal by MAS Effects" />
+        </div>
+        <div class="col-12 col-sm-6 small">
+          <h3 class="d-none d-lg-block">Overview</h3>
+          <p>This beast has a surplus of gain on tap - so much that by default we've put it in chains and lowered it with an internal trimmer knob (to bring down its noise floor). Highly interactive with your guitar's volume knob, you can dial in a surprising range of sounds.</p>
+
+          <p><em>Coming soon (Late Summer or Early Fall, 2021)</em></p>
+          <p>
+            <a class="btn btn-primary" href="/waitlist/?item=Krampus">Join Waitlist</a>
+          </p>
+
+          <div class="d-none d-lg-block mt-4 pt-2">
+            <% macro controls() %>
+              <h2>Controls</h2>
+              <ul class="controls">
+                <li>
+                  <strong>Fuzz</strong> - Sets the amount of gain, distortion, fuzz, sustain, or whatever you want to call it.
+                  Like with most fuzz pedals, it will interact considerably with the volume knob of your guitar (e.g. roll back the volume at low FUZZ levels to clean up the signal considerably).
+                </li>
+                <li>
+                  <strong>Volume</strong> - Controls the overall output of the pedal.
+                </li>
+                <li>
+                  <strong>Tone</strong> - Adjust the amount of treble.
+                </li>
+                <li>
+                  <strong>Roar Switch</strong> - Fattens or thins out the signal going into the pedal. Particularly useful for single coils.
+                </li>
+                <li>
+                  <strong>Soft-touch Foot Switch</strong> - <em>Tap</em> to switch between true bypass and engaged; <em>Hold</em> to temporarily bypass when engaged, or temporarily engage while bypassed. 
+                  <br>
+                  Hold while plugging in power to toggle whether the pedal will be engaged or bypassed on its next power up.
+                </li>
+              </ul>
+              <p><em>Internal Controls</em></p>
+              <ul class="controls">
+                <li>
+                  <strong>FUZZ Ceiling</strong> - Need MORE gain? This pedal has insane amounts of gain on tap, but a lot of people expect to be able to turn the knobs any which way (and all the way up) and have it sound great. This isn't unreasonable, but it's limiting. If you max out the gain, the pedal gets really noisy! So inside, on the lower right, is a blue and white trimmer that tames it.
+                </li>
+                <li>
+                  <strong>Bias</strong> - Can be adjusted to give a gated, sputtery sound.
+                </li>
+              </ul>
+            <% endmacro %>
+            <$ controls() $>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="page-section d-block d-lg-none small mt-0 pt-0">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <$ controls() $>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="page-section small mt-0 pt-0">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <a class="anchor" id="settings"></a>
+          <h2>Demos</h2>
+          <p class="TODO small">Coming Soon</p>
         </div>
       </div>
     </div>
