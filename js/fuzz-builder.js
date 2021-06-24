@@ -73,7 +73,7 @@ window.addEventListener('load', function () {
       ],
       stomps: [
         { key: 'slim', title: 'Ultra-slim washer' },
-        { key: 'standard', title: 'Standard' },
+        { key: 'white-plastic', title: 'White plastic' },
         { key: 'silver', title: 'Silver' },
         { key: 'black', title: 'Black' },
         { key: 'blue', title: 'Blue' },
