@@ -10,8 +10,8 @@ a.underline {
   text-decoration: underline !important;
 }
 
-ul.controls {
-  li {
+dl.controls,ul.controls {
+  li, dt {
     margin-top: 1rem;
   }
 }
