@@ -1,6 +1,6 @@
-<% set title="Desktop Slider Expression Pedal by MAS Effects" %>
-<% set meta_description="Easily tweak knobs on your favorite pedals from the comfort of your desktop, mic stand, or anywhere within reach using this expression slider pedal for guitar, bass, or synth." %>
-<% set og_image="https://mas-effects.com/img/expression.png" %>
+<% set title="Desktop Slider Expression and Volume Pedal by MAS Effects" %>
+<% set meta_description="Slider volume and expression pedal can be used to tame a loud tube amp, or to easily tweak knobs on your favorite pedals from the comfort of your desktop, mic stand, or anywhere within reach. This expression slider and volume slider works great for guitar, bass, or synth." %>
+<% set og_image="https://mas-effects.com/img/expression/4x-expression.jpg" %>
 <% extends "partials/_template.html" %>
 
 <% block body %>
@@ -11,34 +11,125 @@
     <div class="container">
       <div class="row">
         <div class="col text-center">
-          <h1 class="mb-4 section-heading text-uppercase">Desktop Slider Expression Pedal</h1>
+          <h1 class="mb-4 section-heading text-uppercase">Desktop Slider Expression &amp; Volume Pedal</h1>
           <h3 class="section-subheading text-muted">Tweak your favorite settings from the comfort of your desktop, mic stand, or anywhere within reach</h3>
         </div>
       </div>
       <div class="row">
         <div class="col-12 col-md-6 text-center">
-          <img class="lazy img-fluid" src="/img/expression-placeholder.jpg" data-src="/img/expression.png" alt="Desktop Slider Expression Pedal" />
+          <img class="lazy img-fluid" src="/img/expression/4x-expression-placeholder.jpg" data-src="/img/expression/4x-expression.jpg" alt="Desktop Slider Expression + Volume Pedal" />
+          <form action="https://shop.mas-effects.com/cart/add" method="GET">
+            <select class="expression-pot mx-auto form-control form-control-sm" name="id">
+              <optgroup label="Volume + Expression [$49]">
+                <option value="40752969973921">Abduction (Vol + Exp, 100k)</option>
+                <option value="40752970006689">Abduction (Vol + Exp, 10k)</option>
+                <option value="40752970137761">Split Skull (Vol + Exp, 100k)</option>
+                <option value="40752970170529">Split Skull (Vol + Exp, 10k)</option>
+              </optgroup>
+              <optgroup label="Expression [$39]">
+                <option value="40752969908385">Abduction (Exp only, 100k)</option>
+                <option value="40752969941153">Abduction (Exp only, 10k)</option>
+                <option value="40752970072225">Split Skull (Exp only, 100k)</option>
+                <option value="40752970104993">Split Skull (Exp only, 10k)</option>
+              </optgroup>
+            </select>
+            <button type="submit" class="mt-2 btn btn-primary">Buy Now</button>
+          </form>
         </div>
         <div class="col-12 col-md-6 small">
+          <h5>Overview</h5>
           <p>
-            Two Designs to choose from.
+            Use this as either an expression pedal or volume pedal, from the convenience of your desktop, mic stand, or anywhere within reach.
+            <small>NOTE: These should be used with your hands, not feet!</small>
           </p>
-          <p>Available in either 100k (most common) or 10k (select pedals, e.g. Boss)</p>
-          <p>Plug this into any other pedal with an expression jack to get remote control of that pedal. <em>NOTE:</em> these sliders are to be manipulated by hand. <strong>Don't use your feet</strong> on them.</p>
-          <p>They are TRS (require stereo cable) and have a B100k potentiometer which works well with EQD, Strymon, EHX, Matthews Effects, and more.  10k is also available for Boss (and perhaps other) pedals. This expression pedal will not work well with Eventide, Line 6, or others that use TS cables.
-          </p>
-          <p><strong>Please check with your pedal's manual or manufacturer for compatibility before purchasing.</strong></p>
 
+          <h5>Expression Pedal Usage</h5>
+          <p>Use a <strong>stereo (TRS) cable</strong> in the top jack to remotely control your other favorite pedals. This <strong>will not work well with Eventide, Line 6, or others that use mono TS cables</strong>.</p>
+
+          <h5>Volume Pedal Usage</h5>
+          <p>This <strong>optional add-on</strong> allows you to use the slider to adjust the volume from your pedal chain, or within a series effects loop (FX loop) of your favorite tube amp.
+          Plug mono (TS) cables into the side input/output jacks then use the slider to bring  your signal down to a better level.
+          <small>NOTE: The linear taper of the potentiometer makes it feel a little more sensitive on the lower half of the slider.</small>
+          </p>
+
+          <h5>100k or 10k?</h5>
+          <p>
+            Available in either 100k or 10k, both with a linear response (B100k and B10k). 100k potentiometers work well with most EQD, Strymon, EHX, Matthews Effects, and more.  10k is also available for Boss (and perhaps other) pedals.
+            <strong>Please check with your pedal's manual or manufacturer for compatibility before purchasing.</strong>
+          </p>
+
+          <!--
           <div class="text-center">
-            <p>
-              <em>Coming Soon (late summer 2021)</em>
-            </p>
             <a class="" href="https://shop.mas-effects.com/collections/featured-products/products/desktop-expression-pedal-prototype-special-edition" target="_blank">Buy Prototype with Special Limited Edition Graphics</a>
 
-            <br>
-            or
-            <br>
-            <a class="btn btn-primary" href="/waitlist/?item=Expression%20Slider">Join Waitlist</a>
+          </div>
+          -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <h2>Volume + Expression Slider [$49]</h2>
+          <div class="row">
+            <div class="col-6 text-center">
+              <img class="expression-picker lazy img-fluid" src="/img/expression/expression-volume-abduction-placeholder.jpg" data-src="/img/expression/expression-volume-abduction.jpg" alt="UFO Abduction Desktop Slider Expression + Volume Slider Pedal" />
+              <div>
+                <strong>Abduction</strong>: Volume + Expression
+                <form action="https://shop.mas-effects.com/cart/add" method="GET">
+                  <select class="expression-pot mx-auto form-control form-control-sm" name="id">
+                    <option value="40752969973921">B100k (most common)</option>
+                    <option value="40752970006689">B10k (Boss)</option>
+                  </select>
+                  <button type="submit" class="mt-2 btn btn-primary">Add to Cart</button>
+                </form>
+              </div>
+            </div>
+            <div class="col-6 text-center">
+              <img class="expression-picker lazy img-fluid" src="/img/expression/expression-volume-skull-placeholder.jpg" data-src="/img/expression/expression-volume-skull.jpg" alt="Split Skull Desktop Slider Expression + Volume Slider Pedal" />
+              <div>
+                <strong>Split Skull</strong>: Volume + Expression
+                <form action="https://shop.mas-effects.com/cart/add" method="GET">
+                  <select class="expression-pot mx-auto form-control form-control-sm" name="id">
+                    <option value="40752970137761">B100k (most common)</option>
+                    <option value="40752970170529">B10k (Boss)</option>
+                  </select>
+                  <button type="submit" class="mt-2 btn btn-primary">Add to Cart</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col text-center">
+          <h2>Expression Slider [$39]</h2>
+          <h3 class="section-subheading text-muted">(No Volume Control)</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 text-center">
+          <img class="expression-picker lazy img-fluid" src="/img/expression/expression-abduction-placeholder.jpg" data-src="/img/expression/expression-abduction.jpg" alt="UFO Abduction Desktop Slider Expression Slider Pedal" />
+          <div>
+            <strong>Abduction </strong>: Expression Only
+            <form action="https://shop.mas-effects.com/cart/add" method="GET">
+              <select class="expression-pot mx-auto form-control form-control-sm" name="id">
+                <option value="40752969908385">B100k (most common)</option>
+                <option value="40752969941153">B10k (Boss)</option>
+              </select>
+              <button type="submit" class="mt-2 btn btn-primary">Add to Cart</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-6 text-center">
+          <img class="expression-picker lazy img-fluid" src="/img/expression/expression-skull-placeholder.jpg" data-src="/img/expression/expression-skull.jpg" alt="Split Skull Desktop Slider Expression Slider Pedal" />
+          <div>
+            <strong>Split Skull</strong>: Expression Only
+            <form action="https://shop.mas-effects.com/cart/add" method="GET">
+              <select class="expression-pot mx-auto form-control form-control-sm" name="id">
+                <option value="40752970072225">B100k (most common)</option>
+                <option value="40752970104993">B10k (Boss)</option>
+              </select>
+              <button type="submit" class="mt-2 btn btn-primary">Add to Cart</button>
+            </form>
           </div>
         </div>
       </div>
