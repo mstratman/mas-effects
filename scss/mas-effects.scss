@@ -1,9 +1,16 @@
 @import "base/mixins.scss";
 @import "mas/fuzz-builder.scss";
 @import "mas/tooltip.scss";
+@import "mas/holiday.scss";
 
 .TODO {
   background-color: #fff700;
+}
+
+h1 span, h2 span, h3 span, h4 span, h5 span {
+  font-size: 0.65em;
+  font-weight: normal;
+  display: block;
 }
 
 a.underline {

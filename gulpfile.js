@@ -115,11 +115,11 @@ const nunjucksOptions = {
   }
 };
 
-function htmlDev() {
-  const f = filter(['**', '!**/index.html'], {restore: true});
+function htmlProd() {
+  const f = filter(['**', '!**/index.html', '!holiday/*.html'], {restore: true});
   return gulp
-    .src("./nunjucks/*.html")
-    .pipe(nunjucks.compile({production: false}, nunjucksOptions))
+    .src(["./nunjucks/**/*.html", "!./nunjucks/partials/**", "!./nunjucks/attic/**"])
+    .pipe(nunjucks.compile({production: true}, nunjucksOptions))
     .pipe(f)
     .pipe(rename(function(path) {
       path.dirname += "/" + path.basename;
@@ -128,11 +128,12 @@ function htmlDev() {
     .pipe(f.restore)
     .pipe(gulp.dest('dist/'));
 }
-function htmlProd() {
-  const f = filter(['**', '!**/index.html'], {restore: true});
+
+function htmlDev() {
+  const f = filter(['**', '!**/index.html', '!holiday/*.html'], {restore: true});
   return gulp
-    .src("./nunjucks/*.html")
-    .pipe(nunjucks.compile({production: true}, nunjucksOptions))
+    .src(["./nunjucks/**/*.html", "!./nunjucks/partials/**", "!./nunjucks/attic/**"])
+    .pipe(nunjucks.compile({production: false}, nunjucksOptions))
     .pipe(f)
     .pipe(rename(function(path) {
       path.dirname += "/" + path.basename;

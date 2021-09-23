@@ -1,0 +1,175 @@
+<% set title="Tree Boost - Guitar Pedal Christmas Ornament" %>
+<% set og_image="https://mas-effects.com/img/xmas/cover1.jpg" %>
+<% extends "partials/_template.html" %>
+
+<% block body %>
+  <header class="masthead">
+    <div class="container">
+      <div class="intro-text">
+        <h2 class="intro-lead-in">A boost "pedal", an ornament, a fun project kit, a conversation piece</h2>
+        <h1 class="intro-heading text-uppercase">Rockin' Around the Christmas Tree</h1>
+        <h2 class="intro-lead-in normal-style">Playable Guitar Pedal Ornament</h2>
+        <div class="mt-2">
+          <a class="btn btn-primary btn-lg text-uppercase js-scroll-trigger" href="https://shop.mas-effects.com/products/guitar-pedal-christmas-ornament" target="_blank">Buy Now</a>
+          <a class="btn btn-outline-info btn-lg text-uppercase js-scroll-trigger" href="/holiday/">More Ornament Pedals</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-section">
+    <div class="container">
+
+      <% set imgs = [
+           "cover1",
+           "back",
+           "xmas-tree-cover-square",
+           "night1",
+           "night2",
+           "kit",
+           "stocking",
+           "3pack2"
+         ]
+      %>
+      <div class="row no-gutters">
+        <% for img in imgs %>
+          <div class="col-6 col-md-3">
+            <a target="_blank" href="/img/xmas/<$ img $>.jpg">
+              <img class="lazy img-fluid" src="/img/xmas/<$ img $>-reduced-placeholder.jpg" data-src="/img/xmas/<$ img $>-reduced.jpg" />
+            </a>
+          </div>
+        <% endfor %>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3 class="text-center section-heading text-uppercase">So what exactly is this?</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="clearfix">
+            <img class="float-left mr-4" src="/img/xmas/xmas-animated2.gif" alt="Playable guitar pedal ornament" />
+            <div class="float-left">
+              <ul>
+                <li>It's an <strong>ornament</strong>.  15 LEDs randomly emit holiday cheer at varying wavelengths. </li>
+                <li>It's a sweet but gritty <strong>boost guitar "pedal"</strong>.</li>
+                <li>It's a <strong><a target="_blank" href="https://shop.mas-effects.com/products/guitar-pedal-christmas-ornament">kit you build</a></strong> (or <a target="_blank" href="https://shop.mas-effects.com/products/guitar-pedal-christmas-ornament?variant=40889557418145">prebuilt are available too</a>).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col">
+          <h5 class="section-heading text-uppercase">And how does it work?</h5>
+          <p>Flip the switch to make the lights blink. Plug in your guitar to engage the <strong>Nine Volt Nirvana Tape Measure</strong> audio circuit
+          <small>(<a target="_blank" href="https://raw.githubusercontent.com/mstratman/xmas-pedal/master/xmas-tree-1.0-schematic.png">schematic</a>)</small>.
+          </p>
+
+          <h5 class="section-heading text-uppercase">How does it sound?</h5>
+          <p>It gives you a pretty decent boost, around 25dB, and a bit of gritty overdrive. When cranked it has a bit of a lo-fi vibe to it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3 class="text-center section-heading text-uppercase">How do I get one?</h3>
+          <p>This is available pre-built, or as a DIY kit that you solder together. If you can't or don't want to order a PCB you can get all the files needed to make your own on the <a target="_blank" href="https://github.com/mstratman/xmas-pedal">GitHub project page</a>.</p>
+          <a target="_blank" href="https://shop.mas-effects.com/products/guitar-pedal-christmas-ornament" class="btn btn-lg btn-block btn-primary">Shop Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3 class="text-center section-heading text-uppercase">Instructions / How To</h3>
+
+          <h5 class="section-heading text-uppercase">Using the Pedal</h5>
+          <p>There's really only one non-obvious thing to be aware of: <strong>when your guitar cable is plugged in, the pedal is using power</strong>. Unplug it when you're not playing. This has two circuits: the lights controlled by the switch, and the audio controlled by the input cable.</p>
+          <p>NOTE: If you experience a ticking noise while playing, turn off the pedal's blinking lights. Or embrace it and shrug it off because your guitar is plugged into a freaking Christmas Tree, hanging on a bigger Christmas Tree.</p>
+
+          <h5 class="section-heading text-uppercase">Build Documents</h5>
+          <p> Instructions are written for the absolute beginner; This kit is perfect to dip your toe into the "DIY guitar pedal" waters.</p>
+          <p>
+            <a class="btn btn-success btn-lg" href="/holiday/tree.pdf">Build Instructions: <small>Tree</small></a>
+          </p>
+
+          <h5 class="section-heading text-uppercase">Need Help?</h5>
+          <p>Post to <a target="_blank" href="https://www.reddit.com/r/diypedals/">Reddit r/diypedals</a>, 
+          <a target="_blank" href="https://www.diystompboxes.com/smfforum/">the DIYstompboxes forum</a>, or the 
+          Facebook Guitar Pedal Builders group. If I see any posts here I'll jump in and try to help.
+          </p>
+          <p>You can also <a href="mailto:mark@mas-effects.com">email me directly</a> but you'll get a quicker response through those groups.</p>
+          <p>There are dozens of other DIY pedal communities as well, so of course you can seek help anywhere else.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <h3 class="text-center section-heading text-uppercase">All Ornament Pedals</h3>
+          <p><a href="/holiday/">Return to overview of all the ornaments</a>. Or dive into details on each of them below...</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4 text-center">
+          <a href="/holiday/bell/">
+            <h4 class="text-center">Octave Up</h4>
+            <h5 class="mb-3 text-center section-subheading text-muted">Green Ringer / Tentacle</h5>
+          </a>
+        </div>
+        <div class="col-4 text-center">
+          <a href="/holiday/tree/">
+            <h4 class="text-center">Lo-Fi Boost</h4>
+            <h5 class="mb-3 text-center section-subheading text-muted">Tape Measure</h5>
+          </a>
+        </div>
+        <div class="col-4 text-center">
+          <a href="/holiday/snowman/">
+            <h4 class="text-center">Overdrive Distortion</h4>
+            <h5 class="mb-3 text-center section-subheading text-muted">Op-amp w/ Clipping</h5>
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4 text-center">
+          <a href="/holiday/bell/">
+            <img class="lazy img-fluid" src="/img/holiday/available/bell-placeholder.jpg" data-src="/img/holiday/available/bell.jpg">
+          </a>
+        </div>
+        <div class="col-4 text-center">
+          <a href="/holiday/tree/">
+            <img class="lazy img-fluid" src="/img/holiday/available/tree-placeholder.jpg" data-src="/img/holiday/available/tree.jpg">
+          </a>
+        </div>
+        <div class="col-4 text-center">
+          <a href="/holiday/snowman/">
+            <img class="lazy img-fluid" src="/img/holiday/available/snowman-placeholder.jpg" data-src="/img/holiday/available/snowman.jpg">
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mt-2">
+          <a class="btn btn-lg btn-block btn-primary" href="https://shop.mas-effects.com/products/guitar-pedal-christmas-ornament">Buy Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<% endblock %>
