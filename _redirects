@@ -1,2 +1,3 @@
 # This is for netlify: https://docs.netlify.com/routing/redirects/
-/xmas /holiday 301 true
+/xmas /holiday/ 301 true
+/xmas/ /holiday/ 301 true
