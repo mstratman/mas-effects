@@ -1,5 +1,5 @@
 # This is for netlify: https://docs.netlify.com/routing/redirects/
-/xmas /holiday/ 301 true
-/xmas/ /holiday/ 301 true
-/krampus/ /sona/ 301 true
-/krampus /sona/ 301 true
+/xmas /holiday/ 301!
+/xmas/ /holiday/ 301!
+/krampus/ /sona/ 301!
+/krampus /sona/ 301!
