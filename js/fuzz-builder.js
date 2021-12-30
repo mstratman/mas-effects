@@ -29,7 +29,7 @@ window.addEventListener('load', function () {
       comments: "",
       led: "",
 
-      basePrice: 65, // changing these won't save you any money :)
+      basePrice: 75, // changing these won't save you any money :)
       ledPrice: 10,
       stickerPrice: 5,
       jackUpgradePrice: 9,
