@@ -361,3 +361,21 @@ img.expression-picker {
 select.expression-pot {
   width: auto;
 }
+
+.info-box {
+  border: 1px dashed #ccc;
+  padding: 1em;
+}
+
+.fa-stack.small {
+  i { vertical-align: middle; }
+  font-size: 0.6em;
+}
+
+a.white, table.white th, table.white td {
+  color: #fff;
+}
+a.black, p.black {
+  color: #000;
+}
+

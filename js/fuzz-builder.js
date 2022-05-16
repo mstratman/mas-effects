@@ -29,7 +29,7 @@ window.addEventListener('load', function () {
       comments: "",
       led: "",
 
-      basePrice: 75, // changing these won't save you any money :)
+      basePrice: 69, // changing these won't save you any money :)
       ledPrice: 10,
       stickerPrice: 5,
       jackUpgradePrice: 9,
@@ -39,11 +39,11 @@ window.addEventListener('load', function () {
       resizeDoneTimeout: undefined, // assumes 'sticker-${key}.png' and 'thumbs/thumb-${key}.png'
 
       stickers: [
-        { key: 'monster', artist: 'Kailey Reid', title: 'Hiding Fear', url: 'https://www.instagram.com/kaileyreidillustration/', note: "Optional add-on: Eyes glow red. (step 3)", addon: "Glowing eyes", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/hiding-fear.jpg' },
-        { key: 'spaceman', artist: 'David Slebodnick', title: 'Drunk Dead Spaceman', url: 'https://www.instagram.com/daviddrawsdrawings/', note: "Optional add-on: Eyes glow red. (step 3)", addon: "Glowing eyes", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/spaceman.jpg' },
+        { key: 'monster', artist: 'Kailey Reid', title: 'Hiding Fear', url: 'https://www.instagram.com/kaileyreidillustration/', note: "Optional add-on: Eyes glow red. (step 3)", addon: "Glowing eyes", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/hiding-fear-led.jpg' },
+        { key: 'spaceman', artist: 'David Slebodnick', title: 'Drunk Dead Spaceman', url: 'https://www.instagram.com/daviddrawsdrawings/', note: "Optional add-on: Eyes glow red. (step 3)", addon: "Glowing eyes", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/spaceman-led.jpg' },
         { key: 'comet', artist: 'Justin Estcourt', title: 'Until the End', url: 'https://www.instagram.com/jetsyart/', note: "Optional add-on: Glowing comet LED (step 3)", addon: "Glowing comet", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/comet-led.jpg' },
         { key: 'saturn', artist: 'Justin Estcourt', title: 'Saturn Rise', url: 'https://www.instagram.com/jetsyart/', },
-        { key: 'isolation', artist: 'Justin Estcourt', title: 'Isolation', url: 'https://www.instagram.com/jetsyart/', note: "Staff glows blue. Optional Add-on (step 3)", addon: "Glowing staff", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/isolation.jpg', flipLED: true },
+        { key: 'isolation', artist: 'Justin Estcourt', title: 'Isolation', url: 'https://www.instagram.com/jetsyart/', note: "Staff glows blue. Optional Add-on (step 3)", addon: "Glowing staff", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/isolation-led.jpg', flipLED: true },
         { key: 'charging', artist: 'Matt Dixon', title: 'Charging', url: 'https://www.instagram.com/mattdixonart', },
         { key: 'fathom', artist: 'Matt Dixon', title: 'Full Fathom Five', url: 'https://www.instagram.com/mattdixonart', note: "Optional add-on: LED on antenna. (step 3)", addon: "Antenna glows", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/full-fathom-five-led-preview.jpg' },
         { key: 'divinity', artist: 'Matt Dixon', title: 'Divinity', url: 'https://www.instagram.com/mattdixonart', },
