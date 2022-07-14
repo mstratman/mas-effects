@@ -174,7 +174,10 @@
     <div class="container">
       <div class="row">
         <div class="col text-center">
+          <!--
           <h2 class="section-heading text-uppercase">In the Wild</h2>
+          -->
+          <h2 class="section-heading text-uppercase">Your Posts</h2>
           <h3 class="section-subheading text-muted">
             Tag <a target="_blank" href="https://www.instagram.com/mas_effects">@MAS_Effects</a>
             to see your gear here
@@ -183,16 +186,16 @@
       </div>
       <div class="row">
         <div class="col-12 col-md-6 col-lg-4">
+          <% include "partials/instagram/7.html" %>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <% include "partials/instagram/9.html" %>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
           <% include "partials/instagram/5.html" %>
         </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <% include "partials/instagram/6.html" %>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <% include "partials/instagram/3.html" %>
-        </div>
         <div class="d-none d-md-block d-lg-none col-12 col-md-6 col-lg-4">
-          <% include "partials/instagram/1.html" %>
+          <% include "partials/instagram/11.html" %>
         </div>
         <div class="col-6 col-md-4 text-center pt-3 mx-auto">
           <a target="_blank" href="https://www.instagram.com/mas_effects/tagged/" class="btn btn-danger btn-lg">View More...</a>
@@ -201,6 +204,59 @@
       </div>
     </div>
   </section>
+
+
+  <a class="anchor" id="signup-section"></a>
+  <section class="bg-teal page-section">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <h2 class="section-heading text-uppercase">Sign up For Updates</h2>
+          <!--
+          <h3 class="section-subheading text-muted">Find out when there are new pedals, kits, or other cool stuff, and get occassional discount promo codes</h3>
+          -->
+          <form method="POST" data-netlify="true" netlify-honeypot="pooh" name="home-signup">
+            <div class="d-none">
+              Don't fill this field:
+              <input name="pooh" type="text" placeholder="Omit this">
+            </div>
+            <!--
+            <div class="form-row justify-content-center">
+              <div class="custom-control custom-checkbox custom-control-inline">
+                <input type="checkbox" id="signup-pedals" name="pedals" class="custom-control-input" value="yes" checked>
+                <label for="signup-pedals" class="custom-control-label">Pedals</label>
+              </div>
+              <div class="custom-control custom-checkbox custom-control-inline">
+                <input type="checkbox" id="signup-diy" name="diy" class="custom-control-input" value="yes" checked>
+                <label for="signup-diy" class="custom-control-label">DIY Kits/PCBs</label>
+              </div>
+              <div class="custom-control custom-checkbox custom-control-inline">
+                <input type="checkbox" id="signup-discounts" name="discounts" class="custom-control-input" value="yes" checked>
+                <label for="signup-discounts" class="custom-control-label">Discounts</label>
+              </div>
+            </div>
+            -->
+            <div class="form-row justify-content-center">
+              <div class="form-group col-12 col-sm-8 col-lg-5 col-xl-4">
+                <label for="input-email-1" class="sr-only">Email:</label>
+                <input type="text" class="form-control mr-2" id="input-email-1" placeholder="you@example.com" name="_replyto" autocomplete="email">
+              </div>
+              <div class="col-12 col-sm-4 col-lg-3 col-xl-2">
+                <button type="submit" class="btn btn-block btn-primary">Yes, Please!</button>
+              </div>
+            </div>
+          </form>
+
+          <h2 class="section-heading text-uppercase mt-4"><i class="fab fa-instagram"></i> Instagram</h2>
+          <p class="mt-4">Also follow on
+          <strong><a href="https://www.instagram.com/mas_effects/" target="blank">Instagram (@mas_effects)</a></strong>
+          for more frequent updates and pedals that never make it to the site.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
 
   <a class="anchor" id="section-diy"></a>
   <section class="page-section bg-light bordered">
@@ -275,57 +331,6 @@
           <a class="btn btn-lg btn-block btn-primary" href="/diy/">
             More DIY...
           </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <a class="anchor" id="signup-section"></a>
-  <section class="bg-teal page-section">
-    <div class="container">
-      <div class="row">
-        <div class="col text-center">
-          <h2 class="section-heading text-uppercase">Sign up For Updates</h2>
-          <!--
-          <h3 class="section-subheading text-muted">Find out when there are new pedals, kits, or other cool stuff, and get occassional discount promo codes</h3>
-          -->
-          <form method="POST" data-netlify="true" netlify-honeypot="pooh" name="home-signup">
-            <div class="d-none">
-              Don't fill this field:
-              <input name="pooh" type="text" placeholder="Omit this">
-            </div>
-            <!--
-            <div class="form-row justify-content-center">
-              <div class="custom-control custom-checkbox custom-control-inline">
-                <input type="checkbox" id="signup-pedals" name="pedals" class="custom-control-input" value="yes" checked>
-                <label for="signup-pedals" class="custom-control-label">Pedals</label>
-              </div>
-              <div class="custom-control custom-checkbox custom-control-inline">
-                <input type="checkbox" id="signup-diy" name="diy" class="custom-control-input" value="yes" checked>
-                <label for="signup-diy" class="custom-control-label">DIY Kits/PCBs</label>
-              </div>
-              <div class="custom-control custom-checkbox custom-control-inline">
-                <input type="checkbox" id="signup-discounts" name="discounts" class="custom-control-input" value="yes" checked>
-                <label for="signup-discounts" class="custom-control-label">Discounts</label>
-              </div>
-            </div>
-            -->
-            <div class="form-row justify-content-center">
-              <div class="form-group col-12 col-sm-8 col-lg-5 col-xl-4">
-                <label for="input-email-1" class="sr-only">Email:</label>
-                <input type="text" class="form-control mr-2" id="input-email-1" placeholder="you@example.com" name="_replyto" autocomplete="email">
-              </div>
-              <div class="col-12 col-sm-4 col-lg-3 col-xl-2">
-                <button type="submit" class="btn btn-block btn-primary">Yes, Please!</button>
-              </div>
-            </div>
-          </form>
-
-          <h2 class="section-heading text-uppercase mt-4"><i class="fab fa-instagram"></i> Instagram</h2>
-          <p class="mt-4">Also follow on
-          <strong><a href="https://www.instagram.com/mas_effects/" target="blank">Instagram (@mas_effects)</a></strong>
-          for more frequent updates and pedals that never make it to the site.</p>
         </div>
       </div>
     </div>
