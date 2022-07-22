@@ -14,6 +14,10 @@
 
     <title><$ title $></title>
 
+    <% if head_jquery %>
+      <script src="/vendor/jquery/jquery.min.js"></script>
+    <% endif %>
+
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -63,7 +67,9 @@
       </div>
     </footer>
 
-    <script src="/vendor/jquery/jquery.min.js"></script>
+    <% if not head_jquery %>
+      <script src="/vendor/jquery/jquery.min.js"></script>
+    <% endif %>
     <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <script src="/js/agency.min.js"></script>
