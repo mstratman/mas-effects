@@ -1,0 +1,698 @@
+<% set title="Cartridge Pedal Survey" %>
+<% set meta_description="We built a prototype cartridge pedal system for DIY pedal builders. Are you interested in it?" %>
+<% set head_jquery=true %>
+<% extends "partials/_template.html" %>
+
+<% block head_additions %>
+  <script src="/js/cartridge-survey.min.js"></script>
+  <link type="text/css" rel="stylesheet" href="/vendor/simpleLightbox.min.css" />
+  <script src="/vendor/simpleLightbox.min.js"></script>
+<% endblock %>
+
+<% block body %>
+  <section class="page-section pb-0 pb-lg-4 bg-dark text-white">
+  </section>
+
+  <section class="page-section bg-dark pb-4">
+    <div class="container small">
+      <div class="row">
+        <div class="col">
+          <h1 class="mb-4 section-heading text-uppercase">DIY Cartridge Pedal System</h1>
+          <h3 class="section-subheading text-muted">Prototype: Looking for your feedback</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section pb-4">
+    <div class="container small">
+      <div class="row">
+        <div class="col-12 col-sm-7 col-md-6">
+          <h2>Should We Make These Kits?</h2>
+          <p>I obviously think these are a lot of fun, and actually practical for the DIY pedal building addiction, but need help
+          deciding <strong>how many kits</strong> to make available (if any).</p>
+          <p><a href="#yes-no-question">Skip down and give your answer</a> or keep reading...</p>
+        </div>
+        <div class="col-12 col-sm-5 col-md-6">
+          <a href="/img/cartridge-survey/console-cart.jpg"><img src="/img/cartridge-survey/sm-console-cart.jpg" alt="MAS Effects Cartridge pedal prototype" /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section pt-4 pb-4">
+    <div class="container small">
+      <div class="row">
+        <div class="col">
+          <h3>What is this, in short?</h3>
+          <ul>
+            <li><strong>Base console pedal</strong> (<a href="/img/cartridge-survey/console1.jpg" target="_blank">pic</a>) with a variety of knobs and switches, plus volume control and a wet/dry blend</li>
+            <li><strong>Effects cartridges</strong> (<a href="/img/cartridge-survey/cartridge-inside1.jpg" target="_blank">pic</a>) to do the audio processing</li>
+            <li><strong>Cartridge kits</strong> for a variety of effects, as well as "blanks" (vero/strip/bread/perf board) for making <strong>your own layouts</strong></li>
+            <li>Design and <strong>sell your own</strong> cartridge PCBs too?</li>
+          </ul>
+
+          <p><a id="show-more-details" href="#">More details...</a></p>
+
+          <div id="more-details" style="display:none;">
+            <p>The cartridge has an edge connector with many pads that carry the basic signals like: IN, OUT, GND, and POWER, but they offer a lot more. Here are some examples:</p>
+            <ul>
+              <li>The base console pedal has a buffered wet/dry blend that the cartridge PCB can either utilize or not based on how a few SEND/RETURN/IN/OUT pads are wired. i.e. each cartridge can decide if it utilizes the blend.</li>
+              <li>The LEDs on the pedal are also controlled by conditionally grounding a connector pad for each of them. This helps you see, at a glance, which console controls are active.  To make it even easier, we print the controls on the cartridge sticker too.</li>
+              <li>One of the connector pads indicates bypass status, in case a cartridge needs to conditionally display a tempo LED or other similar features.</li>
+            </ul>
+            <p>Other interesting tid-bits:</p>
+            <ul>
+              <li>The pedal currently has the following pots: 2k, 10k, 50k, 1M, and two 100k</li>
+              <li>It has 2 switches: DPDT on-off-on, DPDT on-on</li>
+              <li>But you can add more controls because...</li>
+              <li>There are extra, <strong>unused connectors</strong> so there's no reason you can't and shouldn't <strong>add new awesome features</strong>:
+                <ul>
+                  <li>Tap tempo (e.g. with tapflo in the base console)</li>
+                  <li>a "havoc" momentary foot switch</li>
+                  <li>additional pots/switches/etc</li>
+                  <li>or....</li>
+                </ul>
+              </li>
+              <li>You can add switches and knobs to the cartridge itself, but note they don't sit will when PCB mounted so you'll probably need to hand wire them.</li>
+              <li><small>Random fun fact: We're working on a cartridge with an OLED screen and a few fun games to <a target="_blank"  href="/diy/#oled">play.... with your guitar</a>.</small></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section pt-4 pb-4">
+    <div class="container small">
+      <div class="row">
+        <div class="col">
+          <h3>What does it look like?</h3>
+          <p>This is my prototype with a few rough edges, and my beloved NES style - but your graphics can vary of course. The layout of controls is probably very close to what the final version will be, unless I get feedback recommending otherwise.</p>
+          <div id="gallery-preview">
+            <div class="imageGallery1">
+              <a href="/img/cartridge-survey/console-cart3.jpg"><img src="/img/cartridge-survey/sm-console-cart3.jpg" alt="MAS Effects Cartridge pedal prototype" /></a>
+              <a href="/img/cartridge-survey/cart-collection.jpg"><img src="/img/cartridge-survey/sm-cart-collection.jpg" alt="MAS Effects Cartridge pedal prototype" /></a>
+              <a href="/img/cartridge-survey/cartridge-inside1.jpg"><img src="/img/cartridge-survey/sm-cartridge-inside1.jpg" alt="MAS Effects Cartridge pedal prototype" /></a>
+            </div>
+          </div>
+          <a class="mt-2 btn btn-sm btn-outline-primary" id="show-more-gallery" href="#">View More...</a>
+          <div id="gallery-more" style="display:none;">
+            <div class="imageGallery2">
+              <a href="/img/cartridge-survey/console-cart3.jpg"><img src="/img/cartridge-survey/sm-console-cart3.jpg" alt="MAS Effects Cartridge pedal prototype" /></a>
+              <a href="/img/cartridge-survey/cart-collection.jpg"><img src="/img/cartridge-survey/sm-cart-collection.jpg" alt="MAS Effects Cartridge pedal prototype" /></a>
+              <a href="/img/cartridge-survey/cartridge-inside1.jpg"><img src="/img/cartridge-survey/sm-cartridge-inside1.jpg" alt="MAS Effects Cartridge pedal prototype" /></a>
+              <a href="/img/cartridge-survey/cartridge-inside2.jpg"><img src="/img/cartridge-survey/sm-cartridge-inside2.jpg" alt="MAS Effects Cartridge pedal prototype" /></a>
+              <a href="/img/cartridge-survey/cartridge-pcbs.jpg"><img src="/img/cartridge-survey/sm-cartridge-pcbs.jpg" alt="MAS Effects Cartridge pedal prototype" /></a>
+              <a href="/img/cartridge-survey/console-cart2.jpg"><img src="/img/cartridge-survey/sm-console-cart2.jpg" alt="MAS Effects Cartridge pedal prototype" /></a>
+              <a href="/img/cartridge-survey/cart1.jpg"><img src="/img/cartridge-survey/sm-cart1.jpg" alt="MAS Effects Cartridge pedal prototype" /></a>
+              <a href="/img/cartridge-survey/cart2.jpg"><img src="/img/cartridge-survey/sm-cart2.jpg" alt="MAS Effects Cartridge pedal prototype" /></a>
+              <a href="/img/cartridge-survey/cart3.jpg"><img src="/img/cartridge-survey/sm-cart3.jpg" alt="MAS Effects Cartridge pedal prototype" /></a>
+              <a href="/img/cartridge-survey/cart4.jpg"><img src="/img/cartridge-survey/sm-cart4.jpg" alt="MAS Effects Cartridge pedal prototype" /></a>
+              <a href="/img/cartridge-survey/console-inside.jpg"><img src="/img/cartridge-survey/sm-console-inside.jpg" alt="MAS Effects Cartridge pedal prototype" /></a>
+              <a href="/img/cartridge-survey/console-pcb.jpg"><img src="/img/cartridge-survey/sm-console-pcb.jpg" alt="MAS Effects Cartridge pedal prototype" /></a>
+              <a href="/img/cartridge-survey/console-top.jpg"><img src="/img/cartridge-survey/sm-console-top.jpg" alt="MAS Effects Cartridge pedal prototype" /></a>
+              <a href="/img/cartridge-survey/console1.jpg"><img src="/img/cartridge-survey/sm-console1.jpg" alt="MAS Effects Cartridge pedal prototype" /></a>
+              <a href="/img/cartridge-survey/console-cart.jpg"><img src="/img/cartridge-survey/sm-console-cart.jpg" alt="MAS Effects Cartridge pedal prototype" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section pt-4 pb-4">
+    <div class="container small">
+      <div class="row">
+        <div class="col">
+          <h3>Why would I want this?</h3>
+          <ul>
+            <li><strong>$$$ SAVINGS $$$</strong> -
+              low-cost way to build many pedals without repeatedly buying the <strong>most costly parts</strong>: enclosures, foot switches, potentiometers, jacks, toggle switches, and  knobs.
+          Decorating stickers for the cartridges is also more straightforward and inexpensive than decorating enclosures.
+            </li>
+
+            <li><strong>EASY, RELAXING</strong> builds - Cartridges are much simpler to build since they have <strong>no offboard wiring</strong>. Great projects for beginners to the DIY pedal hobby</li>
+
+            <li><strong>LESS CLUTTER</strong> - I'd bet many of you, like me, have way too many pedals cluttering up your house. These cartridges are really space-efficient, and easy to stack.</li>
+
+            <li><strong>Fun and silly</strong> - and of course there's just some fun and novelty in working within a new platform, designing stickers, adapting circuits to work with the provided knobs and switches, and more.</li>
+
+            <li>You can <strong>design your own</strong> cartridges! Either with specially shaped vero/strip/perf/breadboard style "blanks" we'll sell, or you can take the PCB outline into your own CAD and design ones to be fabricated. <em>(You can also sell your new ones yourself, of course, or we're also considering stocking customer-contributed PCBs and giving you a cut of each sale)</em></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+  <section class="page-section pt-4 pb-4" id="back-to-question">
+    <div class="container small">
+      <div class="row">
+        <div class="col text-center">
+          Ok now, what do you think?
+          <br>
+          <a href="#yes-no-question" class="btn btn-primary">Back to the question</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <section class="page-section pt-4 pb-4">
+    <div class="container small">
+      <div class="row">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 offset-sm-1 offset-md-2 offset-lg-3">
+          <div style="border: 2px solid black;" class="text-center p-3">
+
+            <a id="yes-no-question" class="anchor"></a>
+            <p class="h3">Would you buy DIY cartridge &amp; console kits?</p>
+            <p><small>Need more info? Scroll down to keep reading before answering</small> </p>
+            <form name="cartridge-yes-or-no" id="cartridge-yes-or-no" data-netlify="true">
+              <input type="button" id="q1-yes" class="btn btn-lg btn-outline-success" value="Yes" />
+              <input type="button" id="q1-maybe" class="btn btn-lg btn-outline-primary" value="Maybe" />
+              <input type="button" id="q1-no" class="btn btn-lg btn-outline-danger" value="No" />
+              <input type="hidden" id="q1-answer" name="q1-answer" value="unknown" />
+            </form>
+
+            <div id="if-not-interested" style="display:none;">
+              <form name="cartridge-not-interested" id="cartridge-not-interested" data-netlify="true" class="pt-3">
+                <div class="form-group">
+                  <label for="not-interested-feedback">Do you have any thoughts or feedback?</label>
+                  <textarea class="form-control" id="not-interested-feedback" name="not-interested-feedback" rows="3"></textarea>
+                  <input type="submit" value="Submit" class="btn btn-primary">
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div style="display:none;" id="if-interested">
+    <section class="page-section bg-teal">
+      <div class="container small">
+        <div class="row">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6 offset-sm-1 offset-md-2 offset-lg-3">
+
+            <a id="thank-you" class="anchor"></a>
+            <div class="alert alert-dark mt-3" role="alert" id="thank-you-alert">
+              <h4 class="alert-heading">Thank you!</h4>
+              <p>Thank you for the feedback.</p>
+            </div>
+
+            <div class="p-2" id="sign-up-alert" style="background: #e1eaf5; color: #000;">
+              Want to be notified when it's available?
+              <form name="cartridge-email-form" id="cartridge-email-form" data-netlify="true">
+                <div class="form-row">
+                  <div class="col-auto align-text-bottom">
+                    <label class="sr-only" for="form-email">(optional) Email address</label>
+                    <input type="email" class="form-control" id="form-email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                  </div>
+                  <div class="col-auto align-text-bottom">
+                    <input type="submit" class="btn btn-primary btn-sm" value="Keep me updated!">
+                  </div>
+                  <div id="email-signup-done" style="display:none;"><strong>Done! You're on the list</strong></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col text-center">
+            <h3>Have another minute or two?</h3>
+            <p><strong>Fill out the form below</strong> and get details on <strong>all the offerings</strong> we have planned, while also providing valuable feedback.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container small">
+        <div class="row">
+          <div class="col">
+
+            <h3>What would you buy?</h3>
+            <p>
+              When this is available, what do you think you'd want?
+            This info will help us plan what to offer, and give you more details on what to expect. Prices are estimates.
+            </p>
+
+            <form name="cartridge-survey-details" method="post" data-netlify="true">
+              <input type="hidden" id="initial-answer" name="initial-answer" value="unknown">
+
+<h4 class="text-center section-heading text-uppercase">Part 1: Console Pedal</h4>
+
+
+<h5>Console pedal kit</h5>
+<div class="cartridge-tip">Includes a Bazz Fuss cartridge kit, plus all parts to build the base console: enclosure, connector, PCB, switches, pots, knobs, jacks, etc.</div>
+
+<strong>[$79] Complete console pedal kit</strong>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="console-kit-powder" id="console-kit-powder-no" value="no" checked>
+  <label class="form-check-label" for="console-kit-powder-no">
+    Plain enclosure
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="console-kit-powder" id="console-kit-powder-yes" value="yes" checked>
+  <label class="form-check-label" for="console-kit-powder-yes">
+    Powder coated and printed
+  </label>
+</div>
+
+<input type="button" class="btn btn-outline-primary toggle-btn" value="Add" name="console-kit">
+
+
+<!--
+would you value a printed pedal box?
+-->
+
+<h5 class="mt-4">Console pedal parts</h5>
+<div class="cartridge-tip">
+  Source common parts for the console pedal yourself, and get the unique parts here...
+</div>
+
+<div class="pt-2"><strong>[$10] PCBs</strong> for console <small>(main and foot switch PCBs)</small>:</div>
+<input type="button" class="btn btn-outline-primary toggle-btn" value="Add" name="console-part-pcbs">
+
+<div class="pt-2"><strong>[$49] Enclosure (decorated):</strong> Milled, printed, powder coated</div>
+<input type="button" class="btn btn-outline-primary toggle-btn" value="Add" name="console-part-powder-enclosure">
+
+<div class="pt-2"><strong>[$34] Enclosure (plain)</strong>: Milled, raw aluminum enclosure:</div>
+<input type="button" class="btn btn-outline-primary toggle-btn" value="Add" name="console-part-plain-enclosure">
+
+<div class="pt-2"><strong>[$8] Connector</strong> for cartridge slot:</div>
+<input type="button" class="btn btn-outline-primary toggle-btn" value="Add" name="console-part-connector">
+
+<h4 class="mt-5 section-heading text-uppercase text-center">Part 2: Cartridges</h4>
+<div class="cartridge-tip mid">
+Full kits include dust cover, cartridge sticker, cartridge shell, PCB, all parts, and printed instructions
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Effect</th>
+      <th>Full Kit</th>
+      <th>PCB + Cartridge shell</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Bazz Fuss
+        <br><small>Promo / starter project. This is included with the console pedal kit.</small>
+      </th>
+      <td>
+        $19
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-kit-bazz">
+      </td>
+      <td>
+        $7
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-bazz">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">RAT</th>
+      <td>
+        $29
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-kit-rat">
+      </td>
+      <td>
+        $12
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-rat">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Dual: Ringer - Big Muff Pi Fuzz</th>
+      <td>
+        $29
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-kit-ringpi">
+      </td>
+      <td>
+        $14
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-ringpi">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Muff Fuzz</th>
+      <td>
+        $29
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-kit-minimuff">
+      </td>
+      <td>
+        $12
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-minimuff">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Acapulco Gold</th>
+      <td>
+        $29
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-kit-acapulco">
+      </td>
+      <td>
+        $12
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-acapulco">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Distortion+</th>
+      <td>
+        $29
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-kit-distplus">
+      </td>
+      <td>
+        $12
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-distplus">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Shoe Pixel
+        <br><small>8-bit gated fuzz</small>
+      </th>
+      <td>
+        $29
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-kit-pixel">
+      </td>
+      <td>
+        $12
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-pixel">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Boost
+        <br><small>specific options TBD. Perhaps Black Tiger or 9V Nirvana (lofi)</small>
+      </th>
+      <td>
+        $29
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-kit-boost">
+      </td>
+      <td>
+        $12
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-boost">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">PT2399 Delay</th>
+      <td>
+        $34
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-kit-pt2399delay">
+      </td>
+      <td>
+        $14
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-pt2399delay">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Green ringer (octave up)</th>
+      <td>
+        $29
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-kit-ringer">
+      </td>
+      <td>
+        $12
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-ringer">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Dyna Compressor</th>
+      <td>
+        $34
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-kit-dynacomp">
+      </td>
+      <td>
+        $14
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-dynacomp">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Digital Reverb (FV-1)
+        <br>
+        <small>all options include EEPROM</small>
+      </th>
+      <td>
+        $59 <small>(w/ pre-soldered FV-1)</small>
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-kit-reverb">
+      </td>
+      <td>
+        $14
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-reverb">
+        <br>
+        $39 <small>(w/ FV-1 presoldered)</small>
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-reverb-fv1">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Digital Delay (FV-1)
+        <br>
+        <small>all options include EEPROM</small>
+      </th>
+      <td>
+        $59 <small>(w/ pre-soldered FV-1)</small>
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-kit-delay">
+      </td>
+      <td>
+        $14
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-delay">
+        <br>
+        $39 <small>(w/ FV-1 presoldered)</small>
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-delay-fv1">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Digital Chorus (FV-1)
+        <br>
+        <small>all options include EEPROM</small>
+      </th>
+      <td>
+        $59 <small>(w/ pre-soldered FV-1)</small>
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-kit-chorus">
+      </td>
+      <td>
+        $14
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-chorus">
+        <br>
+        $39 <small>(w/ FV-1 presoldered)</small>
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-chorus-fv1">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Digital Flanger / phaser (FV-1)
+        <br>
+        <small>all options include EEPROM</small>
+      </th>
+      <td>
+        $59 <small>(w/ pre-soldered FV-1)</small>
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-kit-flanger">
+      </td>
+      <td>
+        $14
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-flanger">
+        <br>
+        $39 <small>(w/ FV-1 presoldered)</small>
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-flanger-fv1">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Digital octave / pitch (FV-1)
+        <br>
+        <small>all options include EEPROM</small>
+      </th>
+      <td>
+        $59 <small>(w/ pre-soldered FV-1)</small>
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-kit-octave">
+      </td>
+      <td>
+        $14
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-octave">
+        <br>
+        $39 <small>(w/ FV-1 presoldered)</small>
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-octave-fv1">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Digital mixed effects (FV-1)
+        <br>
+        <small>Details TBD - e.g. harmonic trem + delay</small>
+        <br>
+        <small>all options include EEPROM</small>
+      </th>
+      <td>
+        $59 <small>(w/ pre-soldered FV-1)</small>
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-kit-mixedfv1">
+      </td>
+      <td>
+        $14
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-mixedfv1">
+        <br>
+        $39 <small>(w/ FV-1 presoldered)</small>
+        <br>
+        <input type="button" class="btn btn-sm btn-outline-primary toggle-btn" value="Add" name="cart-pcb-mixedfv1-fv1">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h4 class="mt-5 section-heading text-uppercase text-center">Part 3: DIY / Design your own Cartridges</h4>
+<div class="cartridge-tip">
+If you want to design and build custom layouts for other effects, you just <strong>need a PCB and a Shell</strong> <small>(technically you don't need the shell and can plug in the bare PCB)</small>...
+</div>
+
+<div class="pt-2"><strong>[$5] Cartridge shell</strong></div>
+<div class="form-row">
+  <div class="form-group col-auto">
+    <label for="diy-shell">Qty</label>
+    <select id="diy-shell" name="diy-shell" class="form-control">
+      <option selected value="0">0</option>
+      <option value="1">1</option>
+      <option value="2-4">2 to 4</option>
+      <option value="5+">5+</option>
+    </select>
+  </div>
+</div>
+
+<div class="pt-2"><strong>[$10] Blank PCB</strong> for DIY layouts.
+  <br><small>With bottom connector, and specially shaped to fit the cartridge shell</small>
+</div>
+<div class="form-row">
+  <div class="form-group col-auto">
+    <label for="diy-pcb-vero">Strip/Vero board</label>
+    <select id="diy-pcb-vero" name="diy-pcb-vero" class="form-control">
+      <option selected value="0">0</option>
+      <option value="1">1</option>
+      <option value="2-4">2 to 4</option>
+      <option value="5+">5+</option>
+    </select>
+  </div>
+  <div class="form-group col-auto">
+    <label for="diy-pcb-perf">Perf board</label>
+    <select id="diy-pcb-perf" name="diy-pcb-perf" class="form-control">
+      <option selected value="0">0</option>
+      <option value="1">1</option>
+      <option value="2-4">2 to 4</option>
+      <option value="5+">5+</option>
+    </select>
+  </div>
+  <div class="form-group col-auto">
+    <label for="diy-pcb-breadboard">Breadboard style traces</label>
+    <select id="diy-pcb-breadboard" name="diy-pcb-vero" class="form-control">
+      <option selected value="0">0</option>
+      <option value="1">1</option>
+      <option value="2-4">2 to 4</option>
+      <option value="5+">5+</option>
+    </select>
+  </div>
+</div>
+
+<div class="pt-2"><strong>[$2.50] Dust covers</strong> for cartridges.
+  <br><small>(<a href="/img/cartridge-survey/dust-cover.png" target="_blank">pic for reference</a>. Not functionally necessary, but provides a nostalgic storage option)</small>
+</div>
+<div class="form-row">
+  <div class="form-group col-auto">
+    <label for="diy-dustcover">Qty</label>
+    <select id="diy-dustcover" name="diy-dustcover" class="form-control">
+      <option selected value="0">0</option>
+      <option value="1">1</option>
+      <option value="2-4">2 to 4</option>
+      <option value="5+">5+</option>
+    </select>
+  </div>
+</div>
+
+
+<h4 class="mt-5 section-heading text-uppercase text-center">Part 4: Last thoughts</h4>
+
+<div class="pt-2">
+  <strong>Would you want to design new cartridge PCBs for a royalty on each sale?</strong>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="interested-in-royalty" id="interested-in-royalty-unknown" value="unknown" checked>
+  <label class="form-check-label" for="interested-in-royalty-unknown">
+    Unknown
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="interested-in-royalty" id="interested-in-royalty-no" value="no">
+  <label class="form-check-label" for="interested-in-royalty-no">
+    No
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="interested-in-royalty" id="interested-in-royalty-yes" value="yes">
+  <label class="form-check-label" for="interested-in-royalty-yes">
+    Yes
+  </label>
+</div>
+
+
+
+<div class="form-group pt-3">
+  <label for="anything-else"><strong>Anything else to add?</strong></label>
+  <textarea class="form-control" id="anything-else" name="anything-else" rows="5"></textarea>
+</div>
+
+<div class="form-group">
+  <label for="email">Your email (optional):</label>
+  <input class="form-control" type="email" id="email" name="email">
+</div>
+
+<input type="submit" value="SUBMIT" class="btn btn-lg btn-block btn-success">
+
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<% endblock %>
