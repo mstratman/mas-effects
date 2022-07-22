@@ -61,7 +61,7 @@
               <li>The LEDs on the pedal are also controlled by conditionally grounding a connector pad for each of them. This helps you see, at a glance, which console controls are active.  To make it even easier, we print the controls on the cartridge sticker too.</li>
               <li>One of the connector pads indicates bypass status, in case a cartridge needs to conditionally display a tempo LED or other similar features.</li>
             </ul>
-            <p>Other interesting tid-bits:</p>
+            <p>Other interesting or useful tid-bits:</p>
             <ul>
               <li>The pedal currently has the following pots: 2k, 10k, 50k, 1M, and two 100k</li>
               <li>It has 2 switches: DPDT on-off-on, DPDT on-on</li>
@@ -75,6 +75,7 @@
                 </ul>
               </li>
               <li>You can add switches and knobs to the cartridge itself, but note they don't sit will when PCB mounted so you'll probably need to hand wire them.</li>
+              <li>The gold fingers on the PCB connectors are 2µm ENIG (gold). These are more conductive and better suited for the connectors than HASL (tin/lead). However over time and extreme use, either HASL or ENIG can wear away leaving exposed copper. If this ever happens you may need to use an eraser to remove the corrosion just like we did in the good ol' days with NES cartridges. If you design your own PCBs you can use electroplated hard gold if this is an issue for you, but for 99% of hobbiests the cost is prohibitively high so we go with a good compromise.</li>
               <li><small>Random fun fact: We're working on a cartridge with an OLED screen and a few fun games to <a target="_blank"  href="/diy/#oled">play.... with your guitar</a>.</small></li>
             </ul>
           </div>
@@ -668,7 +669,7 @@ If you want to design and build custom layouts for other effects, you just <stro
   </div>
   <div class="form-group col-auto">
     <label for="diy-pcb-breadboard">Breadboard style traces</label>
-    <select id="diy-pcb-breadboard" name="diy-pcb-vero" class="form-control">
+    <select id="diy-pcb-breadboard" name="diy-pcb-breadboard" class="form-control">
       <option selected value="0">0</option>
       <option value="1">1</option>
       <option value="2-4">2 to 4</option>
