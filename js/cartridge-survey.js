@@ -50,10 +50,12 @@ $(document).ready(function() {
       });
   });
 
+  /* Netlify can't see these
   $(".toggle-btn").each(function(t) {
     var name = $(this).attr("name");
     $(this).after('<input type="hidden" name="' + name + '-qty" value="0">');
   });
+  */
 
   $(".toggle-btn").click(function(e) {
     if ($(this).data("is-picked")) {
