@@ -1,7 +1,28 @@
 # This is for netlify: https://docs.netlify.com/routing/redirects/
-/xmas /holiday/ 301!
-/xmas/ /holiday/ 301!
+
+# legacy URLs
+
 /krampus/ /sona/ 301!
 /krampus /sona/ 301!
+
 /expanse-preview /expanse/ 301!
 /expanse-preview/ /expanse/ 301!
+
+/xmas.pdf /holiday/ # old link for tree build doc
+
+# Convenience redirects. e.g. for masfx.info/whatever short urls
+
+/xmas /holiday/ 301!
+/xmas/ /holiday/ 301!
+
+/qf /beginner/quickfuzz-instructions
+/qf/ /beginner/quickfuzz-instructions
+
+/250 /beginner/distortion-instructions
+/250/ /beginner/distortion-instructions
+
+/vu /vu.pdf
+/vu/ /vu.pdf
+
+/relay /relay.pdf
+/relay/ /relay.pdf

@@ -52,9 +52,10 @@
         "gulp-nunjucks": "^5.0.1",
         "gulp-plumber": "^1.2.1",
         "gulp-rename": "1.4.0",
-        "gulp-sass": "4.0.2",
+        "gulp-sass": "^5.1.0",
         "gulp-uglify": "3.0.2",
         "merge-stream": "2.0.0",
+        "sass": "^1.56.1",
         "webpack-stream": "^6.1.1"
     },
     "presets": [
