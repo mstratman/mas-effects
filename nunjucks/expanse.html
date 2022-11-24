@@ -1,16 +1,23 @@
 <% set title="The Expanse - Harmonic Tremolo Pedal by MAS Effects" %>
+<% set head_jquery=true %>
 <% set meta_description="The Expanse is a harmonic tremolo pedal you can keep on Earth, or get lost in space." %>
 <% set store_link="https://shop.mas-effects.com/cart/add?id=42471815151777" %>
 <% set cta="Get One" %>
 <% set og_image="https://mas-effects.com/img/expanse.png" %>
 <% extends "partials/_template.html" %>
 
+<% block head_additions %>
+  <link type="text/css" rel="stylesheet" href="/vendor/simpleLightbox.min.css" />
+  <script src="/vendor/simpleLightbox.min.js"></script>
+  <script src="/js/expanse.min.js"></script>
+<% endblock %>
+
 <% block body %>
   <section class="page-section pb-0 pb-lg-4 bg-dark text-white">
   </section>
 
   <section class="page-section">
-    <div class="container">
+    <div class="container gallery">
       <div class="row">
         <div class="col text-center">
           <h1 class="mb-4 section-heading text-uppercase">The Expanse</h1>
@@ -20,7 +27,7 @@
       </div>
       <div class="row">
         <div class="col-6 text-center">
-          <a href="/img/expanse/cover.jpg" target="_blank">
+          <a class="lightbox" href="/img/expanse/cover.jpg" target="_blank">
             <img class="lazy img-fluid" src="/img/expanse/560x560/cover-placeholder.jpg" data-src="/img/expanse/560x560/cover.jpg" alt="The Expanse by MAS Effects" />
           </a>
         </div>
@@ -31,23 +38,24 @@
           -->
 
           <div class="row d-none d-md-flex">
+            <!-- NOTE THIS gallery IS DUPLICATED BELOW -->
             <div class="col-6">
-              <a target="_blank" href="/img/expanse/angle.jpg">
+              <a class="lightbox" target="_blank" href="/img/expanse/angle.jpg">
                 <img class="img-fluid" src="/img/expanse/160x160/angle.jpg" alt="The Expanse by MAS Effects" />
               </a>
             </div>
             <div class="col-6">
-              <a target="_blank" href="/img/expanse/bottom.jpg">
+              <a class="lightbox" target="_blank" href="/img/expanse/bottom.jpg">
                 <img class="img-fluid" src="/img/expanse/160x160/bottom.jpg" alt="The Expanse by MAS Effects" />
               </a>
             </div>
             <div class="col-6">
-              <a target="_blank" href="/img/expanse/top.jpg">
+              <a class="lightbox" target="_blank" href="/img/expanse/top.jpg">
                 <img class="img-fluid" src="/img/expanse/160x160/top.jpg" alt="The Expanse by MAS Effects" />
               </a>
             </div>
             <div class="col-6">
-              <a target="_blank" href="/img/expanse/front.jpg">
+              <a class="lightbox" target="_blank" href="/img/expanse/front.jpg">
                 <img class="img-fluid" src="/img/expanse/160x160/front.jpg" alt="The Expanse by MAS Effects" />
               </a>
             </div>
@@ -61,23 +69,24 @@
       </div>
 
       <div class="row d-md-none">
+        <!-- NOTE THIS IS DUPLICATED ABOVE -->
         <div class="col-6">
-          <a target="_blank" href="/img/expanse/angle.jpg">
+          <a  class="lightbox" target="_blank" href="/img/expanse/angle.jpg">
             <img class="img-fluid" src="/img/expanse/160x160/angle.jpg" alt="The Expanse by MAS Effects" />
           </a>
         </div>
         <div class="col-6">
-          <a target="_blank" href="/img/expanse/bottom.jpg">
+          <a class="lightbox" target="_blank" href="/img/expanse/bottom.jpg">
             <img class="img-fluid" src="/img/expanse/160x160/bottom.jpg" alt="The Expanse by MAS Effects" />
           </a>
         </div>
         <div class="col-6">
-          <a target="_blank" href="/img/expanse/top.jpg">
+          <a class="lightbox" target="_blank" href="/img/expanse/top.jpg">
             <img class="img-fluid" src="/img/expanse/160x160/top.jpg" alt="The Expanse by MAS Effects" />
           </a>
         </div>
         <div class="col-6">
-          <a target="_blank" href="/img/expanse/front.jpg">
+          <a class="lightbox" target="_blank" href="/img/expanse/front.jpg">
             <img class="img-fluid" src="/img/expanse/160x160/front.jpg" alt="The Expanse by MAS Effects" />
           </a>
         </div>
