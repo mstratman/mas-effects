@@ -26,3 +26,11 @@
 
 /relay /relay.pdf
 /relay/ /relay.pdf
+
+/mwkit /mimirs-well-kit/
+/mwkit/ /mimirs-well-kit/
+
+/stomp https://github.com/mstratman/stompfuzz
+/stomp/ https://github.com/mstratman/stompfuzz
+/pico https://github.com/mstratman/picofuzz
+/pico/ https://github.com/mstratman/picofuzz
