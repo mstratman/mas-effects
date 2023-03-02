@@ -48,7 +48,7 @@
           </div>
 
           <div class="text-left mt-5">
-            <h2>Great for...</h2>
+            <h3>Great for...</h3>
             <ul>
               <li>"Frame" to see exactly where a job will sit on your material</li>
               <li>"Print and cut" feature to re-cut material</li>
@@ -67,12 +67,12 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          <h2>Learn More</h2>
+          <h2  class="text-center section-heading text-uppercase">Learn More</h2>
         </div>
       </div>
       <div class="row">
-        <div class="col small">
-          <img class="img img-fluid" src="https://via.placeholder.com/1280x720">
+        <div class="col small text-center my-5">
+          <em>[video coming soon]</em>
         </div>
       </div>
       <div class="row">
@@ -132,8 +132,29 @@
     <div class="container">
       <div class="row">
         <div class="col-12 small">
-          <h2>Installation</h2>
-          <img class="img img-fluid" src="https://via.placeholder.com/1280x720">
+          <h2 class="text-center section-heading text-uppercase">Installation</h2>
+          <h4>Brief Overview</h4>
+          <!--
+          <p>
+            <a href="#" id="show_instructions">Show written installation guide</a>
+          </p>
+          -->
+          <div id="written_instructions">
+            <ol>
+              <li>Remove left panel <a href="https://www.youtube.com/watch?v=hGueX-e-aBU&t=114s">(video)</a></li>
+              <li>Remove panel over controller <a href="https://www.youtube.com/watch?v=hGueX-e-aBU&t=240s">(video)</a></li>
+              <li>Install red wire into a <em>+5V</em> connector, and black wire into <em>GND</em> <a href="https://youtu.be/hGueX-e-aBU?t=277">(video)</a></li>
+              <li>Secure the drag chain to the upper-left corner of the controller cover plate <a href="https://www.youtube.com/watch?v=hGueX-e-aBU&t=475s">(video)</a></li>
+              <li>Attach the red beam assembly to the rail next to the second mirror <a href="https://www.youtube.com/watch?v=hGueX-e-aBU&t=573s">(video)</a></li>
+              <li>Align the beam by adjusting the nuts on the red dot assembly <a href="https://www.youtube.com/watch?v=hGueX-e-aBU&t=700s">(video)</a></li>
+              <li>Reinstall left panel</li>
+            </ol>
+          </div>
+
+          <h4 class="mt-4">Video: Detailed Step-by-Step</h4>
+          <div class="embed-responsive embed-responsive-16by9 text-white" style="background-color: #8f8f8f;">
+            <iframe  class="embed-responsive-item" src="https://www.youtube.com/embed/hGueX-e-aBU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
     </div>
@@ -145,7 +166,7 @@
     <div class="container">
       <div class="row">
         <div class="col small">
-          <h2>FAQ</h2>
+          <h2  class="text-center section-heading text-uppercase">FAQ</h2>
 
           <h4>What tools do I need to install this?</h4>
           <ul>
@@ -181,8 +202,13 @@
 
   <script type="text/javascript">
     $(document).ready(function() {
-      $("#show_form").click(function() {
+      $("#show_form").click(function(evt) {
+        evt.preventDefault();
         $("#signup_form").show();
+      });
+      $("#show_instructions").click(function(evt) {
+        evt.preventDefault();
+        $("#written_instructions").show();
       });
     });
   </script>
