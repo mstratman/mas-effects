@@ -34,3 +34,7 @@
 /stomp/ https://github.com/mstratman/stompfuzz
 /pico https://github.com/mstratman/picofuzz
 /pico/ https://github.com/mstratman/picofuzz
+
+/polar /omtech-polar-red-dot/
+/polar/ /omtech-polar-red-dot/
+
