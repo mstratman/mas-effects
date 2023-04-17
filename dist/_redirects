@@ -23,6 +23,8 @@
 
 /vu /vu.pdf
 /vu/ /vu.pdf
+/VU /vu.pdf
+/VU/ /vu.pdf
 
 /relay /relay.pdf
 /relay/ /relay.pdf
@@ -34,3 +36,7 @@
 /stomp/ https://github.com/mstratman/stompfuzz
 /pico https://github.com/mstratman/picofuzz
 /pico/ https://github.com/mstratman/picofuzz
+
+/polar /omtech-polar-red-dot/
+/polar/ /omtech-polar-red-dot/
+
