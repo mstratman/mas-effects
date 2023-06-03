@@ -399,3 +399,27 @@ a.black, p.black {
 a.card:hover {
   text-decoration: none;
 }
+
+.review.card {
+  max-width: 600px;
+  min-width: 300px;
+  i.verified {
+    color: #afd1de;
+  }
+  .review-star {
+    color: #ffbd32;
+  }
+  .card-text {
+    font-size: smaller;
+    text-align: left;
+  }
+  .review-author {
+    font-size: smaller;
+    text-align: left;
+    color: #adb5bd;
+  }
+  .card-footer {
+    background-color: #fff;
+    font-size: smaller;
+  }
+}
