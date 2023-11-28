@@ -15,11 +15,13 @@
 /xmas /holiday/ 301!
 /xmas/ /holiday/ 301!
 
-/qf /beginner/quickfuzz-instructions
-/qf/ /beginner/quickfuzz-instructions
+#/qf /beginner/quickfuzz-instructions
+#/qf/ /beginner/quickfuzz-instructions
+/qf  /beginner-pedal-kit/
+/qf/ /beginner-pedal-kit/
 
-/250 /beginner/distortion-instructions
-/250/ /beginner/distortion-instructions
+#/250 /beginner/distortion-instructions
+#/250/ /beginner/distortion-instructions
 
 /vu /vu.pdf
 /vu/ /vu.pdf
