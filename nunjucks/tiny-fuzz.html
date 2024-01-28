@@ -13,7 +13,7 @@
 </div>
           <div class="mt-5 text-center">
             <a target="_blank" href="https://shop.mas-effects.com/collections/tiny-fuzz" class="btn btn-xl btn-primary">Shop In-Stock [$49]</a>
-            <a  href="/fuzz-builder/" class="btn btn-xl btn-primary mt-1 mt-md-0">Custom Built [$69+]</a>
+            <a  href="/fuzz-builder/" class="btn btn-xl btn-primary mt-1 mt-md-0">Custom Built [$59+]</a>
           </div>
         </div>
       </div>
@@ -132,6 +132,7 @@
       pedals: [
         {
           title: 'Hiding Fear',
+          price: '$49 or $79',
           store_link: 'https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-hiding-fear',
           builder_link: '/fuzz-builder/?sticker=monster&pg=2',
           img: '/img/illustrator-series/hiding-fear.jpg',
@@ -150,6 +151,7 @@
       pedals: [
         {
           title: 'Drunk Dead Spaceman',
+          price: '$49 or $79',
           store_link: 'https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-drunk-dead-spaceman',
           builder_link: '/fuzz-builder/?sticker=spaceman&pg=2',
           img: '/img/illustrator-series/spaceman.jpg',
@@ -175,6 +177,7 @@
         },
         {
           store_link: 'https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-full-fathom-five',
+          price: '$49 or $79',
           builder_link: '/fuzz-builder/?sticker=fathom&pg=2',
           img: '/img/illustrator-series/full-fathom-five.jpg',
           img_placeholder: '/img/illustrator-series/full-fathom-five-placeholder.jpg',
@@ -207,6 +210,7 @@
         },
         {
           store_link: 'https://shop.mas-effects.com/products/tiny-fuzz-isolation',
+          price: '$49 or $79',
           builder_link: '/fuzz-builder/?sticker=isolation&pg=2',
           img: '/img/illustrator-series/isolation.jpg',
           img_placeholder: '/img/illustrator-series/isolation-placeholder.jpg',
@@ -219,6 +223,7 @@
         },
         {
           store_link: 'https://shop.mas-effects.com/collections/tiny-fuzz/products/tiny-fuzz-until-the-end',
+          price: '$49 or $79',
           builder_link: '/fuzz-builder/?sticker=comet&pg=2',
           img: '/img/illustrator-series/until-the-end.jpg',
           img_placeholder: '/img/illustrator-series/until-the-end-placeholder.jpg',
@@ -422,8 +427,8 @@
   <% endmacro %>
 
   <% macro pedal_buttons(pedal) %>
-    <a class="btn btn-block btn-primary" target="_blank" href="<$ pedal.store_link $>">Shop In-Stock [$49]</a>
-    <a target="_blank" class="btn btn-block btn-<% if pedal.store_link %>outline-<% endif %>primary" href="<$ pedal.builder_link $>">Customize [$69+]</a>
+    <a class="btn btn-block btn-primary" target="_blank" href="<$ pedal.store_link $>">Shop In-Stock [<% if pedal.price %><$ pedal.price $><% else %>$49<% endif %>]</a>
+    <a target="_blank" class="btn btn-block btn-<% if pedal.store_link %>outline-<% endif %>primary" href="<$ pedal.builder_link $>">Customize [$59+]</a>
   <% endmacro %>
 
   <% for section in sections %>
@@ -464,7 +469,7 @@
             </div>
             <div class="col-6 col-lg-3 mt-5">
               <a href="/fuzz-builder/" class="white">
-                <strong>[$69+] Fully custom</strong>
+                <strong>[$59+] Fully custom</strong>
               </a>
               <em><a href="#v2-vs-v3">(note: taller)</a></em>
               <br>
@@ -654,7 +659,7 @@
                 <th scope="row">Fully Custom builds</th>
                 <td>N/A</td>
                 <td>
-                  <a href="/fuzz-builder/" class="black underline">Still available [$69+]</a>
+                  <a href="/fuzz-builder/" class="black underline">Still available [$59+]</a>
                 </td>
               </tr>
             </tbody>

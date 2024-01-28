@@ -53,6 +53,7 @@
               <img v-for="sticker in stickers" v-if="sticker.key == chosenSticker.key" class="z2 preview-abs" :src="`/img/fuzz-builder/sticker-${sticker.key}.png`">
 
               <template v-for="knob in knobs">
+                <!-- Rocket has a single knob that's offset; not  in the middle -->
                 <img v-if="!knob.nopreview && chosenSticker.key!='rocket' && chosenKnob != null && chosenKnob.key==knob.key && chosenKnobNumber==1" class="z3 preview-abs" :src="`/img/fuzz-builder/knobs/${knob.key}1.png`">
                 <img v-if="!knob.nopreview && chosenSticker.key=='rocket' && chosenKnob != null && chosenKnob.key==knob.key && chosenKnobNumber==1" class="z3 preview-abs" :src="`/img/fuzz-builder/knobs/${knob.key}1b.png`">
                 <img v-if="!knob.nopreview && chosenKnob != null && chosenKnob.key==knob.key && chosenKnobNumber==2" class="z3 preview-abs" :src="`/img/fuzz-builder/knobs/${knob.key}2.png`">
@@ -91,6 +92,11 @@
                   <div v-show="chosenSticker.key">
                     <h2>{{chosenSticker.title}}</h2>
                     <h3>by <a target="_blank" :href="chosenSticker.url">{{chosenSticker.artist}}</a></h3>
+                    <div v-show="chosenSticker.soldout">
+                      <div class="alert alert-danger" role="alert">
+                        <strong>SOLD OUT:</strong> Sorry this is currently sold out. <a :href="'/waitlist?item=tiny-fuzz-'+chosenSticker.key">Click here to be notified when it's available.</a>
+                      </div>
+                    </div>
                     <div v-show="chosenSticker.note">
                       <div class="alert alert-primary" role="alert">
                         <strong>NOTE:</strong> {{chosenSticker.note}}
@@ -111,10 +117,11 @@
                 <h4>Knobs</h4>
                 <div class="form-group">
                   <label for="knob-number">Control Knobs</label>
+                  <div v-show="chosenKnobNumber != 2"><small><em>NOTE: Customizing with 0 or 1 knobs (instead of 2) will use <a target="_blank" href="/tiny-fuzz/#v2-vs-v3">the taller v2 enclosure</a></em></small></div>
                   <select name="num_knobs" v-model="chosenKnobNumber" v-on:change="waitThenResizeImages" class="form-control" id="knob-number">
                     <option value="2">Gain + Volume</option>
-                    <option value="1">Gain only (internal volume trimmer)</option>
-                    <option value="0">None (volume trimmer, max gain)</option>
+                    <option value="1">[+${{customPotsPrice}}] Gain only (internal volume trimmer)</option>
+                    <option value="0">[+${{customPotsPrice}}] None (volume trimmer, max gain)</option>
                   </select>
                 </div>
 
@@ -184,6 +191,7 @@
 
               <tab-content title="Extras">
                 <h4>LED Indicator</h4>
+                <small><em>3mm LED in chrome bezel</em></small>
                 <div class="form-group">
                   <label for="led-color">LED Color</label>
                   <select name="led_color" v-model="led" v-on:change="waitThenResizeImages" class="form-control" id="led-color">
@@ -195,6 +203,9 @@
 
                 <h4 v-show="chosenSticker.addonPrice" class="mt">Ambient LEDs</h4>
                 <div  v-show="chosenSticker.addonPrice" class="form-check">
+                  <div>
+                    <em><small>NOTE: This will use <a target="_blank" href="/tiny-fuzz/#v2-vs-v3">the taller v2 enclosure</a></small></em>
+                  </div>
                   <input class="form-check-input" type="checkbox" name="addon_selected" v-model="choseAddon" :value="chosenSticker.addonPrice" id="addon">
                   <label class="form-check-label" for="addon">
                     [+${{chosenSticker.addonPrice}}] {{chosenSticker.addon}}
@@ -260,7 +271,10 @@
                           <td>Illustration: <strong>{{chosenSticker.title}}</strong> <em>by {{chosenSticker.artist}}</em></td>
                         </tr>
                         <tr>
-                          <td><small><em>included</em></small></td>
+                          <td>
+                            <small v-if="chosenKnobNumber == 2"><em>included</em></small>
+                            <span v-if="chosenKnobNumber != 2">+ <em>${{customPotsPrice}}</em></span>
+                          </td>
                           <td>Controls:
                             <strong v-if="chosenKnobNumber == 0">No knobs. Internal volume trimmer. Maximized gain</strong>
                             <strong v-if="chosenKnobNumber == 1">Gain knob. Internal volume trimmer</strong>
@@ -304,11 +318,11 @@
                           <td>&nbsp;</td>
                         </tr>
                         <tr>
-                          <td><strong>$50</strong></td>
+                          <td><strong>$59</strong></td>
                           <td><em>Deposit</em></td>
                         </tr>
                         <tr>
-                          <td><strong>${{total - 50}}</strong></td>
+                          <td><strong>${{total - 59}}</strong></td>
                           <td><em>Remaining balance, <small>payable when pedal is complete (~1 to 5 days)</small></em></td>
                         </tr>
                       </tbody>

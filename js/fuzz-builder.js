@@ -29,11 +29,12 @@ window.addEventListener('load', function () {
       comments: "",
       led: "",
 
-      basePrice: 69, // changing these won't save you any money :)
-      ledPrice: 10,
+      basePrice: 59, // changing these won't save you any money :)
+      ledPrice: 0,
       stickerPrice: 5,
       jackUpgradePrice: 9,
       footswitchUpgradePrice: 8,
+      customPotsPrice: 30,
 
       resizeThrottled: false,
       resizeDoneTimeout: undefined, // assumes 'sticker-${key}.png' and 'thumbs/thumb-${key}.png'
@@ -41,9 +42,9 @@ window.addEventListener('load', function () {
       stickers: [
         { key: 'monster', artist: 'Kailey Reid', title: 'Hiding Fear', url: 'https://www.instagram.com/kaileyreidillustration/', note: "Optional add-on: Eyes glow red. (step 3)", addon: "Glowing eyes", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/hiding-fear-led.jpg' },
         { key: 'spaceman', artist: 'David Slebodnick', title: 'Drunk Dead Spaceman', url: 'https://www.instagram.com/daviddrawsdrawings/', note: "Optional add-on: Eyes glow red. (step 3)", addon: "Glowing eyes", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/spaceman-led.jpg' },
-        { key: 'comet', artist: 'Justin Estcourt', title: 'Until the End', url: 'https://www.instagram.com/jetsyart/', note: "Optional add-on: Glowing comet LED (step 3)", addon: "Glowing comet", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/comet-led.jpg' },
+        { key: 'comet', soldout:true, artist: 'Justin Estcourt', title: 'Until the End', url: 'https://www.instagram.com/jetsyart/', note: "Optional add-on: Glowing comet LED (step 3)", addon: "Glowing comet", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/comet-led.jpg' },
         { key: 'saturn', artist: 'Justin Estcourt', title: 'Saturn Rise', url: 'https://www.instagram.com/jetsyart/', },
-        { key: 'isolation', artist: 'Justin Estcourt', title: 'Isolation', url: 'https://www.instagram.com/jetsyart/', note: "Staff glows blue. Optional Add-on (step 3)", addon: "Glowing staff", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/isolation-led.jpg', flipLED: true },
+        { key: 'isolation', artist: 'Justin Estcourt', title: 'Isolation', url: 'https://www.instagram.com/jetsyart/', note: "Optional add-on: Staff glows blue (step 3)", addon: "Glowing staff", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/isolation-led.jpg', flipLED: true },
         { key: 'charging', artist: 'Matt Dixon', title: 'Charging', url: 'https://www.instagram.com/mattdixonart', },
         { key: 'fathom', artist: 'Matt Dixon', title: 'Full Fathom Five', url: 'https://www.instagram.com/mattdixonart', note: "Optional add-on: LED on antenna. (step 3)", addon: "Antenna glows", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/full-fathom-five-led-preview.jpg' },
         { key: 'divinity', artist: 'Matt Dixon', title: 'Divinity', url: 'https://www.instagram.com/mattdixonart', },
@@ -66,10 +67,11 @@ window.addEventListener('load', function () {
         { key: 'green',  title: 'Green' },
         { key: 'orange',  title: 'Orange' },
         { key: 'purple',  title: 'Purple' },
-        { key: 'red',  title: 'Red', },
+        { key: 'red',  title: 'Red' },
+        { key: 'alblack',  nopreview: true, title: 'Aluminum black', desc:'[+$5] In stock', addonPrice: 5 },
+        { key: 'al2', nopreview: true, title: 'Aluminum other', desc: '[+$12] Various colors, Special order', addonPrice: 12 },
         { key: 'al1',  title: 'Aluminum with dot', desc:'TEMPORARILY OUT OF STOCK [+$10] Special order', addonPrice: 10 },
-        { key: 'al2', nopreview: true, title: 'Aluminum', desc: '[+$10] Various colors, Special order', addonPrice: 10 },
-        { key: 'other', nopreview: true, nothumb: true, title: 'Other', desc: '[+$10] Leave comments, Special order', addonPrice: 10 },
+        { key: 'other', nopreview: true, nothumb: true, title: 'Other', desc: '[+$12] Leave comments, Special order', addonPrice: 12 },
       ],
       stomps: [
         { key: 'slim', title: 'Ultra-slim washer' },
@@ -188,6 +190,9 @@ window.addEventListener('load', function () {
         }
         if (this.footswitchUpgrade) {
           total += this.footswitchUpgradePrice
+        }
+        if (this.chosenKnobNumber != 2) {
+          total += this.customPotsPrice
         }
         return total
       },
