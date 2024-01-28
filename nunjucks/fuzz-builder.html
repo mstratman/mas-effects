@@ -117,12 +117,19 @@
                 <h4>Knobs</h4>
                 <div class="form-group">
                   <label for="knob-number">Control Knobs</label>
-                  <div v-show="chosenKnobNumber != 2"><small><em>NOTE: Customizing with 0 or 1 knobs (instead of 2) will use <a target="_blank" href="/tiny-fuzz/#v2-vs-v3">the taller v2 enclosure</a></em></small></div>
-                  <select name="num_knobs" v-model="chosenKnobNumber" v-on:change="waitThenResizeImages" class="form-control" id="knob-number">
+                  <select name="num_knobs" v-model="chosenKnobNumber" v-on:change="numKnobsChanged" class="form-control" id="knob-number">
                     <option value="2">Gain + Volume</option>
-                    <option value="1">[+${{customPotsPrice}}] Gain only (internal volume trimmer)</option>
-                    <option value="0">[+${{customPotsPrice}}] None (volume trimmer, max gain)</option>
+                    <option value="1">[+${{v2Price}}] Gain only (internal volume trimmer)</option>
+                    <option value="0">[+${{v2Price}}] None (volume trimmer, max gain)</option>
                   </select>
+                </div>
+                <div  v-show="chosenKnobNumber != 2" class="form-check mb-3" >
+                  <div><small><em>NOTE: Customizing with 0 or 1 knobs (instead of 2) requires the <a target="_blank" href="/tiny-fuzz/#v2-vs-v3">the taller v2 enclosure</a></em></small></div>
+                  <input name="sel_v2_1 " v-model="chosenV2" v-on:change="changedV2" class="form-check-input" type="checkbox" value="yes" id="sel_v2_1">
+                  <label class="form-check-label" for="sel_v2_1">
+                    Taller V2 enclosure (required)
+                    <a target="_blank" href="/tiny-fuzz/#v2-vs-v3"><small>(See example)</small></a>
+                  </label>
                 </div>
 
                 <div class="form-group">
@@ -202,11 +209,16 @@
                 <small>NOTE: LED placement and bezel hardware will vary</small>
 
                 <h4 v-show="chosenSticker.addonPrice" class="mt">Ambient LEDs</h4>
+                <div v-show="!chosenV2 && chosenSticker.addonPrice"><small><em>Ambient LEDs require the taller V2 enclosure</em></small></div>
                 <div  v-show="chosenSticker.addonPrice" class="form-check">
-                  <div>
-                    <em><small>NOTE: This will use <a target="_blank" href="/tiny-fuzz/#v2-vs-v3">the taller v2 enclosure</a></small></em>
-                  </div>
-                  <input class="form-check-input" type="checkbox" name="addon_selected" v-model="choseAddon" :value="chosenSticker.addonPrice" id="addon">
+                  <input name="sel_v2_2 " v-model="chosenV2" v-on:change="changedV2" class="form-check-input" type="checkbox" value="yes" id="sel_v2_2">
+                  <label class="form-check-label" for="sel_v2_2">
+                    [+${{v2Price}} <small>one-time</small>] Taller V2 enclosure (required)
+                    <a target="_blank" href="/tiny-fuzz/#v2-vs-v3"><small>(See example)</small></a>
+                  </label>
+                </div>
+                <div  v-show="chosenSticker.addonPrice" class="form-check">
+                  <input  :disabled="! chosenV2" class="form-check-input" type="checkbox" name="addon_selected" v-model="choseAddon" :value="chosenSticker.addonPrice" id="addon">
                   <label class="form-check-label" for="addon">
                     [+${{chosenSticker.addonPrice}}] {{chosenSticker.addon}}
                   </label>
@@ -215,8 +227,16 @@
                 </div>
 
                 <h4 class="mt">Hardware Upgrades</h4>
+                <div v-show="!chosenV2"><small><em>Upgraded jacks require the taller V2 enclosure</em></small></div>
                 <div class="form-check">
-                  <input name="upgrade_jacks" v-model="jacksUpgrade" class="form-check-input" type="checkbox" value="yes" id="upgrade-jacks">
+                  <input name="sel_v2_3 " v-model="chosenV2" v-on:change="changedV2" class="form-check-input" type="checkbox" value="yes" id="sel_v2_3">
+                  <label class="form-check-label" for="sel_v2_3">
+                    [+${{v2Price}} <small>one-time</small>] Taller V2 enclosure (required)
+                    <a target="_blank" href="/tiny-fuzz/#v2-vs-v3"><small>(See example)</small></a>
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input :disabled="! chosenV2" name="upgrade_jacks" v-model="jacksUpgrade" class="form-check-input" type="checkbox" value="yes" id="upgrade-jacks">
                   <label class="form-check-label" for="upgrade-jacks">
                     [+${{jackUpgradePrice}}] Lumberg brand premium jacks:<small> input, output, and DC power</small>
                     <a href="#" @click.prevent.stop="" class="mytip"><small>(More info)</small>
@@ -228,7 +248,7 @@
                   </label>
                 </div>
                 <div class="form-check">
-                  <input name="upgrade_footswitch" v-model="footswitchUpgrade" class="form-check-input" type="checkbox" value="yes" id="upgrade-footswitch">
+                  <input  :disabled="! chosenV2" name="upgrade_footswitch" v-model="footswitchUpgrade" class="form-check-input" type="checkbox" value="yes" id="upgrade-footswitch">
                   <label class="form-check-label" for="upgrade-footswitch">
                     [+${{footswitchUpgradePrice}}] "Feather click" foot switch
                     <a href="#" @click.prevent.stop="" class="mytip"><small>(More info)</small>
@@ -273,7 +293,6 @@
                         <tr>
                           <td>
                             <small v-if="chosenKnobNumber == 2"><em>included</em></small>
-                            <span v-if="chosenKnobNumber != 2">+ <em>${{customPotsPrice}}</em></span>
                           </td>
                           <td>Controls:
                             <strong v-if="chosenKnobNumber == 0">No knobs. Internal volume trimmer. Maximized gain</strong>
@@ -300,6 +319,10 @@
                         <tr v-if="chosenSticker && chosenSticker.addonPrice && choseAddon">
                           <td>+ <em>${{chosenSticker.addonPrice}}</em></td>
                           <td>Ambient LED: <strong>{{chosenSticker.addon}}</strong></td>
+                        </tr>
+                        <tr v-if="chosenV2">
+                          <td>+ <em>${{v2Price}}</em></td>
+                          <td><strong>Taller V2 enclosure</strong></td>
                         </tr>
                         <tr v-if="jacksUpgrade">
                           <td>+ <em>${{jackUpgradePrice}}</em></td>

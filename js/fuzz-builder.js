@@ -20,6 +20,7 @@ window.addEventListener('load', function () {
 
       chosenSticker: {},
       chosenKnob: null,
+      chosenV2: false,
       chosenKnobNumber: 2,
       chosenStomp: null,
       choseAddon: 0,
@@ -30,11 +31,11 @@ window.addEventListener('load', function () {
       led: "",
 
       basePrice: 59, // changing these won't save you any money :)
+      v2Price: 15,
       ledPrice: 0,
       stickerPrice: 5,
       jackUpgradePrice: 9,
       footswitchUpgradePrice: 8,
-      customPotsPrice: 30,
 
       resizeThrottled: false,
       resizeDoneTimeout: undefined, // assumes 'sticker-${key}.png' and 'thumbs/thumb-${key}.png'
@@ -138,6 +139,11 @@ window.addEventListener('load', function () {
           this.resizeImages()
         })
       },
+      numKnobsChanged: function() {
+        if (this.chosenKnobNumber != 2) {
+          this.chosenV2 = "yes"
+        }
+      },
       resizeImages: function() {
         let imgs = document.getElementsByClassName('preview-abs')
         imgs = Array.from(imgs)
@@ -168,6 +174,15 @@ window.addEventListener('load', function () {
         })
         return rv
       },
+
+      changedV2: function() {
+        if (! this.chosenV2) {
+          this.chosenKnobNumber = 2
+          this.choseAddon = 0
+          this.jacksUpgrade = null
+          this.footswitchUpgrade = null
+        }
+      },
     },
 
     computed: {
@@ -191,8 +206,8 @@ window.addEventListener('load', function () {
         if (this.footswitchUpgrade) {
           total += this.footswitchUpgradePrice
         }
-        if (this.chosenKnobNumber != 2) {
-          total += this.customPotsPrice
+        if (this.chosenV2) {
+          total += this.v2Price
         }
         return total
       },
