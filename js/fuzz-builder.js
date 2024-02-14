@@ -56,7 +56,7 @@ window.addEventListener('load', function () {
         { key: 'kiwi', artist: 'MottsyMakes', title: 'Kiwi', url: 'https://www.instagram.com/mottsymakes/', },
         { key: 'hourglass', artist: 'MottsyMakes', title: 'Hourglass', url: 'https://www.instagram.com/mottsymakes/', },
         { key: 'rocket', artist: 'Cam Ojeda', title: 'Rocket', url: 'https://www.instagram.com/camtronart/', },
-        { key: 'spirits', artist: 'MilkyStout', title: 'Spirits', url: 'https://www.instagram.com/milkystout/', },
+        { key: 'spirits', soldout: true, artist: 'MilkyStout', title: 'Spirits', url: 'https://www.instagram.com/milkystout/', },
         { key: 'map', artist: 'Anna Geschwind', title: 'Middle Earth', url: 'https://www.instagram.com/annageschwind.art/', }
       ],
       knobs: [
