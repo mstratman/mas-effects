@@ -3,6 +3,7 @@
 @import "mas/tooltip.scss";
 @import "mas/holiday.scss";
 
+
 .TODO {
   background-color: #fff700;
 }
@@ -65,7 +66,7 @@ img.home-mw {
 .bg-dark, .bg-dark-darktext {
   background-color: #343a40;
 }
-.bg-dark {
+.bg-dark, .white-text {
   color: #fff;
   h1, h2, h3, p {
     color: #fff;
@@ -403,23 +404,98 @@ a.card:hover {
 .review.card {
   max-width: 600px;
   min-width: 300px;
-  i.verified {
-    color: #afd1de;
-  }
-  .review-star {
-    color: #ffbd32;
-  }
+  border: 1px solid rgba(0,0,0,.125);
+  border-left: 1px solid rgba(0,0,0,.125) !important;
   .card-text {
     font-size: smaller;
     text-align: left;
-  }
-  .review-author {
-    font-size: smaller;
-    text-align: left;
-    color: #adb5bd;
   }
   .card-footer {
     background-color: #fff;
     font-size: smaller;
   }
+}
+i.verified {
+  color: #afd1de;
+}
+.review-text {
+  font-size: smaller;
+  text-align: left;
+}
+.review-star {
+  color: #ffbd32;
+}
+.review-author {
+  font-size: smaller;
+  text-align: left;
+  color: #adb5bd;
+}
+
+
+.bpk-icon {
+  img {
+    width: 100%;
+    max-width: 100px;
+  }
+}
+.bpk-tool-card {
+  margin: 2em;
+  padding: 1em;
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0,.125);
+  background-color: rgba(0,0,0,.03);
+  .bpk-tool-icon {
+    img {
+      width: 100%;
+      max-width: 200px;
+    }
+  }
+}
+.bpk-small-icon {
+  text-align: center;
+  img {
+    width: 100%;
+    max-width: 50px;
+  }
+}
+.bpk-feature-box {
+  text-align: left;
+  /*
+  font-size: 0.8em;
+  */
+  h3, h4 {
+    font-size: 1rem;
+  }
+}
+.bpk-value-prop {
+}
+.bpk-top-box {
+  /*
+  border-radius: 5px;
+  background-color: #D0EAE6;
+  */
+  border: 1px solid #D0EAE6; /* rgba(0,0,0,.125); */
+}
+@media (max-width: 991px) and (min-width: 768px) {
+  .bpk-enclosure-pic {
+    max-height: 300px;
+  }
+}
+@media (max-width: 576px) {
+  .bpk-enclosure-pic {
+    max-height: 200px;
+  }
+}
+.bpk-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  border-top: 1px solid rgba(0,0,0,.125);
+}
+
+/* this is to compensate for the .bpk-footer which overlaps it */
+footer.footer {
+  padding-bottom: 6em;
 }
