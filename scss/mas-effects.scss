@@ -460,21 +460,19 @@ i.verified {
 }
 .bpk-feature-box {
   text-align: left;
-  /*
-  font-size: 0.8em;
-  */
   h3, h4 {
     font-size: 1rem;
   }
 }
 .bpk-value-prop {
-}
-.bpk-top-box {
-  /*
   border-radius: 5px;
-  background-color: #D0EAE6;
+  /*
+  border: 1px solid rgba(0,0,0,.125);
   */
-  border: 1px solid #D0EAE6; /* rgba(0,0,0,.125); */
+  height: 100%;
+  h3, h4 {
+    font-size: 1rem;
+  }
 }
 @media (max-width: 991px) and (min-width: 768px) {
   .bpk-enclosure-pic {
@@ -491,7 +489,7 @@ i.verified {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: white;
+  background-color: rgba(255, 255, 255 ,0.6);
   border-top: 1px solid rgba(0,0,0,.125);
 }
 
@@ -499,3 +497,7 @@ i.verified {
 footer.footer {
   padding-bottom: 6em;
 }
+.stars a {
+  text-decoration: none;
+}
+

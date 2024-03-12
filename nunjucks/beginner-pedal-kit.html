@@ -1,47 +1,650 @@
 <% set title="The Ultimate Beginner DIY Guitar Pedal Kit" %>
+<% set head_jquery=true %>
 <% set meta_description="Build your own DIY guitar pedal with the most beginner-friendly kit ever released." %>
 <% set og_image="https://mas-effects.com/img/beginner-pedal-kit/cover-suitcase.jpg" %>
 <% extends "partials/_template.html" %>
 
+<% block head_additions %>
+  <link type="text/css" rel="stylesheet" href="/vendor/simpleLightbox.min.css" />
+  <script src="/vendor/simpleLightbox.min.js"></script>
+  <script src="/js/lightbox.min.js"></script>
+  <script src="/js/bpk.min.js"></script>
+<% endblock %>
+
+<% set review_summary %>
+  <div class="d-inline-block px-2" style="border-right: 1px solid black">
+    <div class="stars">
+      <a href="#reviews">
+        <i class="review-star fas fa-star"></i>
+        <i class="review-star fas fa-star"></i>
+        <i class="review-star fas fa-star"></i>
+        <i class="review-star fas fa-star"></i>
+        <i class="review-star fas fa-star"></i>
+      </a>
+    </div>
+  </div>
+  <div class="d-inline-block px-2">
+    <strong class="review-text">
+      <!--
+      With the comprehensive guide and perfectly laid out instructions and components, I can't think of a better way to learn the addictive hobby of pedal building!
+      -->
+      <!--
+        "MAS has truly outdone themselves on this one"
+      -->
+      <!--
+      "I can't think of a better way to learn the hobby"
+      -->
+      "Everything was awesome 🤘"
+    </strong>
+    <!--
+    <div class="review-author">
+      -- Devin R.
+      <i class="fas fa-certificate verified" title="Verified"></i>
+    </div>
+    -->
+  </div>
+<% endset %>
+
+<% set valueprop2 %>
+  <div class="bpk-value-prop shadow p-3">
+    <div class="bpk-small-icon mb-3">
+      <img class="img-fluid" src="/img/beginner-pedal-kit/icon-coins-black.png">
+    </div>
+    <h4>AFFORDABLE</h4>
+    Only $59, and designed for minimal tools.
+    You won't find a better value even close to this price.
+    <br>
+    <small><a href="#affordable">[Learn more]</a></small>
+  </div>
+<% endset %>
+<% set valueprop1 %>
+  <div class="bpk-value-prop shadow p-3">
+    <div class="bpk-small-icon mb-3">
+      <img class="img-fluid" src="/img/beginner-pedal-kit/icon-smile-black.png">
+    </div>
+    <h4>EASY &amp; FUN</h4>
+    No complex wiring. Comprehensive illustrated guides, videos, and great support. We'll even teach you to solder!
+    <br>
+    <small><a href="#easy">[Learn more]</a></small>
+  </div>
+<% endset %>
+<% set maincta %>
+  <a target="_blank" class="btn btn-lg btn-primary" href="https://shop.mas-effects.com/products/ultimate-beginner-pedal-kit">Get Yours Now</a>
+<% endset %>
+<% set mainimg %>
+  <a class="lightbox" href="/img/beginner-pedal-kit/cover-suitcase.jpg">
+    <img class="lazy img-fluid" src="/img/beginner-pedal-kit/cover-suitcase-placeholder.jpg" data-src="/img/beginner-pedal-kit/cover-suitcase.jpg" alt="Beginner DIY Guitar Pedal Kit" />
+  </a>
+<% endset %>
+
 <% block body %>
   <section class="page-section pb-0 pb-lg-4 bg-dark text-white">
   </section>
-
-  <section class="page-section">
+  <section class="page-section small">
     <div class="container">
       <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 p-2 bg-bpk-dark">
+          <h1 class="mb-0 section-heading text-uppercase">Beginner Pedal Kit</h1>
+          <!--
+          <div class="h5"><em>(Perfect for veterans too!)</em></div>
+          -->
+          <p class="mb-4 h6 mt-2">The most affordable and beginner-friendly DIY guitar pedal kit.</p>
+
+          <div class="mt-4">
+            <$ review_summary | safe $>
+          </div>
+          <div class="d-block d-sm-none d-md-block d-lg-none mt-4">
+            <$ maincta | safe $>
+          </div>
+
+          <div class="d-none d-lg-block mt-2">
+            <div class="row bpk-feature-box text-center">
+              <div class="col-6 p-3">
+                <$ valueprop1 | safe $>
+              </div>
+              <div class="col-6 p-3">
+                <$ valueprop2 | safe $>
+              </div>
+            </div>
+            <div class="mt-4">
+              <$ maincta | safe $>
+            </div>
+          </div>
+        </div>
+        <div class="d-none d-sm-block col-12 col-sm-6 col-md-6">
+          <$ mainimg | safe $>
+        </div>
+      </div>
+
+      <div class="row d-flex d-lg-none mt-2">
+        <div class="col-12 col-sm-6 p-3">
+          <$ valueprop1 | safe $>
+        </div>
+        <div class="col-12 col-sm-6 p-3">
+          <$ valueprop2 | safe $>
+        </div>
+      </div>
+      <div class="row d-flex d-sm-none">
         <div class="col text-center">
-          <h1 class="mb-4 section-heading text-uppercase">Beginner Pedal Kit</h1>
-           <h2>More Info Coming Soon... (Early 2024)</h2>
+          <$ mainimg | safe $>
+        </div>
+      </div>
+      <div class="row d-flex d-md-none mt-3">
+        <div class="col text-center">
+          <$ maincta | safe $>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <% set enclosure_pic %>
+    <a class="lightbox" href="/img/beginner-pedal-kit/complete-assembled.png">
+      <img class="lazy img-fluid bpk-enclosure-pic" src="/img/beginner-pedal-kit/complete-assembled-placeholder.jpg" data-src="/img/beginner-pedal-kit/complete-assembled.png" alt="Gutshot: Beginner DIY Guitar Pedal Kit" />
+    </a>
+  <% endset %>
+
+  <% macro feature(icon, title) %>
+    <div class="col-12 col-md-6 bpk-feature-box py-2">
+      <div class="row">
+        <div class="col-12 d-none d-sm-block col-sm-3">
+          <div class="bpk-icon">
+            <img class="img-fluid" src="/img/beginner-pedal-kit/<$ icon $>">
+          </div>
+        </div>
+        <div class="col-12 col-sm-9">
+          <h3><$ title $></h3>
+          <div class="bpk-icon d-block d-sm-none pb-2">
+            <img class="img-fluid" src="/img/beginner-pedal-kit/<$ icon $>">
+          </div>
+          <$ caller() $>
+        </div>
+      </div>
+    </div>
+  <% endmacro %>
+
+  <% set feature_cols %>
+    <% call feature("icon-components.png", "Presorted Components") %>
+      Avoid misplaced and mixed up parts. Instead of handing you a bag of random parts like most kits, we pre-sort the components so you don’t have to measure them or read complex color bands and unintuitive codes.
+    <% endcall %>
+
+    <% call feature("icon-connector.png", "Simplified Connections") %>
+      No tangled or confusing wires.
+Off-board wiring - i.e. wiring the foot switch and jacks - is another common point of failure with other kits. We provide additional circuit boards and ribbon cables to make it quick, fun, and foolproof.
+    <% endcall %>
+
+    <% call feature("icon-book-video.png", "First Class Guidance") %>
+      This kit assumes NO PRIOR KNOWLEDGE or experience.
+      Our comprehensive,
+      <a target="_blank" href="https://masfx.io/quickfuzz.pdf">full color, illustrated booklet</a>
+      <small>(included free)</small>
+      and
+      <a href="https://www.youtube.com/watch?v=vGG7x3BZhto" target="_blank">step-by-step video</a>
+      will walk you through EVERYTHING.
+    <% endcall %>
+
+    <% call feature("icon-soldering-iron.png", "Learn Soldering") %>
+      The number one cause of failed DIY pedals is bad solder joints. To ensure your success we’ve designed <a href="https://shop.mas-effects.com/products/soldering-practice-kit-3-led-flashlight" target="_blank">a Soldering Practice Kit</a> <small>(included free)</small>, along with a <a href="https://masfx.io/how_to_solder/" target="_blank">How to Solder guide</a> that will take you from absolute beginner to soldering expert in about an hour.
+    <% endcall %>
+  <% endset %>
+
+  <section class="page-section small bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <a class="anchor" id="easy"></a>
+          <h2>EASY AND FUN</h2>
+        </div>
+        <div class="col-12 d-sm-none text-center">
+          <$ enclosure_pic | safe $>
         </div>
       </div>
       <div class="row">
-        <div class="col">
-           <ul>
-             <li><strong>Affordable</strong>: Getting started building pedals shouldn't break the bank. Not only is this kit's purchase price extremely affordable, but it <strong>requires minimal tooling</strong> and investment to get started (~$15).</li>
-             <li><strong>Easy and fun</strong>: We eliminated most of the common reasons people fail on their first pedal. Get a satisfying victory early on to form a more realistic impression of the DIY pedal building hobby.</li>
-           </ul>
-           <p>
-           Now shipping to 
-           early adopters who agree to provide feedback in a survey:
-           <small>"Official" launch expected in Feb or March, 2024.</small>
-           <div class="text-center">
-             <a href="https://shop.mas-effects.com/products/ultimate-beginner-pedal-kit" target="_blank" class="btn btn-primary">Get One</a>
-             <a target="_blank" href="https://masfx.io/quickfuzz/" class="ml-3 btn btn-outline-success">Documentation / Video</a>
-           </div>
-           </p>
+        <div class="col-12 col-sm-8">
+          <p>
+          We eliminated most of the common reasons people fail on their first pedal. Avoid that heartache and get an early win for the most satisfying entry into the DIY pedal building hobby.
+          </p>
+          <p>
+          Already a veteran builder? Get ready for your most relaxing and enjoyable build yet!
+          </p>
+          <div class="row d-none d-lg-flex">
+            <$ feature_cols | safe $>
+          </div>
+
+        </div>
+        <div class="col d-none d-sm-block col-sm-4">
+          <$ enclosure_pic | safe $>
         </div>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-12 col-sm-8 col-md-6 col-lg-5  text-center">
-          <a href="https://shop.mas-effects.com/products/ultimate-beginner-pedal-kit">
-            <img class="lazy img-fluid" src="/img/beginner-pedal-kit/cover-suitcase-placeholder.jpg" data-src="/img/beginner-pedal-kit/cover-suitcase.jpg" alt="Beginner DIY Guitar Pedal Kit" />
-          </a>
-          <br>
-         <p><a href="https://maseffects.substack.com/p/why-the-world-needs-another-pedal-kit">This article walks through the back story and why we developed this kit.</a></p>
+
+      <div class="row d-lg-none">
+        <$ feature_cols | safe $>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section bg-white small">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="text-center">
+            <a class="anchor" id="affordable"></a>
+            <h2>AFFORDABLE</h2>
+          </div>
+          <p>
+           Getting started building pedals shouldn't break the bank. Not only is this kit's purchase price
+           <strong>extremely affordable</strong>, but it <strong>requires minimal tooling</strong> and investment to get started (~$15).
+          </p>
+          <h4>Minimal Tooling</h4>
+          <p>
+          We looked for every opportunity to eliminate the need for many of the tools you'd need to build other kits. For example:
+            Push-on knobs don't require tiny screwdrivers or allen keys;
+            Pre-cut, pre-stripped ribbon cables eliminate the need for wire cutters and strippers;
+            A wrench tool is included with 3 sizes to secure all the hardware onto the enclosure;
+          </p>
+          <!--
+          <ul>
+            <li>Push-on knobs don't require tiny screwdrivers or allen keys</li>
+            <li>Pre-cut, pre-stripped ribbon cables eliminate the need for wire cutters and strippers</li>
+            <li>A wrench tool is included with 3 sizes to secure all the hardware onto the enclosure</li>
+          </ul>
+          -->
+          <h4>Low Price <span>and HUGE value</span></h4>
+          <p>
+            $59 is practically unheard of for a pedal kit, especially one with pre-sorted components, and as much documentation, videos, guidance, and various extras as we provide.
+          </p>
+          <h4>How?</h4>
+          <p>
+          This isn't a cheap "here's a bag of junky parts, <em>good luck with that</em>" kit like you find on Amazon.
+          How is this so affordable?
+          </p>
+          <p>The answer is <strong>FOCUS</strong>. Do one thing and do it well.</p>
+          <p>While we plan to continue making kits, e.g. our upcoming digital pedal kit, we won't be offering multiple versions of this Beginner kit. The level of attention and guidance we put into this kit isn't possible to spread over dozens of different circuits. We chose ONE problem to solve: <em>Make the most inexpensive, beginner-friendly kit possible</em>, and kept laser-focused on that goal.</p>
         </div>
       </div>
     </div>
   </section>
+
+  <section class="page-section bg-white bordered small">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="text-center">
+            <a class="anchor" id="included"></a>
+            <h2>WHAT'S INCLUDED?</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+
+          <div class="card-deck">
+
+            <div class="card">
+              <div class="card-body">
+                <div class="text-center">
+                  <h5 class="card-title">All the Parts Needed</h5>
+                </div>
+                <div class="bpk-icon text-center mb-3">
+                  <img class="img-fluid" src="/img/beginner-pedal-kit/icon-components2.png">
+                </div>
+                <p class="card-text">
+                ALL THE PARTS needed to build your own fuzz pedal
+                </p>
+                <div id="included1"  style="display:none;">
+                  <ul>
+                    <li>
+                      Enclosure: pre-cut, either plain aluminum <small>(to decorate yourself)</small> with a faceplate, or powder coated and UV printed. MANY designs to choose from.
+                    </li>
+                    <li>
+                      Three (3) Printed circuit boards (PCBs): 1) for the jacks, 2) the main effect, and 3) foot switch and LED
+                    </li>
+                    <li>
+                      Jacks, foot switch, potentiometers, ribbon cables, and all the necessary hardware
+                    </li>
+                    <li>
+                      All the electrical components <small>(resistors, capacitors, transistor, and diodes)</small>, pre-sorted since they can be tricky to identify
+                    </li>
+                    <li>
+                      Push-on knobs and LED in colors that compliment the design you chose
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card-footer text-center">
+                <a class="btn btn-outline-info" href="#" id="show_included1">See Details</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <div class="text-center">
+                  <h5 class="card-title">Guidance and Support</h5>
+                </div>
+                <div class="bpk-icon text-center mb-3">
+                  <img class="img-fluid" src="/img/beginner-pedal-kit/icon-book-video2.png">
+                </div>
+                <p class="card-text">
+                Videos, illustrations, and booklets to guide you, as well as quick and personal support
+                </p>
+                <div id="included2"  style="display:none;">
+                  <ul>
+                    <li>
+                      Printed, full-color, illustrated instructional booklet that walks you through every step of building, plus gives additional helpful tips.
+                    </li>
+                    <li>
+                      Step-by-step walkthrough video. Build your pedal with me!
+                    </li>
+                    <li>
+                      <a target="_blank" href="https://masfx.io/how_to_solder/">How to Solder booket</a>: free PDF or buy the printed booklet
+                    </li>
+                    <li>
+                      <a target="_blank" href="https://www.youtube.com/watch?v=Ae-0r53lgzM">How to Solder video</a>
+                    </li>
+                    <li>
+                      <a target="_blank" href="https://shop.mas-effects.com/products/soldering-practice-kit-3-led-flashlight">Soldering Practice Kit</a> included free, and extras are available in the shop.
+                    </li>
+                    <li>
+                      Poster reference sheet with schematic and other helpful references
+                    </li>
+                    <li>
+                      Quick and thoughtful support to any questions in <a target="_blank" href="https://mas-effects.com/support">our support forum</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card-footer text-center">
+                <a class="btn btn-outline-info" href="#" id="show_included2">See Details</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <div class="text-center">
+                  <h5 class="card-title">Useful and Fun Extras</h5>
+                </div>
+                <div class="bpk-icon text-center mb-3">
+                  <img class="img-fluid" src="/img/beginner-pedal-kit/icon-box.png">
+                </div>
+                <p class="card-text">
+                  Wrench tool, merit badge, fun swag, and more
+                </p>
+                <div id="included3"  style="display:none;">
+                  <ul>
+                    <li>
+                      Wrench tool with 3 sizes for securing your foot switch, jacks, and potentiometers
+                    </li>
+                    <li>
+                      DIY Pedals Merit Badge! Earn a cute patch to show off your new skills
+                    </li>
+                    <li>
+                      Various fun swag, e.g. sticker, magnet, pick, etc.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card-footer text-center">
+                <a class="btn btn-outline-info" href="#" id="show_included3">See Details</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-5 pt-3">
+        <div class="col-12 col-lg-10 offset-lg-1 text-center">
+          <h3>Unboxing</h3>
+          <div class="embed-responsive embed-responsive-16by9 text-white" style="background-color: #8f8f8f;">
+            <iframe  class="embed-responsive-item" src="https://www.youtube.com/embed/G78WwdwMHqQ?si=v_gpdTjaT70kKbwh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-5 pt-3">
+        <div class="col">
+          <div class="text-center">
+            <a class="anchor" id="included"></a>
+            <h3>
+              Tools You Need
+              <span>(also available as $15 add-on)</span>
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-sm-6 text-center">
+          <div class="bpk-tool-card">
+            <div class="bpk-tool-icon">
+              <img class="img-fluid" src="/img/beginner-pedal-kit/tool-soldering-iron.png">
+            </div>
+            <h5>Soldering Iron</h5>
+            <div>
+              with stand, solder, and a sponge <small>(kitchen cellulose type)</small> to clean your tip
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 text-center">
+          <div class="bpk-tool-card">
+            <div class="bpk-tool-icon">
+              <img class="img-fluid" src="/img/beginner-pedal-kit/tool-cutters.png">
+            </div>
+            <div>
+              <h5>Flush Cutters</h5>
+            </div>
+            <div>
+              AKA side cutters, or diagonal cutters, or wire cutters
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p>
+          Since you may already have your own tools, or you might have preferences on which tools you purchase, we don't include them by default:
+          </p>
+          <ul>
+            <li><strong>Soldering iron</strong> &amp; stand, and <strong>solder</strong></li>
+            <li><strong>Sponge</strong> to clean your iron's tip <small>(kitchen cellulose type)</small></li>
+            <li><strong>Flush cutters</strong> <small>(aka side cutters, or diagonal cutters, or wire cutters)</small></li>
+          </ul>
+          <p>We sell these in
+             <a href="https://shop.mas-effects.com/products/ultimate-beginner-pedal-kit" target="_blank">
+              a $15 add-on bundle
+             </a>,
+             just check the box when you buy your Beginner Pedal Kit.
+          </p>
+          <strong>What About Other Tools?</strong>
+          <p>Usually when you build DIY pedals people advise a lot more tools: wire strippers, helping hands or PCB holders, solder sucking pump, desoldering braid, needle nose pliers, crimpers, etc. However, we've designed our kit and instructional materials to allow you to build this pedal with minimal tools.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <% macro review_card(title, author) %>
+    <div class="review card border-non">
+      <div class="card-body">
+        <h5 class="card-title">
+          <$ title $>
+        </h5>
+        <div class="stars">
+          <i class="review-star fas fa-star"></i>
+          <i class="review-star fas fa-star"></i>
+          <i class="review-star fas fa-star"></i>
+          <i class="review-star fas fa-star"></i>
+          <i class="review-star fas fa-star"></i>
+        </div>
+        <p class="card-text">
+        <$ caller() $>
+        </p>
+        <p class="review-author">
+          --
+          <$ author $>
+          <i class="fas fa-certificate verified" title="Verified"></i>
+        </p>
+      </div>
+    </div>
+  <% endmacro %>
+
+  <section class="page-section bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <a class="anchor" id="reviews"></a>
+          <h2>REVIEWS</h2>
+          <p><em><small>These are just a few. <a href="https://shop.mas-effects.com/products/ultimate-beginner-pedal-kit#rapid_reviews_items" target="_blank">See them all in our shop</a></small></em></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="card-group">
+            <% call review_card("Truly a great project!", "Devin R.") %>
+            With the comprehensive guide and perfectly laid out instructions and components, I can't think of a better way to learn the addictive hobby of pedal building! MAS has truly outdone themselves on this one, it takes a lot of the scary out of the process and lets you learn circuitry and soldering at a very approachable level. When I learned...
+            <small><a target="_blank" href="https://shop.mas-effects.com/products/ultimate-beginner-pedal-kit#rapid_reviews_items">(more)</a></small>
+            <% endcall %>
+            <% call review_card("Great beginner kit", "Ryan H.") %>
+            This was the first DIY guitar pedal I've ever out together, and it was a breeze. I do have some experience soldering, but I did look through the provided documentation on "How to Solder" and it was very helpful. I completed this kit in under 2 hours, and it worked first try. I absolutely love it's tone too.
+            <% endcall %>
+            <% call review_card("Fun Project", "Msudsy") %>
+            I can't believe how well together and well documented this kit is. Almost anyone should be able to build this. It is a great introduction into pedal building.
+            <% endcall %>
+            <% call review_card("Early Adopter", "Dan N.") %>
+            I'm still very new to building pedal kits (3-5 built) and wanted to see how this one was with the absolute beginner documentation and presentation. I first warmed up with the beginner flashlight kit provided, and that worked with no issue.
+
+            The documentation in this kit is top notch. Very easy to follow, and teaches you *why* some things are...<small><a target="_blank" href="https://shop.mas-effects.com/products/ultimate-beginner-pedal-kit#rapid_reviews_items">(more)</a></small>
+            <% endcall %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center mt-3">
+          <a href="https://shop.mas-effects.com/products/ultimate-beginner-pedal-kit#rapid_reviews_items" target="_blank" class="btn btn-sm btn-outline-primary">Read More Reviews</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="page-section bg-dark text-white small">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <a class="anchor" id="demos"></a>
+          <h2>DEMOS</h2>
+          <p>Have a demo you'd like to share? Send it to be added to this page! In the meantime you can hear the same circuit in our <a href="/tiny-fuzz/">MAS Effects Tiny Fuzz pedal here</a>.
+          </p>
+          <div class="text-center">
+            <a class="btn btn-success" href="https://mas-effects.com/contact/">Post Yours?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="page-section bg-white small">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <a class="anchor" id="pickupsim"></a>
+          <h2>PICKUP SIMULATOR: <span>Optional Add-on</span></h2>
+          <a class="lightbox" href="/img/beginner-pedal-kit/pickup-simulator-pcbs.png" target="_blank">
+            <img class="img-fluid" src="/img/beginner-pedal-kit/pickup-simulator-pcbs-thumb.png">
+          </a>
+          <a class="btn btn-info" target="_blank" href="https://masfx.io/quickfuzz/pickup_simulator/">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section bg-light small">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <a class="anchor" id="customize"></a>
+          <h2 class="TODO">MAKE IT YOUR OWN</h2>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-4">
+          <a class="lightbox" href="/img/beginner-pedal-kit/enclosures-lg.png" target="_blank">
+            <img class="img-fluid" src="/img/beginner-pedal-kit/enclosures-sm.png">
+          </a>
+        </div>
+        <div class="col-8 TODO">
+          <h4>TONS of designs to choose from</h4>
+          <strong>These are just a few</strong> and the selection changes over time
+          <br>
+          <br>
+          TODO: Note about raw aluminum, decorate yourseflf...
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-8">
+          <h4>TODO: Something about customer images</h4>
+        </div>
+        <div class="col-4">
+          <a href="https://www.reddit.com/r/maseffects/comments/1aqyini/finished_my_beginner_pedal/" target="_blank">
+            <img class="img-fluid" src="/img/beginner-pedal-kit/customer-enclosure1-sm.png">
+          </a>
+          TODO: Pics of various designs
+          TODO: Show painted + sticker version
+          TODO: Email yours and we'll add it to the page
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section small">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <a class="anchor" id="documentation"></a>
+          <h2>DOCUMENTATION: How to Build <span>Your own DIY guitar pedal</span></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          TODO: Show each documentation type here
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section small bg-teal">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <a class="anchor" id="photos"></a>
+          <h2>Photos</h2>
+          <a class="TODO">TODO...</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section small bg-white">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <a class="anchor" id="faq"></a>
+          <h2>FAQ</h2>
+          <a class="TODO">TODO...: Sounds good on bass</a>
+          for beginners only? No, fun and relaxing build for everyone.
+
+          Do I have to read that long booklet?
+          no: The docs are structured so you can skim them rather than read line-by-line
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="bpk-footer py-3">
+    <div class="container text-center">
+      <a class="btn btn-primary" target="_blank" href="https://shop.mas-effects.com/products/ultimate-beginner-pedal-kit">Get Your Kit</a>
+    </div>
+  </div>
 
 <% endblock %>
