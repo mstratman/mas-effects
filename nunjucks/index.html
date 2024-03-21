@@ -26,36 +26,45 @@
     </a>
   <% endset %>
 
-  <a class="anchor" id="beginner-"></a>
-  <!--
-  <section class="page-section pedal-grid">
+  <% set diycta %>
+    <a href="/beginner-pedal-kit" class="btn btn-outline-primary">Learn More</a>
+    <a href="https://shop.mas-effects.com/products/ultimate-beginner-pedal-kit" target="_blank" class="btn btn-primary">Get Yours</a>
+  <% endset %>
+
+  <a class="anchor" id="beginner-diy"></a>
+  <section class="page-section">
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-8 text-center">
           <h2 class="section-heading text-uppercase">Ever Considered Building Your Own Pedal?</h2>
+          <!--
           <h3 class="section-subheading text-muted">
             The Ultimate Beginner DIY Pedal Kit
           </h3>
+          -->
           <div class="row">
             <div class="col-12 col-md-8 col-lg-12">
-              <p class="TODO">TODO: a bit of details and a button</p>
-              TODO: More DIY here...
+              <p>
+              It's never been so <strong>easy</strong> and <strong>inexpensive</strong>.
+              <br>
+              We've developed 
+              the
+              <strong><em>Ultimate Beginner DIY Pedal Kit</em></strong>
+              </p>
+              <$ diycta | safe $>
             </div>
-            <div class="col-12 col-md-4 d-none d-md-block d-lg-none">
-              PIC 1
+            <div class="col-12 col-md-4 d-none d-md-block d-lg-none text-left">
               <$ diypic | safe $>
             </div>
           </div>
 
         </div>
         <div class="col-12 col-lg-4 text-center d-block d-md-none d-lg-block">
-          PIC 2
           <$ diypic | safe $>
         </div>
       </div>
     </div>
   </section>
-  -->
 
   <a class="anchor" id="pedals"></a>
   <section class="page-section pedal-grid">
