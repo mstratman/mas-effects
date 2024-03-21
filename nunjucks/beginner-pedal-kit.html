@@ -1,7 +1,7 @@
 <% set title="The Ultimate Beginner DIY Guitar Pedal Kit" %>
 <% set head_jquery=true %>
 <% set meta_description="Build your own DIY guitar pedal with the most beginner-friendly kit ever released." %>
-<% set og_image="https://mas-effects.com/img/beginner-pedal-kit/cover-suitcase.jpg" %>
+<% set og_image="https://mas-effects.com/img/beginner-pedal-kit/cover-suitcase-rectangle.jpg" %>
 <% extends "partials/_template.html" %>
 
 <% block head_additions %>
@@ -68,12 +68,14 @@
     <small><a href="#easy">[Learn more]</a></small>
   </div>
 <% endset %>
+
 <% set maincta %>
   <a target="_blank" class="btn btn-lg btn-primary" href="https://shop.mas-effects.com/products/ultimate-beginner-pedal-kit">Get Yours Now</a>
 <% endset %>
+
 <% set mainimg %>
   <a class="lightbox" href="/img/beginner-pedal-kit/cover-suitcase.jpg">
-    <img class="lazy img-fluid" src="/img/beginner-pedal-kit/cover-suitcase-placeholder.jpg" data-src="/img/beginner-pedal-kit/cover-suitcase.jpg" alt="Beginner DIY Guitar Pedal Kit" />
+    <img class="lazy img-fluid img-thumbnail2" src="/img/beginner-pedal-kit/cover-suitcase-rectangle-placeholder.jpg" data-src="/img/beginner-pedal-kit/cover-suitcase-rectangle.jpg" alt="Beginner DIY Guitar Pedal Kit" />
   </a>
 <% endset %>
 
@@ -181,6 +183,7 @@ Off-board wiring - i.e. wiring the foot switch and jacks - is another common poi
       and
       <a href="https://www.youtube.com/watch?v=vGG7x3BZhto" target="_blank">step-by-step video</a>
       will walk you through EVERYTHING.
+      Questions or problems? <a target="_blank" href="https://mas-effects.com/forum">We're here for you</a>.
     <% endcall %>
 
     <% call feature("icon-soldering-iron.png", "Learn Soldering") %>
@@ -526,7 +529,7 @@ Off-board wiring - i.e. wiring the foot switch and jacks - is another common poi
     </div>
   </section>
 
-  <section class="page-section bg-dark text-white small">
+  <section class="page-section bg-teal text-white small">
     <div class="container">
       <div class="row">
         <div class="col text-center">
@@ -563,78 +566,253 @@ Off-board wiring - i.e. wiring the foot switch and jacks - is another common poi
       <div class="row">
         <div class="col text-center">
           <a class="anchor" id="customize"></a>
-          <h2 class="TODO">MAKE IT YOUR OWN</h2>
+          <h2>MAKE IT YOUR OWN</h2>
         </div>
       </div>
       <div class="row mt-4">
-        <div class="col-4">
+        <div class="col-12 col-sm-4 order-2 order-sm-1">
           <a class="lightbox" href="/img/beginner-pedal-kit/enclosures-lg.png" target="_blank">
             <img class="img-fluid" src="/img/beginner-pedal-kit/enclosures-sm.png">
           </a>
         </div>
-        <div class="col-8 TODO">
+        <div class="col-12 col-sm-8 order-1 order-sm-2">
           <h4>TONS of designs to choose from</h4>
-          <strong>These are just a few</strong> and the selection changes over time
-          <br>
-          <br>
-          TODO: Note about raw aluminum, decorate yourseflf...
+          <p>
+          <strong>These are just a few</strong> and the selection changes over time.
+          </p>
+          <p>
+            Something for everyone: Simple? Quirky? Retro? Sparkly? Whimsical? Brutal? ...
+          </p>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12 col-sm-4 order-2 order-sm-1">
+          <a class="lightbox" href="/img/beginner-pedal-kit/raw-aluminum-enclosure.png" target="_blank">
+            <img class="img-fluid" src="/img/beginner-pedal-kit/raw-aluminum-enclosure-sm.png">
+          </a>
+        </div>
+        <div class="col-12 col-sm-8 order-1 order-sm-2">
+          <h4>Or decorate it yourself</h4>
+          <p>
+          Get the raw aluminum enclosure and faceplate to truly customize it.
+          </p>
+          <ul>
+            <li>Paint it</li>
+            <li>Add stickers</li>
+            <li>Make waterslide decals on your printer</li>
+            <li>Use staz-on ink and rubber stamps</li>
+            <li>Draw with paint pens or sharpies</li>
+            <li>Use a label maker</li>
+            <li>Engrave it</li>
+          </ul>
         </div>
       </div>
       <div class="row mt-4">
         <div class="col-8">
-          <h4>TODO: Something about customer images</h4>
+          <h4>Customer Gallery</h4>
+          <p><a href="https://www.reddit.com/r/maseffects/" target="_blank">Post your build to our forum</a> or <a href="mailto:mark@mas-effects.com">email it</a> and we'd love to feature it here! </p>
         </div>
         <div class="col-4">
           <a href="https://www.reddit.com/r/maseffects/comments/1aqyini/finished_my_beginner_pedal/" target="_blank">
             <img class="img-fluid" src="/img/beginner-pedal-kit/customer-enclosure1-sm.png">
+            <br>
+            <small>from billy3000</small>
           </a>
-          TODO: Pics of various designs
-          TODO: Show painted + sticker version
-          TODO: Email yours and we'll add it to the page
         </div>
       </div>
     </div>
   </section>
 
-  <section class="page-section small">
+  <section class="page-section small bg-dark">
     <div class="container">
+
       <div class="row">
         <div class="col text-center">
           <a class="anchor" id="documentation"></a>
-          <h2>DOCUMENTATION: How to Build <span>Your own DIY guitar pedal</span></h2>
+          <h2>DOCUMENTATION <span>How to build your own DIY guitar pedal</span></h2>
         </div>
       </div>
+
       <div class="row">
-        <div class="col">
-          TODO: Show each documentation type here
+
+        <div class="col-12 col-lg-6">
+          <div class="bpk-doc-section text-center">
+            <h3>How to Solder</h3>
+            <div class="row">
+
+              <div class="col-12 col-sm-6">
+                <a href="https://masfx.io/how-to-solder.pdf" target="_blank">
+                  <img class="img-fluid" src="/img/beginner-pedal-kit/docs/booklet-solder.png">
+                </a>
+                <h4>Booklet</h4>
+                <a target="_blank" href="https://shop.mas-effects.com/collections/diy/products/how-to-solder-booklet">Buy it now</a>
+                <small>(or get it at a discounted rate when bundled with your Beginner Pedal Kit)</small>.
+                Or...
+                <div> 
+                  <a target="_blank"  class="btn btn-info" href="https://masfx.io/how-to-solder.pdf">
+                    <i class="fas fa-book"></i>
+                    Read PDF
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6">
+                <a href="https://www.youtube.com/watch?v=Ae-0r53lgzM" target="_blank">
+                  <img class="img-fluid" src="/img/beginner-pedal-kit/docs/vid-solder.png">
+                </a>
+                <h4>Video</h4>
+                See the soldering steps in real-time, while I talk you through many tips and tricks
+                <div>
+                  <a target="_blank"  class="btn btn-info" href="https://www.youtube.com/watch?v=Ae-0r53lgzM">
+                    <i class="fas fa-play"></i>
+                    Watch Video
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+
+        <div class="col-12 col-lg-6">
+          <div class="bpk-doc-section text-center">
+            <h3>Pedal Kit Documentation</h3>
+
+            <div class="row">
+              <div class="col-12 col-sm-6 text-center">
+                <a href="https://masfx.io/quickfuzz.pdf" target="_blank">
+                  <img class="img-fluid" src="/img/beginner-pedal-kit/docs/booklet-bpk.png">
+                </a>
+                <h4>Booklet</h4>
+                A printed copy of this comes with your kit. Or you can...
+                <div> 
+                  <a target="_blank"  class="btn btn-info" href="https://masfx.io/quickfuzz.pdf">
+                    <i class="fas fa-book"></i>
+                    Read PDF
+                  </a>
+                </div>
+                <small><a href="https://masfx.io/quickfuzz/" target="_blank">Or view an interactive web-based version here.</a></small>
+              </div>
+              <div class="col-12 col-sm-6">
+                <a href="https://www.youtube.com/watch?v=vGG7x3BZhto" target="_blank">
+                  <img class="img-fluid" src="/img/beginner-pedal-kit/docs/vid-bpk.png">
+                </a>
+                <h4>Video</h4>
+                Join me and let's build the kit together, step by step.
+                <div>
+                  <a target="_blank"  class="btn btn-info" href="https://www.youtube.com/watch?v=vGG7x3BZhto">
+                    <i class="fas fa-play"></i>
+                    Watch Video
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-12 col-lg-6">
+          <div class="bpk-doc-section text-center">
+            <h3>(Optional) Pickup Simulator Documentation</h3>
+            <div class="row">
+
+              <div class="col-12 col-sm-6">
+                <a href="https://masfx.io/pickup-simulator.pdf" target="_blank">
+                  <img class="img-fluid" src="/img/beginner-pedal-kit/docs/pickup-sim.png">
+                </a>
+                <h4>Pamphlet</h4>
+                A printed copy of this comes with your kit. Or you can...
+                <div> 
+                  <a target="_blank"  class="btn btn-info" href="https://masfx.io/pickup-simulator.pdf">
+                    <i class="fas fa-book"></i>
+                    Read PDF
+                  </a>
+                </div>
+                <small><a target="_blank" href="https://masfx.io/pickup-simulator-hackers-guide.pdf">Want to build a standalone pickup simulator pedal? Get the raw details here.</a></small>
+              </div>
+
+              <div class="col-12 col-sm-6">
+                <a href="https://www.youtube.com/watch?v=2Ny21D-NHJs" target="_blank">
+                  <img class="img-fluid" src="/img/beginner-pedal-kit/docs/vid-pickup-sim.png">
+                </a>
+                <h4>Video</h4>
+                <div>
+                  <a target="_blank"  class="btn btn-info" href="https://www.youtube.com/watch?v=2Ny21D-NHJs">
+                    <i class="fas fa-play"></i>
+                    Watch Video
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <div class="bpk-doc-section text-center">
+            <h3>Support: Get Help</h3>
+            <p>Any questions or trouble along the way? Just leave a quick post in our forum and we'll get you sorted out ASAP.</p>
+            <a class="btn btn-info" target="_blank" href="https://mas-effects.com/forum">
+              Visit Forum
+            </a>
+
+          </div>
+        </div>
+
+
       </div>
+
     </div>
   </section>
 
-  <section class="page-section small bg-teal">
-    <div class="container">
-      <div class="row">
-        <div class="col text-center">
-          <a class="anchor" id="photos"></a>
-          <h2>Photos</h2>
-          <a class="TODO">TODO...</a>
-        </div>
-      </div>
+
+  <% macro gallery(img, ext="jpg") %>
+    <div class="col-6 col-md-4 text-center">
+      <a class="lightbox" href="/img/beginner-pedal-kit/gallery/<$ img $>.<$ ext $>">
+        <img class="lazy img-fluid" src="/img/beginner-pedal-kit/gallery/gallery-placeholder.png" data-src="/img/beginner-pedal-kit/gallery/<$ img $>-thumb.<$ ext $>" alt="" />
+      </a>
     </div>
-  </section>
+  <% endmacro %>
 
   <section class="page-section small bg-white">
     <div class="container">
       <div class="row">
         <div class="col text-center">
+          <a class="anchor" id="photos"></a>
+          <h2>Photos</h2>
+        </div>
+      </div>
+      <div class="row">
+        <$ gallery("components") $>
+        <$ gallery("gutshot-dual-annotated", "jpg") $>
+        <$ gallery("merit-badge") $>
+        <$ gallery("pcbs") $>
+        <$ gallery("pickup-sim-kit") $>
+        <$ gallery("printed") $>
+        <$ gallery("soldering-practice") $>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section small bg-light">
+    <div class="container">
+      <div class="row mb-3">
+        <div class="col text-center">
           <a class="anchor" id="faq"></a>
           <h2>FAQ</h2>
-          <a class="TODO">TODO...: Sounds good on bass</a>
-          for beginners only? No, fun and relaxing build for everyone.
-
-          Do I have to read that long booklet?
-          no: The docs are structured so you can skim them rather than read line-by-line
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h4>Do I have to consume ALL of that documentation?</h4>
+          <p>No. We simply provide a variety of resources to meet every type of learner.</p>
+          <p>If you're in a hurry, here's a tip: Just follow along with the illustrations <a target="_blank" href="https://masfx.io/quickfuzz.pdf">in the booklet</a>. You don't have to watch the videos or read the booklet. Each step is deliberately captured in a simple picture. The booklet is also carefully designed to be easy to skim. Scan the headings and dive in where you'd like.</p>
+          <h4>For beginners only?</h4>
+          <p>Definitely not. Advanced builders will find this kit fun and relaxing. It's truly delightful to build, and at this price point it's hard to pass up.</p>
+          <p>Advanced builders might also have fun turning our <a href="https://masfx.io/pickup-simulator-hackers-guide.pdf" target="_blank">pickup simulator add-on sub-kit into a standalone pedal</a>, too.</p>
+          <h4>My favorite enclosure design is sold out, now what?</h4>
+          <p>Don't hesitate to <a target="_blank" href="https://mas-effects.com/contact/">reach out and see</a> if we are restocking your favorite enclosure design. We can also do special-orders for a reasonable fee. Of course you can also choose your second favorite, or get a bare aluminum enclosure and decorate it yourself.</p>
+          <h4>How long will it take to build my pedal?</h4>
+          <p>This kit can be built in about 15 minutes, or may take 8 hours or more. It's really up to you, and varies wildly depending on how deep you want to go with your learning.</p>
         </div>
       </div>
     </div>
