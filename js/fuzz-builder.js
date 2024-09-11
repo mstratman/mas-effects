@@ -43,7 +43,7 @@ window.addEventListener('load', function () {
       stickers: [
         { key: 'monster', artist: 'Kailey Reid', title: 'Hiding Fear', url: 'https://www.instagram.com/kaileyreidillustration/', note: "Optional add-on: Eyes glow red. (step 3)", addon: "Glowing eyes", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/hiding-fear-led.jpg' },
         { key: 'spaceman', artist: 'David Slebodnick', title: 'Drunk Dead Spaceman', url: 'https://www.instagram.com/daviddrawsdrawings/', note: "Optional add-on: Eyes glow red. (step 3)", addon: "Glowing eyes", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/spaceman-led.jpg' },
-        { key: 'comet', soldout:true, artist: 'Justin Estcourt', title: 'Until the End', url: 'https://www.instagram.com/jetsyart/', note: "Optional add-on: Glowing comet LED (step 3)", addon: "Glowing comet", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/comet-led.jpg' },
+        { key: 'comet', soldout:false, artist: 'Justin Estcourt', title: 'Until the End', url: 'https://www.instagram.com/jetsyart/', note: "Optional add-on: Glowing comet LED (step 3)", addon: "Glowing comet", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/comet-led.jpg' },
         { key: 'saturn', artist: 'Justin Estcourt', title: 'Saturn Rise', url: 'https://www.instagram.com/jetsyart/', },
         { key: 'isolation', artist: 'Justin Estcourt', title: 'Isolation', url: 'https://www.instagram.com/jetsyart/', note: "Optional add-on: Staff glows blue (step 3)", addon: "Glowing staff", addonPrice: 10, addonPreviewUrl: '/img/illustrator-series/isolation-led.jpg', flipLED: true },
         { key: 'charging', artist: 'Matt Dixon', title: 'Charging', url: 'https://www.instagram.com/mattdixonart', },
@@ -56,7 +56,7 @@ window.addEventListener('load', function () {
         { key: 'kiwi', artist: 'MottsyMakes', title: 'Kiwi', url: 'https://www.instagram.com/mottsymakes/', },
         { key: 'hourglass', artist: 'MottsyMakes', title: 'Hourglass', url: 'https://www.instagram.com/mottsymakes/', },
         { key: 'rocket', artist: 'Cam Ojeda', title: 'Rocket', url: 'https://www.instagram.com/camtronart/', },
-        { key: 'spirits', soldout: true, artist: 'MilkyStout', title: 'Spirits', url: 'https://www.instagram.com/milkystout/', },
+        { key: 'spirits', soldout: false, artist: 'MilkyStout', title: 'Spirits', url: 'https://www.instagram.com/milkystout/', },
         { key: 'map', artist: 'Anna Geschwind', title: 'Middle Earth', url: 'https://www.instagram.com/annageschwind.art/', }
       ],
       knobs: [
