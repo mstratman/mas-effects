@@ -63,3 +63,6 @@
 #
 /game https://shop.mas-effects.com/products/diy-musical-game-soldering-kit
 /game/ https://shop.mas-effects.com/products/diy-musical-game-soldering-kit
+
+# We actually have a DIY page, but it's out of date.
+/diy https://shop.mas-effects.com/collections/diy
