@@ -1,7 +1,14 @@
 <% set title="Christmas Ornament Guitar Pedal Kits by MAS Effects" %>
 <% set meta_description="These DIY guitar pedal kits are ornaments you can play! Several designs to choose from, and priced to make them a great gift for your bandmates, friends, and family." %>
 <% set og_image="https://mas-effects.com/img/holiday/5pack.jpg" %>
+<% set head_jquery=true %>
 <% extends "partials/_template.html" %>
+
+<% block head_additions %>
+  <link type="text/css" rel="stylesheet" href="/vendor/simpleLightbox.min.css" />
+  <script src="/vendor/simpleLightbox.min.js"></script>
+  <script src="/js/lightbox.min.js"></script>
+<% endblock %>
 
 <% block body %>
   <header class="masthead xmas-masthead">
@@ -17,30 +24,6 @@
       </div>
     </div>
   </header>
-<!--
-  <section class="page-section">
-    <div class="container">
-
-      <% set imgs = [
-           "3pack",
-           "bell",
-           "snowman",
-           "night2"
-         ]
-      %>
-      <div class="row no-gutters">
-        <% for img in imgs %>
-          <div class="col-6 col-md-3">
-            <a target="_blank" href="/img/holiday/gallery/<$ img $>.jpg">
-              <img class="lazy img-fluid" src="/img/holiday/gallery/<$ img $>-reduced-placeholder.jpg" data-src="/img/holiday/gallery/<$ img $>-reduced.jpg" />
-            </a>
-          </div>
-        <% endfor %>
-      </div>
-    </div>
-  </section>
-  -->
-
 
   <section class="page-section bg-light">
     <div class="container">
@@ -227,7 +210,33 @@
     </div>
   </section>
 
-  <section class="page-section">
+  <section class="page-section bordered">
+    <div class="container">
+
+      <% set imgs = [
+           { name: "penguin", alt: "8-Bit Penguin ornament guitar pedal kit" },
+           { name: "santa", alt: "Santa in chimney ornament guitar pedal kit" },
+           { name: "tree", alt: "Christmas tree ornament guitar pedal kit" },
+           { name: "bell", alt: "Bell ornament guitar pedal kit" },
+           { name: "gift", alt: "Gift ornament guitar pedal kit" },
+           { name: "stocking", alt: "Stocking ornament guitar pedal kit" },
+           { name: "snowman", alt: "Snowman ornament guitar pedal kit" },
+           { name: "collage", alt: "The full collection of playable Christmas ornament guitar pedal kits" }
+         ]
+      %>
+      <div class="row no-gutters">
+        <% for img in imgs %>
+          <div class="col-6 col-md-3">
+            <a class="lightbox" href="/img/holiday/gallery2026/<$ img.name $>.jpg">
+              <img class="lazy img-fluid" src="/img/holiday/gallery2026/<$ img.name $>-reduced-placeholder.jpg" data-src="/img/holiday/gallery2026/<$ img.name $>-reduced.jpg" alt="<$ img.alt $>" />
+            </a>
+          </div>
+        <% endfor %>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section bordered">
     <div class="container">
       <div class="row">
         <div class="col-12">
